@@ -256,17 +256,25 @@ switch  ActualPlayerState
 	
 	case PlayerStates.MenuOpen: 
 	_statePrint="MENU OPEN"; _movePad=false; 
+	
+	if !instance_exists(oIngameMenu) {
+		instance_create_layer(x,y,"INSTANCES",oIngameMenu);
+		
+	}	
 	if _keyMenu {
 	
 	switch (_menuOpened) {
 	
 	case true:ActualPlayerState=PlayerStates.Stand;
+	if instance_exists(oIngameMenu) {with(oIngameMenu) {instance_destroy();}}
 	_menuOpened=false;
 	_keyMenu=false;
 	break;
 	
 	
 	case false:
+	
+	
 	break;
 	
 	}
