@@ -9,6 +9,11 @@ _canspeak_range=32;
 _velTextshow=3;
 
 
+randomize();
+sectionId=noone;
+image_speed=0;
+
+
 Equip_head=0;
 
 

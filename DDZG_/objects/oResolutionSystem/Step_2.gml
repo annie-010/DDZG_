@@ -68,13 +68,13 @@ vy = camera_get_view_y(camera);
 
 
 
+
+
+
+
+
+
 #endregion
-
-
-
-
-
-
 
 
 

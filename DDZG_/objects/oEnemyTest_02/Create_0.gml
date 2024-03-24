@@ -1,6 +1,7 @@
 /// @description Inserte aquí la descripción
 spd = 2; /*xy speed*/
 //z var
+
 z = 0; /*z pos*/
 zfloor = 0; /*z pos of floor beneath you*/
 zspeed = 12; /*speed of jump*/
@@ -8,7 +9,7 @@ zgrav = 0; /*changes, applies downforce*/
 zjump = false; /*if in air*/
 _statePrint="ESTADO INICIAL";// Puede escribir su código en este editor
 
-
+sectionId=noone;
 x1=noone;
 y1=noone;
 x2=noone;

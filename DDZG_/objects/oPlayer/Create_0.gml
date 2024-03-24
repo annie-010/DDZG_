@@ -21,6 +21,17 @@ _tangible=true;
 _notangibleTime=0;
 
 
+
+///////////////////INVENTORY////////
+_menuOpened=false;
+////////////////////////////////////
+
+
+
+
+
+
+
 sectionId=noone;
 
 physics_=true;
@@ -28,7 +39,7 @@ physics_=true;
 _vel=2;
 enum PlayerStates 
 {
-	INACTIVE,Stand, Walk,Run, Jump,Hurt,Stairs,Attack_0,Attack_1,Attack_2,BackDash,Death,
+	INACTIVE,Stand, Walk,Run, Jump,Hurt,Stairs,Attack_0,Attack_1,Attack_2,BackDash,Death, MenuOpen,
 }
 
 ActualPlayerState= PlayerStates.INACTIVE;

@@ -6,6 +6,7 @@ view_set_camera(0, camera);
 global.Pause_Game=false;
 global.player_hp=1;
 
+
 ///alphaTrans = 0;
 
 

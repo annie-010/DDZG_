@@ -4,12 +4,45 @@
 draw_sprite_ext(sprite_index,image_index,x,y-z,image_xscale,1,0,blendColor_,1);
 
 
-
-
-/*
-if (x1!=noone && y1!=noone) and (x2!=noone && y2!=noone) {
-//draw_self();	
-draw_set_alpha(0.5);
-draw_set_color(c_purple);
-draw_rectangle(x1,y1,x2,y2,false);
+if sprite_index!=noone {
+draw_self();
 }
+
+
+if sectionId!=noone {
+
+draw_set_color(c_red);
+draw_text(x,y,"SECTION ID = " + string(sectionId));
+}
+
+
+
+
+
+
+///draw_sprite_ext(sprite_index,image_index,x,y-z,Xscale,1,0,blendColor_,1);
+/*
+//draw_text(x,y,_statePrint);
+draw_text(x,y+32,"Distance = " + string(distance_));
+draw_text(x,y-96,"depth = " + string(depth));
+draw_text(x,y+64,"Inmunity Time = " + string(InmunityTime));
+draw_text(x,y+96, "Hurt = " + string(HurtDur));
+draw_text(x,y+128, "ATTACKANIM = " + string(attackDur));
+/*
+
+switch (actualEnemyState) { ///=EnemyState.stand
+	
+
+case enemie_state.stand_: draw_sprite_ext(sprite_index,image_index,x,y-z,image_xscale,1,0,c_white,1); break;
+case enemie_state.walk_: draw_sprite_ext(sprite_index,image_index,x,y-z,image_xscale,1,0,c_white,1); break;
+case enemie_state.attack_: draw_sprite_ext(sprite_index,image_index,x,y-z,image_xscale,1,0,c_white,1); break;
+case enemie_state.hurt_: draw_sprite_ext(sprite_index,image_index,x,y-z,image_xscale,1,0,c_red,0.5); break;
+///case EnemyState.hurt_rest: draw_sprite_ext(sprite_index,image_index,x,y-z,image_xscale,1,0,c_red,0.5); break;
+
+}
+
+
+
+
+
+

@@ -1,6 +1,86 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
 
+
+
+
+
+var darkSectionCollision;
+darkSectionCollision =   collision_rectangle(x-16,y-16,x+16,y+16,oDarktoRoomSections,true,true);
+ if  darkSectionCollision!=noone {show_debug_message("Enemigo darkSectionIs = " + string(darkSectionCollision.sectionId)) }
+ 
+ 
+ var darkCollisionPlace;
+ darkCollisionPlace = instance_place(x,y,oDarktoRoomSections);
+ if darkCollisionPlace!=noone {
+	 
+if sectionId==noone{ sectionId=darkCollisionPlace.sectionId;} else if sectionId!=noone {
+	if sectionId!=darkCollisionPlace.sectionId {
+	
+	sectionId=darkCollisionPlace.sectionId;
+	exit;
+	
+	
+	///show_debug_message("Aqui hay un problema, aqui.")
+	}
+}
+ 
+ }
+ 
+ if sectionId!=noone && instance_exists(oPlayer) {
+	 
+	 
+	 
+	 
+	 
+	 
+	 if sectionId!=oPlayer.sectionId {
+	 
+	 visible=0;
+	 show_debug_message("Visible Desactivado");
+	 
+	 
+	 
+	 } else if sectionId==oPlayer.sectionId {
+	 
+	 visible=1;
+	 show_debug_message("Visible Activado");
+	 
+	 }
+ }
+
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if global.Pause_Game==false { image_speed=1;
 
 if instance_exists(oPlayer) {
@@ -32,7 +112,7 @@ switch (actualEnemyState) {
 	
 	
 	case enemie_state.stand_:
-	visible=1;
+	///visible=1;
 	
 	if x>oPlayer.x {image_xscale=-1;} 
 	if x<oPlayer.x {image_xscale=1;}	
@@ -59,7 +139,7 @@ y2=noone;
 	
 	
 	case enemie_state.walk_:
-	visible=1;
+	//visible=1;
 	if x>oPlayer.x {image_xscale=-1;} 
 	if x<oPlayer.x {image_xscale=1;}	
 	
@@ -86,7 +166,7 @@ vel_=choose(2,2.5,3,3.5,4);
 	case enemie_state.run_:
 		if x>oPlayer.x {image_xscale=-1;} 
 	if x<oPlayer.x {image_xscale=1;}	
-	vel_=run_vel; visible=1;
+	vel_=run_vel; ///visible=1;
 	
 	
 	
@@ -160,7 +240,8 @@ y2=noone;
 	
 	case enemie_state.hurt_: 
 	
-	if HurtDur>=15 {visible=1;  hspeed=0; actualEnemyState=enemie_state.stand_; HurtDur=0;  }
+	if HurtDur>=15 {///visible=1;  
+		hspeed=0; actualEnemyState=enemie_state.stand_; HurtDur=0;  }
 	
 	sprite_index=sprEnemy_01_Hurt;
 	_statePrint="HURT";

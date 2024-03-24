@@ -1,3 +1,4 @@
+////@@ -1,104 +1,6 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
 
@@ -20,6 +21,7 @@ draw_set_color(c_blue);
 //draw_set_color(c_white);
 ///draw_set_alpha(0.3);
 draw_sprite_ext(mask_index,0,x,y,1,1,0,c_white,0.5);
+draw_set_alpha(1);
 ////draw_set_alpha(1);
 //draw_text(x-25,y-128,"ACTUAL STATE = " + string(_statePrint));
 //draw_text(x-25,y+128,"DASH TIME = " + string(_BackDashtime));
@@ -88,18 +90,6 @@ if (stair_init_y!=noone) && (stair_end_y!=noone)
 	draw_text(x-50,y-170,"STAIR_INIT_Y =  " + string(stair_init_y));
 	draw_text(x-50,y-185,"STAIR_END_Y = " + string(stair_end_y));
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

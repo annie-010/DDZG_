@@ -1,3 +1,7 @@
+pause=false;
+
+
+bg=noone;
 
 global.earthquake=false;
 global.Pause_Game=false;
@@ -14,7 +18,12 @@ view_enabled = true;
 view_visible[0] = true;
 
 
+player_xpause=0;
+player_ypause=0;
+
+
 ///////////VARIABLES QUE LUEGO SE MOVERÁN A QUIEN CONTROLE ESTADOS DEL SISTEMA
+
 boss_count_act=0;  
 boss_count_time=0
 Enemy_life=false;
@@ -48,7 +57,7 @@ vy = camera_get_view_y(camera);
 
 view_set_camera(0, camera);
 
-///window_set_fullscreen(false); ////TRUE
+window_set_fullscreen(false); ////TRUE
 window_set_size((RES_W * RES_SCALE), (RES_H * RES_SCALE));
 surface_resize(application_surface, (RES_W * RES_SCALE), (RES_H * RES_SCALE));
 
@@ -63,4 +72,4 @@ var window_height = RES_H * RES_SCALE;
 
 ////window_set_position((display_width / 2 - window_width / 2), (display_height / 2 - window_height / 2));
 
-
+display_reset(0, true);

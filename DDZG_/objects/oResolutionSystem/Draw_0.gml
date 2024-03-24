@@ -1,16 +1,27 @@
-/// @description Inserte aquí la descripción
-// Puede escribir su código en este editor
+var cam_x = view_get_xport(0);
+var cam_y = view_get_yport(0);
 
-/*
 
-if ev_room_end {
-	 alphaTrans++;
+
+
+switch (pause) {
+
+case false:
+
+break;
+
+
+case true:
+
+bg = sprite_add("Pause.png",0,0,0,cam_x,cam_y);
+
+draw_sprite(bg,0,player_xpause-512,player_ypause-400);
+draw_sprite(sprRECrectangle,0,player_xpause-512,player_ypause-400);
+break;
+
+
 }
 
-vx = camera_get_view_x(camera);
-vy = camera_get_view_y(camera);
-
-//draw_sprite_ext(sprTransBlack,0,vx,vy,1,1,0,c_black,alphaTrans)
 
 
 

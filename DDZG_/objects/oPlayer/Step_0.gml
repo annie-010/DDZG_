@@ -1,4 +1,7 @@
 
+
+var _keyMenu = keyboard_check_pressed(ord("U"));
+
  var darkCollisionPlace;
  darkCollisionPlace = instance_place(x,y,oDarktoRoomSections);
  if darkCollisionPlace!=noone {
@@ -251,6 +254,32 @@ switch  ActualPlayerState
 	
 	
 	
+	case PlayerStates.MenuOpen: 
+	_statePrint="MENU OPEN"; _movePad=false; 
+	if _keyMenu {
+	
+	switch (_menuOpened) {
+	
+	case true:ActualPlayerState=PlayerStates.Stand;
+	_menuOpened=false;
+	_keyMenu=false;
+	break;
+	
+	
+	case false:
+	break;
+	
+	}
+	
+	
+	}
+	///if key
+	
+	
+	break;
+	
+	
+	
 	case PlayerStates.Death:
 	
 	switch (DeathAnim) {
@@ -291,6 +320,34 @@ switch  ActualPlayerState
 	
 	case PlayerStates.Stand: spd = 2; 
 	visible=1;
+	
+	
+	if _keyMenu {
+
+switch(_menuOpened) {
+
+case true:
+///_menuOpened=false;
+break;
+
+
+case false:
+_keyMenu=false;
+_menuOpened=true;
+ActualPlayerState=PlayerStates.MenuOpen;
+break;
+}}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	if _keyLeft {image_xscale=-1;}
 	if _keyRight {image_xscale=1;}

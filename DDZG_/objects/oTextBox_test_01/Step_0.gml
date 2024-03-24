@@ -1,10 +1,96 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor   
+
+
+
+
+
+depth=-floor(bbox_bottom/32);
+
+
+var darkSectionCollision;
+darkSectionCollision =   collision_rectangle(x-16,y-16,x+16,y+16,oDarktoRoomSections,true,true);
+ if  darkSectionCollision!=noone {}
+ 
+ 
+ var darkCollisionPlace;
+ darkCollisionPlace = instance_place(x,y,oDarktoRoomSections);
+ if darkCollisionPlace!=noone {
+if sectionId==noone{ sectionId=darkCollisionPlace.sectionId;}
+ 
+ }
+ 
+ if sectionId!=noone && instance_exists(oPlayer) {
+	 if sectionId!=oPlayer.sectionId {
+	 
+	 visible=0;
+	 
+	 } else if sectionId==oPlayer.sectionId {
+	 
+	 visible=1;
+	 
+	 
+	 }
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 depth=-floor(bbox_bottom/32);
 
 if _owner!=noone && _alreadyDrawing==false  {alarm[0]=3; _alreadyDrawing=true;}
 
-var keyboard_NextText = keyboard_check_pressed(vk_enter);
+var keyboard_NextText = keyboard_check_pressed(ord("L"));
 if distance_to_object(oPlayer)<=_canspeak_range { _canspeak=true;} else {_canspeak=false;}
 if distance_to_object(oPlayer)<=_canbesee_range {_canbesee=true; } else {_canbesee=false;}
 
