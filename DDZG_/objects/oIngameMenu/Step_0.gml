@@ -2,6 +2,10 @@
 // Puede escribir su código en este editor
 var _keyaction,_keyback
 
+if _owner._menuOpened==false {
+instance_destroy();
+}
+
 _keyaction = keyboard_check_pressed(ord("I"));
 _keyback = keyboard_check_pressed(ord("U"));
 

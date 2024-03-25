@@ -128,7 +128,7 @@ repeat (16) { if place_meeting(x-1,y,oBlock) {hspeed=0; x+=3;} }
 
 
 
-if ActualPlayerState!=PlayerStates.Hurt   {Hurt_time=0;}
+if ActualPlayerState!=PlayerStates.Hurt   { Hurt_time=0;}
 if Hurt_time>=15  {  hspeed=0; visible=1;  ActualPlayerState=PlayerStates.Stand;  Hurt_time=0; }
 
 
@@ -249,7 +249,8 @@ moveJoyPad = max(_keyLeft,_keyRight,_keyDown,_keyUp);
 switch  ActualPlayerState  
 {
 	case PlayerStates.INACTIVE: 
-	_statePrint="INACTIVE"; _movePad=false;
+	_statePrint="INACTIVE"; _movePad=false; 
+	_menuOpened=false;
 	break;
 	
 	
@@ -468,6 +469,7 @@ if !_keyJumpHeld {show_debug_message("SE HA SOLTADO EL BOTÓN");
 	
 	break;
 	case PlayerStates.Hurt:
+	_menuOpened=false;
 	_statePrint="HURT";
 	
 	
@@ -572,7 +574,7 @@ if !_keyJumpHeld {show_debug_message("SE HA SOLTADO EL BOTÓN");
 }
 
 
-if _movePad==true {
+if _movePad==true { 
 	
 
 

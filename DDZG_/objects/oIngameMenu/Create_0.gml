@@ -1,7 +1,7 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
 
-
+_owner=oPlayer;
 _menuOpened=true;
 _arrow=sprcursor;
 _mpos=0;
