@@ -115,7 +115,9 @@ if (stair_init_y!=noone) && (stair_end_y!=noone)
 
 
 
-
+for (i=0; i <ds_list_size(global.list); i+=1){
+draw_text(ob_block.x,ob_block.y+64 +(10 * i), ds_list_find_value(global.list, i));
+}
 
 
 
