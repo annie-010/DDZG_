@@ -61,4 +61,8 @@ break;
 
 
 
+if keyboard_check_pressed(ord("K")) {
+	
+	show_message("TIENES NO SE CUANTAS PERAS CULIAS");
 
+}

@@ -6,9 +6,9 @@ if _owner!=noone && _created==false
 	
 	
 	
-	var frontShow =	 instance_create_layer(_owner.x,_owner.y,"Instances",oObjectShow);	frontShow.ClothPos=ClothState.Front_;  frontShow._owner=_owner; frontShow.image_speed=0; frontShow.sprite_index=sprWitch_Hat; frontShow.image_index=0;
+	var frontShow =	 instance_create_layer(_owner.x,_owner.y,"Instances",oObjectShow);	frontShow.ClothPos=ClothState.Front_;  frontShow._owner=_owner; frontShow.image_speed=0; frontShow.sprite_index=sprwitchHat; frontShow.image_index=0;
 	
-	var backShow =	 instance_create_layer(_owner.x,_owner.y,"Instances",oObjectShow);	backShow.ClothPos=ClothState.Back_;  backShow._owner=_owner; backShow.image_speed=0; backShow.sprite_index=sprWitch_Hat; backShow.image_index=1;
+	var backShow =	 instance_create_layer(_owner.x,_owner.y,"Instances",oObjectShow);	backShow.ClothPos=ClothState.Back_;  backShow._owner=_owner; backShow.image_speed=0; backShow.sprite_index=sprwitchHat; backShow.image_index=1;
 	
 	_created=true;
 }

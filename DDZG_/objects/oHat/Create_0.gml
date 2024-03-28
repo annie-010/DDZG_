@@ -4,8 +4,8 @@
 
 _owner=noone;
 
-sprFront=sprWitch_Hat;
-sprBack=sprWitch_Hat;
+sprFront=sprwitchHat;
+sprBack=sprwitchHat;
 _created=false;
 
 

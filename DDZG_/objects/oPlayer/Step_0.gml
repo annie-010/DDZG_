@@ -1,3 +1,16 @@
+var _testInventory = keyboard_check_pressed(ord("T"));
+if _testInventory {
+_actualInventory._head=_witchHat;
+}
+
+
+x_scale = image_xscale;
+
+
+
+
+
+
 
 
 var _keyMenu = keyboard_check_pressed(ord("U"));

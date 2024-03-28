@@ -1,7 +1,7 @@
 {
   "resourceType": "GMSprite",
   "resourceVersion": "1.0",
-  "name": "sprWitch_Hat",
+  "name": "sprporcupineHat",
   "bbox_bottom": 76,
   "bbox_left": 3,
   "bbox_right": 92,
@@ -26,14 +26,14 @@
   "nineSlice": null,
   "origin": 9,
   "parent": {
-    "name": "EQUIP",
-    "path": "folders/Sprites/EQUIP.yy",
+    "name": "_HATS",
+    "path": "folders/Sprites/EQUIP/_HATS.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {
     "resourceType": "GMSequence",
     "resourceVersion": "1.4",
-    "name": "sprWitch_Hat",
+    "name": "sprporcupineHat",
     "autoRecord": true,
     "backdropHeight": 768,
     "backdropImageOpacity": 0.5,
@@ -55,8 +55,8 @@
     "timeUnits": 1,
     "tracks": [
       {"resourceType":"GMSpriteFramesTrack","resourceVersion":"1.0","name":"frames","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"1.0","Keyframes":[
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"95e68e29-7550-4bcc-8241-b354fae48632","path":"sprites/sprWitch_Hat/sprWitch_Hat.yy",},},},"Disabled":false,"id":"f2e7169b-0392-411b-b8e0-4d4d9dd11caf","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
-            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fdc86676-be91-40cb-8cc3-67abdb33f35c","path":"sprites/sprWitch_Hat/sprWitch_Hat.yy",},},},"Disabled":false,"id":"84476402-25a3-4ede-afd5-94b8bc5d79ce","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"95e68e29-7550-4bcc-8241-b354fae48632","path":"sprites/sprporcupineHat/sprporcupineHat.yy",},},},"Disabled":false,"id":"84d5eb42-6762-4a4c-86ce-721e206dc403","IsCreationKey":false,"Key":0.0,"Length":1.0,"Stretch":false,},
+            {"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"1.0","Channels":{"0":{"resourceType":"SpriteFrameKeyframe","resourceVersion":"1.0","Id":{"name":"fdc86676-be91-40cb-8cc3-67abdb33f35c","path":"sprites/sprporcupineHat/sprporcupineHat.yy",},},},"Disabled":false,"id":"5953d238-7824-4bcd-a60f-c50a18247f8d","IsCreationKey":false,"Key":1.0,"Length":1.0,"Stretch":false,},
           ],},"modifiers":[],"spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange": null,

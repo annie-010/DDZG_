@@ -2,6 +2,18 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
 
+
+
+
+
+
+
+
+
+
+
+
+
 ///draw_set_color(c_red);
 ///draw_text(x-32,y+25,"DetphPlayer = " + string(depth));
 
@@ -13,14 +25,14 @@
 
 draw_set_alpha(1);
 draw_sprite(sprPlayerShadowFront,image_index,x,y-zfloor);
-draw_sprite_ext(sprite_index,image_index,x,y-z+3,image_xscale,1,0,_blendColor,_alpha);
-draw_set_alpha(0.3);
-draw_set_color(c_blue);
+
+//draw_set_alpha(0.3);
+///draw_set_color(c_blue);
 //draw_text(x,y+25,"Z_ =" + string(z));
 //draw_rectangle(x-27,y-z-134,x+27,y-z+3,false);
 //draw_set_color(c_white);
 ///draw_set_alpha(0.3);
-draw_sprite_ext(mask_index,0,x,y,1,1,0,c_white,0.5);
+///draw_sprite_ext(mask_index,0,x,y,1,1,0,c_white,0.5);
 draw_set_alpha(1);
 ////draw_set_alpha(1);
 //draw_text(x-25,y-128,"ACTUAL STATE = " + string(_statePrint));
@@ -92,6 +104,32 @@ if (stair_init_y!=noone) && (stair_end_y!=noone)
 }
 
 
+
+*/
+
+
+
+
+
+
+
+
+
+draw_sprite_ext(sprite_index,image_index,x,y-z+3,image_xscale,1,0,_blendColor,_alpha);
+
+
+if _actualInventory._head!=noone {
+
+draw_text(x,y,"InventoryHead = " + string(_actualInventory._head));
+
+draw_sprite_ext(_actualInventory._head._Spr,0,x,y-z,x_scale,1,0,c_white,1);
+
+draw_sprite_ext(sprite_index,image_index,x,y-z+3,image_xscale,1,0,_blendColor,_alpha);
+
+draw_sprite_ext(_actualInventory._head._Spr,1,x,y-z,x_scale,1,0,c_white,1);
+} if _actualInventory==noone {
+	draw_sprite_ext(sprite_index,image_index,x,y-z+3,image_xscale,1,0,_blendColor,_alpha);
+}
 
 
 
