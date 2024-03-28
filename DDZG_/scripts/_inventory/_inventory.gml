@@ -3,6 +3,7 @@
 function _inventoryStruct(){
 
 _witchHat = {
+_Name : "Witch hat" ,
 _Spr : sprwitchHat, //Sprite
 _Def : 1, //Defense
 _Vel : 2, //Velocity
@@ -12,6 +13,7 @@ _Descr : "you can feel the magic power in this paper mache hat"
 }
 
 _porcupineHat = {
+_Name : "Porpucine Hat" ,
 _Spr : sprporcupineHat, //Sprite
 _Def : 3, //Defense
 _Vel : 2, //Velocity
@@ -21,6 +23,7 @@ _Descr : "You got a puncture when you put it on, you'll get a puncture when you 
 }
 
 _kittyHat = {
+_Name : "Kitty hat" ,
 _Spr : sprkittyHat, //Sprite
 _Def : 1, //Defense
 _Vel : 4, //Velocity
@@ -30,6 +33,7 @@ _Descr : "You feel a strange urge to eat tuna"
 }
 
 _constructHat = {
+_Name : "Construct hat" ,
 _Spr : sprconstructHat, //Sprite
 _Def : 1, //Defense
 _Vel : 4, //Velocity
@@ -38,25 +42,12 @@ _Pattack : 3, //Physics Attack
 _Descr : "Hop!, hammer, Hop!"
 }
 
-
 ///ARRAY_INVENTORY;
 _arrayHat [0] = noone;
 _arrayHat [1] = _witchHat;
 _arrayHat [2] = _porcupineHat
 _arrayHat [3] = _kittyHat;
 _arrayHat [4] = _constructHat;
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 

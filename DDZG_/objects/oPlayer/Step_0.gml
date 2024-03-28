@@ -1,5 +1,16 @@
 var _testInventory = keyboard_check_pressed(ord("T"));
 if _testInventory {
+	
+var _actualInventory_ds = oResolutionSystem._ActualHeadInventory;
+var _actualInvetory_dsnum = ds_list_size(_actualInventory_ds);
+
+
+ds_list_add(_actualInventory_ds,0);
+
+
+///=0;
+
+	
 _actualInventory._head=_witchHat;
 }
 

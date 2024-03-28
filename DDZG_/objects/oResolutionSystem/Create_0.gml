@@ -1,5 +1,5 @@
 pause=false;
-
+_ActualHeadInventory = ds_list_create();
 
 bg=noone;
 

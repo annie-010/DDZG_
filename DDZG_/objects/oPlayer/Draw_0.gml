@@ -3,7 +3,12 @@
 // Puede escribir su código en este editor
 
 
+var drawInventory = keyboard_check_pressed(ord("B"));
+if drawInventory {
 
+
+
+}
 
 
 
