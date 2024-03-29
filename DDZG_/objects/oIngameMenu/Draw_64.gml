@@ -39,21 +39,57 @@ draw_sprite(_arrow,0,(startX-32), (startY+16) + spacing * _mpos);
 
 
 break;
-}
 
+
+
+
+case _optionsmenu.Equip_:
+
+for (var i = 0; i < array_length(_optionsequipArray); i++) {
+    draw_text(startX, startY + (i * spacing), _optionsequipArray[i]);
+}
+draw_sprite(_arrow,0,(startX-32), (startY+16) + spacing * _mpos);
 
 
 break;
 
 
-case false:
+case _optionsmenu.Equip_head:
 
 
+var acces__headEquip = _headEquip;
 
-break;
+if !ds_list_empty(_headEquip) {
+
+
+for (_i = 0; _i < ds_list_size(acces__headEquip); _i += 1) {
+	var hatStruct = ds_list_find_value(acces__headEquip,_i);
+	var hatStructName = hatStruct._Name
+	
+	show_debug_message(acces__headEquip);
+	
+    ///var hatStruct = ds_list_find_index(_headEquip, _i);
+	//show_debug_message(hatStruct);
+	
+    //var hatName = hatStruct._Name;
+    draw_text(startX, startY + (_i * spacing), hatStructName);
+}
+
 
 }
 
+
+
+///for (_i=0; _i <ds_list_size(_headEquip); _i+=1){
+//draw_text(startX,startY+(_i * spacing), ds_list_find_value(_headEquip, _i));
+//}}
+
+break;
+
+
+}
+
+}
 
 
 #endregion 
@@ -61,8 +97,8 @@ break;
 
 
 
-if keyboard_check_pressed(ord("K")) {
+///if keyboard_check_pressed(ord("K")) {
 	
-	show_message("TIENES NO SE CUANTAS PERAS CULIAS");
+	///show_message("TIENES NO SE CUANTAS PERAS CULIAS");
 
-}
+///}

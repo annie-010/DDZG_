@@ -22,17 +22,8 @@ _notangibleTime=0;
 
 x_scale = image_xscale;
 
-///////////////////INVENTORY////////
-_menuOpened=false;
 
-////////INVENTORY
-_actualInventory = {
 
-_head : noone,
-_hand : noone,
-_chest : noone
-
-}
 
 
 
@@ -140,3 +131,14 @@ spd = 3; /*xy speed*/
 
 
 
+
+///////////////////INVENTORY////////
+_menuOpened=false;
+////////INVENTORY
+_actualInventory = {
+
+_head : noone,
+_hand : noone,
+_chest : noone
+
+}

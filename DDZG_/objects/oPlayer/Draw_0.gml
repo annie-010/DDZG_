@@ -113,11 +113,15 @@ if (stair_init_y!=noone) && (stair_end_y!=noone)
 */
 
 
+//_ActualHeadInventory = ds_list_create();
 
 
-for (i=0; i <ds_list_size(global.list); i+=1){
-draw_text(ob_block.x,ob_block.y+64 +(10 * i), ds_list_find_value(global.list, i));
-}
+if instance_exists(oIngameMenu) {
+
+///var ds_inventorynum = ds_list_find_index(oIngameMenu,0);
+
+
+
 
 
 
@@ -136,7 +140,7 @@ draw_sprite_ext(sprite_index,image_index,x,y-z+3,image_xscale,1,0,_blendColor,_a
 draw_sprite_ext(_actualInventory._head._Spr,1,x,y-z,x_scale,1,0,c_white,1);
 } if _actualInventory==noone {
 	draw_sprite_ext(sprite_index,image_index,x,y-z+3,image_xscale,1,0,_blendColor,_alpha);
-}
+}}
 
 
 

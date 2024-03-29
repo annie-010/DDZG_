@@ -1,5 +1,5 @@
 pause=false;
-_ActualHeadInventory = ds_list_create();
+
 
 bg=noone;
 
@@ -73,3 +73,36 @@ var window_height = RES_H * RES_SCALE;
 ////window_set_position((display_width / 2 - window_width / 2), (display_height / 2 - window_height / 2));
 
 display_reset(0, true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

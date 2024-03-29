@@ -1,18 +1,28 @@
-var _testInventory = keyboard_check_pressed(ord("T"));
+///var _testInventory = keyboard_check_pressed(ord("T"));
+
+/*
+
 if _testInventory {
-	
-var _actualInventory_ds = oResolutionSystem._ActualHeadInventory;
+///_inventoryStruct();
+var _actualInventory_ds = oIngameMenu._headEquip;
 var _actualInvetory_dsnum = ds_list_size(_actualInventory_ds);
 
 
-ds_list_add(_actualInventory_ds,0);
+
+///ds_list_add(_actualInventory_ds,);
 
 
 ///=0;
 
-	
-_actualInventory._head=_witchHat;
+ds_list_add(_actualInventory_ds,0);
+
+
+    //////oResolutionSystem._actualInventory
 }
+
+
+*/
+
 
 
 x_scale = image_xscale;
@@ -182,7 +192,7 @@ if(instance_id_Coin != noone) {
 		
 	
 		
-        show_debug_message("Colisión con oCoin_0 en Z dentro del rango permitido.");
+        ///show_debug_message("Colisión con oCoin_0 en Z dentro del rango permitido.");
 			with (instance_id_Coin) {instance_destroy();}
     }
 	
@@ -253,7 +263,7 @@ if (z <= zfloor+1/*+1 for sticking glitch on ground*/)
 
 
 if  ActualPlayerState==PlayerStates.Jump
-{show_debug_message("Llego estado jump")}
+{show_debug_message("Llego estado jump");}
 
 
 
@@ -282,8 +292,9 @@ switch  ActualPlayerState
 	case PlayerStates.MenuOpen: 
 	_statePrint="MENU OPEN"; _movePad=false; 
 	
-	if !instance_exists(oIngameMenu) {
-		instance_create_layer(x,y,"INSTANCES",oIngameMenu);
+	if instance_exists(oIngameMenu) {
+		oIngameMenu._menuOpened=true;
+		////instance_create_layer(x,y,"INSTANCES",oIngameMenu);
 		
 	}	
 	if _keyMenu {
@@ -291,8 +302,10 @@ switch  ActualPlayerState
 	switch (_menuOpened) {
 	
 	case true:ActualPlayerState=PlayerStates.Stand;
-	if instance_exists(oIngameMenu) {with(oIngameMenu) {instance_destroy();}}
+	///if instance_exists(oIngameMenu) {with(oIngameMenu) {instance_destroy();}}
 	_menuOpened=false;
+	oIngameMenu._menuOpened=false;
+	oIngameMenu._mpos=0;
 	_keyMenu=false;
 	break;
 	
