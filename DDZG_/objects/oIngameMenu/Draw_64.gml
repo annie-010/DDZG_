@@ -57,6 +57,7 @@ break;
 case _optionsmenu.Equip_head:
 
 
+draw_sprite(_arrow,0,(startX-32), (startY+16) + spacing * _mpos);
 var acces__headEquip = _headEquip;
 
 if !ds_list_empty(_headEquip) {
@@ -88,6 +89,13 @@ break;
 
 
 }
+
+case false:
+
+
+break;
+
+
 
 }
 

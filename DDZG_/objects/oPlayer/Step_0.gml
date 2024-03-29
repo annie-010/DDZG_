@@ -290,6 +290,9 @@ switch  ActualPlayerState
 	
 	
 	case PlayerStates.MenuOpen: 
+	
+	
+	
 	_statePrint="MENU OPEN"; _movePad=false; 
 	
 	if instance_exists(oIngameMenu) {
@@ -297,16 +300,70 @@ switch  ActualPlayerState
 		////instance_create_layer(x,y,"INSTANCES",oIngameMenu);
 		
 	}	
+	
+var _gameMenupage = oIngameMenu._actualoptionmenu;
+
+if _keyMenu {
+
+switch(_gameMenupage) {
+
+case _optionsmenu.Equip_: 
+break;
+
+
+
+case _optionsmenu.Select_:
+
+ ActualPlayerState=PlayerStates.Stand;
+
+
+break;
+
+
+
+case 4:
+break;
+
+
+}
+
+}
+
+	/*
+	
 	if _keyMenu {
 	
 	switch (_menuOpened) {
 	
-	case true:ActualPlayerState=PlayerStates.Stand;
+	case true:
+	
+	switch (oIngameMenu._actualoptionmenu) {
+		case  _optionsmenu.Select_:	
+
+	ActualPlayerState=PlayerStates.Stand;
 	///if instance_exists(oIngameMenu) {with(oIngameMenu) {instance_destroy();}}
 	_menuOpened=false;
 	oIngameMenu._menuOpened=false;
 	oIngameMenu._mpos=0;
 	_keyMenu=false;
+		
+		break;
+		
+		
+		case  _optionsmenu.Equip_:		
+		break;
+		
+		
+		
+		case  _optionsmenu.Equip_head:	
+		
+		
+		break;
+	}
+	
+	
+	
+
 	break;
 	
 	
@@ -319,6 +376,10 @@ switch  ActualPlayerState
 	
 	
 	}
+	
+	
+	*/
+	
 	///if key
 	
 	
@@ -382,7 +443,12 @@ _keyMenu=false;
 _menuOpened=true;
 ActualPlayerState=PlayerStates.MenuOpen;
 break;
-}}
+
+
+}
+
+
+}
 
 	
 	
@@ -737,7 +803,7 @@ if hit_Coll!=noone {
 	var hitEnemyColl = instance_place(x,y,oEnemyHitParent);
 
 	if (hit_Coll.depth==depth) or (hit_Coll.depth==(depth)-1) {
-		show_debug_message("El obj Golpe enemigo " + string(hitEnemyColl) + "Comparte Depth con el jugador");
+		///show_debug_message("El obj Golpe enemigo " + string(hitEnemyColl) + "Comparte Depth con el jugador");
 	
 	}
 	
@@ -745,8 +811,9 @@ if hit_Coll!=noone {
 	ActualPlayerState=PlayerStates.Hurt;
 	global.hp_player-=1;
 	global.earthquake=true;
-	show_debug_message("Se ha golpeado al player!");
-	show_debug_message("El objeto que golpea es! = " + string(hitEnemyColl));}
+	//show_debug_message("Se ha golpeado al player!");
+	//show_debug_message("El objeto que golpea es! = " + string(hitEnemyColl));
+	}
 	
 	
 	}
