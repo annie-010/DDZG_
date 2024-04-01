@@ -7,7 +7,7 @@
 
 var darkSectionCollision;
 darkSectionCollision =   collision_rectangle(x-16,y-16,x+16,y+16,oDarktoRoomSections,true,true);
- if  darkSectionCollision!=noone {show_debug_message("Enemigo darkSectionIs = " + string(darkSectionCollision.sectionId)) }
+ ///if  darkSectionCollision!=noone {show_debug_message("Enemigo darkSectionIs = " + string(darkSectionCollision.sectionId)) }
  
  
  var darkCollisionPlace;
@@ -37,14 +37,14 @@ if sectionId==noone{ sectionId=darkCollisionPlace.sectionId;} else if sectionId!
 	 if sectionId!=oPlayer.sectionId {
 	 
 	 visible=0;
-	 show_debug_message("Visible Desactivado");
+	/// show_debug_message("Visible Desactivado");
 	 
 	 
 	 
 	 } else if sectionId==oPlayer.sectionId {
 	 
 	 visible=1;
-	 show_debug_message("Visible Activado");
+	 ///show_debug_message("Visible Activado");
 	 
 	 }
  }

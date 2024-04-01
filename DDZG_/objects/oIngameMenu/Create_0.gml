@@ -85,10 +85,13 @@ _arrayHat [4] = _constructHat;
 
 _headEquip=ds_list_create();
 
+
+ds_list_add(_headEquip,_arrayHat[0]);
 ds_list_add(_headEquip,_arrayHat[1]);
 ds_list_add(_headEquip,_arrayHat[2]);
 ds_list_add(_headEquip,_arrayHat[3]);
 ds_list_add(_headEquip,_arrayHat[4]);
+
 headEquip = ds_list_size(_headEquip);
 
 for (var i = 0; i < headEquip; i += 1)

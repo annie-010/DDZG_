@@ -290,19 +290,42 @@ switch  ActualPlayerState
 	
 	
 	case PlayerStates.MenuOpen: 
-	
-	
-	
 	_statePrint="MENU OPEN"; _movePad=false; 
 	
-	if instance_exists(oIngameMenu) {
-		oIngameMenu._menuOpened=true;
-		////instance_create_layer(x,y,"INSTANCES",oIngameMenu);
-		
+	
+	switch(_menuOpened) {
+	
+	case true: 
+	
+	oIngameMenu._menuOpened=true;
+	
+	///show_debug_message("ABRIENDO MENU OPLAYER _MENUOPENED TRUE")
+	
+	
+	
+	break;
+	
+	case false:
+    oIngameMenu._menuOpen=false;
+	ActualPlayerState=PlayerStates.Stand;
+	
+	break;
+	
+	
+	
 	}	
 	
-var _gameMenupage = oIngameMenu._actualoptionmenu;
+	
+	//_menuOpened=true && instance_exists(oIngameMenu) {
+	///	
+		////instance_create_layer(x,y,"INSTANCES",oIngameMenu);
+		
+	//}	
+	
+///var _gameMenupage = oIngameMenu._actualoptionmenu;
 
+
+/*
 if _keyMenu {
 
 switch(_gameMenupage) {
@@ -314,7 +337,7 @@ break;
 
 case _optionsmenu.Select_:
 
- ActualPlayerState=PlayerStates.Stand;
+///_menuOpened=false;
 
 
 break;
@@ -429,27 +452,38 @@ break;
 	visible=1;
 	
 	
+if _keyMenu && _menuOpened==false {
+show_debug_message("ABRIENDO MENU")
+	ActualPlayerState=PlayerStates.MenuOpen;
+_menuOpened=true;
+_keyMenu=false;
+
+}
+	
+	
+	
+	/*
+	
 	if _keyMenu {
 
 switch(_menuOpened) {
 
-case true:
-///_menuOpened=false;
-break;
+///case true:
+//_menuOpened=false;
+//break;
 
 
 case false:
 _keyMenu=false;
 _menuOpened=true;
 ActualPlayerState=PlayerStates.MenuOpen;
+show_debug_message("Orden U Abrir menú desde player.");
 break;
-
-
 }
 
 
 }
-
+*/
 	
 	
 	

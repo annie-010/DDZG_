@@ -1,25 +1,25 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
 var _keyaction,_keyback
-
+_keyaction = keyboard_check_pressed(ord("I"));
+_keyback = keyboard_check_pressed(ord("U"));
 
 
 if instance_exists(oPlayer) {
 	
 	
-_keyaction = keyboard_check_pressed(ord("I"));
-_keyback = keyboard_check_pressed(ord("U"));
+
 
 
 
 if _owner._menuOpened==false {
 	
-	show_debug_message("El menú está cerrado!");
+	///show_debug_message("El menú está cerrado!");
 	visible=0;
 	
 ////instance_destroy();
 } else if  _owner._menuOpened!=false {
-
+////show_debug_message("El menú está abierto!");
 visible=1;
 
 
@@ -43,13 +43,15 @@ switch _actualoptionmenu
 case _optionsmenu.Select_:
 
 if _keyback {
-
+	
+///_actualoptionmenu=_optionsmenu.Select_;
 _menuOpened=false;
-_menuOpened=false;
-_mpos=0;
 _owner._menuOpened=false;
+_mpos=0;
+show_debug_message("Nos encontramos probando el boton de rtroceso");
 
-
+//_owner.ActualPlayerState=PlayerStates.Stand;
+	//_keyback=false;
 }
 
 
@@ -102,7 +104,9 @@ case _optionsmenu.Equip_:
 if _keyback {
 	
 	_actualoptionmenu=_optionsmenu.Select_;
+	_keyback=false;
 	_mpos=0;
+
 }
 
 
@@ -160,15 +164,27 @@ if _keyback {
 	
 	_actualoptionmenu=_optionsmenu.Equip_;
 	_mpos=0;
+	_keyback=false;
 }
+
+
+if _keyaction {var _val = ds_list_find_value(_headEquip,_mpos);
+
+if _val==0 {_actualoptionmenu=_optionsmenu.Equip_; _mpos=0;} else if _val!=0 {
+	_owner._actualInventory._head=_val; _mpos=0;
+	_actualoptionmenu=_optionsmenu.Equip_;}
+///
+
+
+}
+
+
 
 switch _mpos {
 	
 	case 0:
 	if _keyup {_mpos=4;}
 	if _keydown {_mpos=1;}
-	if _keyaction { show_message("TE PUSISTE EL GORRITO WE."); /////_actualoptionmenu=_optionsmenu.Equip_head;
-		}
 	
 	break;
 	
@@ -176,7 +192,7 @@ switch _mpos {
 	case 1:
 	if _keyup {_mpos=0;}
 	if _keydown {_mpos=2;}	
-	if _keyaction {}
+
 
 	break;
 	
@@ -184,7 +200,7 @@ switch _mpos {
 	case 2:
 	if _keyup {_mpos=1;}
 	if _keydown {_mpos=3;}	
-		if _keyaction {}
+
 	
 	break;
 	
@@ -192,13 +208,13 @@ switch _mpos {
 	case 3:
 	if _keyup {_mpos=2;}
 	if _keydown {_mpos=4;}	
-		if _keyaction {}
+
 	break;
 	
 	case 4:
 	if _keyup {_mpos=3;}
 	if _keydown {_mpos=0;}
-		if _keyaction {}
+
 	break;
 }
 

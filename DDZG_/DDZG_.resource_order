@@ -83,6 +83,7 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"SpritetoTiles","order":6,"path":"folders/Tile Sets/SpritetoTiles.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
+    {"name":"_MOVEFLOOR","order":25,"path":"folders/Sprites/_MOVEFLOOR.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"sprEnemyTestPortrait40","order":3,"path":"sprites/sprEnemyTestPortrait40/sprEnemyTestPortrait40.yy",},
@@ -149,6 +150,7 @@
     {"name":"snd_select02","order":5,"path":"sounds/snd_select02/snd_select02.yy",},
     {"name":"sprPlayerAttackBlade_2","order":3,"path":"sprites/sprPlayerAttackBlade_2/sprPlayerAttackBlade_2.yy",},
     {"name":"oEnemyTest_02","order":3,"path":"objects/oEnemyTest_02/oEnemyTest_02.yy",},
+    {"name":"Sprite120","order":4,"path":"sprites/Sprite120/Sprite120.yy",},
     {"name":"oInfoGUI","order":1,"path":"objects/oInfoGUI/oInfoGUI.yy",},
     {"name":"r_test_InitScreen","order":7,"path":"rooms/r_test_InitScreen/r_test_InitScreen.yy",},
     {"name":"sprMachine_0","order":1,"path":"sprites/sprMachine_0/sprMachine_0.yy",},
