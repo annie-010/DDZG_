@@ -52,6 +52,7 @@
     {"name":"_ENEMY_TEST","order":1,"path":"folders/Sprites/_ENEMYSPRITES/_ENEMY_TEST.yy",},
     {"name":"Enemy_test_01","order":5,"path":"folders/Sprites/_ENEMYSPRITES/_ENEMY_TEST/Enemy_test_01.yy",},
     {"name":"_FILTERCRT","order":10,"path":"folders/Sprites/_FILTERCRT.yy",},
+    {"name":"_MOVEFLOOR","order":25,"path":"folders/Sprites/_MOVEFLOOR.yy",},
     {"name":"_PLATFORMSYSTEM","order":9,"path":"folders/Sprites/_PLATFORMSYSTEM.yy",},
     {"name":"DELYNER","order":5,"path":"folders/Sprites/DELYNER.yy",},
     {"name":"ENEMIES","order":7,"path":"folders/Sprites/ENEMIES.yy",},
@@ -83,7 +84,6 @@
     {"name":"Tile Sets","order":2,"path":"folders/Tile Sets.yy",},
     {"name":"SpritetoTiles","order":6,"path":"folders/Tile Sets/SpritetoTiles.yy",},
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
-    {"name":"_MOVEFLOOR","order":25,"path":"folders/Sprites/_MOVEFLOOR.yy",},
   ],
   "ResourceOrderSettings": [
     {"name":"sprEnemyTestPortrait40","order":3,"path":"sprites/sprEnemyTestPortrait40/sprEnemyTestPortrait40.yy",},

@@ -131,7 +131,7 @@ draw_sprite_ext(sprite_index,image_index,x,y-z+3,image_xscale,1,0,_blendColor,_a
 
 if _actualInventory._head!=noone {
 
-draw_text(x,y,"InventoryHead = " + string(_actualInventory._head));
+//draw_text(x,y,"InventoryHead = " + string(_actualInventory._head));
 
 draw_sprite_ext(_actualInventory._head._Spr,0,x,y-z,x_scale,1,0,c_white,1);
 
