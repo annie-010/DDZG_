@@ -170,12 +170,16 @@ if _keyback {
 
 if _keyaction {var _val = ds_list_find_value(_headEquip,_mpos);
 
-if _val==0 {_actualoptionmenu=_optionsmenu.Equip_; _mpos=0;} else if _val!=0 {
+if _val==0 {_actualoptionmenu=_optionsmenu.Equip_; _mpos=0;} else if 
+_val==1 {
+		_owner._actualInventory._head=noone; _mpos=0;
+	_actualoptionmenu=_optionsmenu.Equip_;
+	
+}
+
+else if _val!=0 && _val!=1 {
 	_owner._actualInventory._head=_val; _mpos=0;
 	_actualoptionmenu=_optionsmenu.Equip_;}
-///
-
-
 }
 
 

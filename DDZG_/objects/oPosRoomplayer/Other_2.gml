@@ -3,6 +3,8 @@
 posPlayer_x=2959;///2880;
 posPlayer_y=2165;///722;
 equiHeadPlayer = noone;
+equiChestPlayer = noone;
+equiHandPlayer = noone;
 
 
 

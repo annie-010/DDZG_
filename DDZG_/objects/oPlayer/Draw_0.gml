@@ -5,9 +5,6 @@
 
 var drawInventory = keyboard_check_pressed(ord("B"));
 if drawInventory {
-
-
-
 }
 
 

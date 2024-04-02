@@ -72,26 +72,16 @@ for (_i = 0; _i < ds_list_size(acces__headEquip); _i += 1) {
 	var hatStruct = ds_list_find_value(acces__headEquip,_i);
 	
 	var hatStructName = "0";
+
 	
-	
-	
-	
-	
-	
-	
-	if hatStruct!=0 {hatStructName=hatStruct._Name;    
+	if hatStruct!=0  && hatStruct!=1 {hatStructName=hatStruct._Name;    
 		
 		    draw_text(startX, startY + (_i * spacing), hatStructName);
 		
 		
 		}
-	else if hatStruct==0 {hatStructName="Back"
-		
-		
-		    draw_text(startX, startY + (_i * spacing), hatStructName);
-		
-		
-		}
+	else if hatStruct==0 {hatStructName="Back" draw_text(startX, startY + (_i * spacing), hatStructName);}
+	else if hatStruct==1 {hatStructName="Desequipar" draw_text(startX, startY + (_i * spacing), hatStructName);}
 	
 	
 	///var hatStructName = hatStruct._Name;

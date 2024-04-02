@@ -132,13 +132,16 @@ spd = 3; /*xy speed*/
 
 
 
+
+
+
 ///////////////////INVENTORY////////
 _menuOpened=false;
 ////////INVENTORY
 _actualInventory = {
 
-_head : noone,
-_hand : noone,
-_chest : noone
+_head : oPosRoomplayer.equiHeadPlayer,////noone,
+_hand : oPosRoomplayer.equiChestPlayer,
+_chest : oPosRoomplayer.equiHandPlayer,
 
 }

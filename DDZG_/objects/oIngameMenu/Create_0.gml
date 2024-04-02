@@ -74,11 +74,12 @@ _Descr : "Hop!, hammer, Hop!"
 }
 
 ///ARRAY_INVENTORY;
-///_arrayHat [0] = noone;
-_arrayHat [1] = _witchHat;
-_arrayHat [2] = _porcupineHat
-_arrayHat [3] = _kittyHat;
-_arrayHat [4] = _constructHat;
+_arrayHat [0] = 0;
+_arrayHat [1] = 1;
+_arrayHat [2] = _witchHat;
+_arrayHat [3] = _porcupineHat
+_arrayHat [4] = _kittyHat;
+_arrayHat [5] = _constructHat;
 
 
 
@@ -91,6 +92,7 @@ ds_list_add(_headEquip,_arrayHat[1]);
 ds_list_add(_headEquip,_arrayHat[2]);
 ds_list_add(_headEquip,_arrayHat[3]);
 ds_list_add(_headEquip,_arrayHat[4]);
+ds_list_add(_headEquip,_arrayHat[5]);
 
 headEquip = ds_list_size(_headEquip);
 
