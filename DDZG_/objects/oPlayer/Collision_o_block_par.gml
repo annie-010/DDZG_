@@ -1,12 +1,30 @@
 
 ///EVENTO COLISION CON PLATAFORMA PARENT
 ///update zfloor
-instbelow = instance_place(x,y,o_block_par);
-zfloor = instbelow.z;
+
+
+
+
+
+
+var _instbelow = instance_place(x,y,o_block_par);
+if z>_instbelow.z or z == _instbelow.z {
+
+zfloor = _instbelow.z;
 ///_blendColor=c_red;
-depth=instbelow.depth-1;
- if  ((ActualPlayerState==PlayerStates.Jump) && z==instbelow.z) && _onPlatform==false   {  ActualPlayerState= PlayerStates.Stand _onPlatform=true;};
+depth=_instbelow.depth-1;
+ if  ((ActualPlayerState==PlayerStates.Jump) && z==_instbelow.z) && _onPlatform==false   {  ActualPlayerState= PlayerStates.Stand _onPlatform=true;};
  maskInplatform=true;
+} else if z<_instbelow.z {
+show_debug_message("PRUEBA DE COLISION, POR DEBAJO DE LA PLATAFORMA");
+///image_blend=c_red;
+//_blendColor=make_color_rgb(156,178,199);
+}
+
+
+
+
+
  
  
  

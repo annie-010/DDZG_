@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "_PLAYER",
-    "path": "folders/Objects/_PLAYER.yy",
+    "name": "_MENU",
+    "path": "folders/Objects/_MENU.yy",
   },
   "parentObjectId": null,
   "persistent": true,

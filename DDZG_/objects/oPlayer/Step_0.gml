@@ -56,17 +56,6 @@ if !place_meeting(x,y,oDarktoRoomSections) {
  }
 
 
-
-
-
-
-
-
-
-
-
-
-
 switch(_tangible) {
 	
 	case false :
@@ -130,12 +119,6 @@ switch(_tangible) {
 	
 	
 } 
-
-
-
-
-
-
 
 
 
@@ -226,8 +209,6 @@ if place_meeting(x,y-2,oSolidBlock) {y+=4; hspeed=0;}}
 
 
 ///PHYSICS
-
-
 #region PHYSICS
 
 if physics_==true {
@@ -238,11 +219,18 @@ if (zjump == true)
 	z += zspeed; _onPlatform=false;  /*z pos goes up*/
 }
 //if not ontop of block
-if (!instance_place(x,y,o_block_par))
-{
-	zfloor = 0; /*zfloor is ground level*/
+//var _instblock = (instance_place(x,y,o_block_par));
+//if  _instblock!=noone  {
+//if z<_instblock.z {zfloor=0;} else if z>_instblock.z {
+//z=_instblock.z; }}
 
+else if (!instance_place(x,y,o_block_par)) or (z<instance_place(x,y,o_block_par).z)
+{
+zfloor = 0; /*zfloor is ground level*/
 }
+
+
+
 //if not on ground
 if (!z <= zfloor) 
 {
@@ -263,7 +251,8 @@ if (z <= zfloor+1/*+1 for sticking glitch on ground*/)
 
 
 if  ActualPlayerState==PlayerStates.Jump
-{show_debug_message("Llego estado jump");}
+{///show_debug_message("Llego estado jump");
+	}
 
 
 
@@ -593,8 +582,14 @@ if _keyJump {if (z <= zfloor) {zjump = true; ActualPlayerState=PlayerStates.Jump
 	
 	_statePrint="JUMP";
 	sprite_index=sprPlayerJump;
+if !(place_meeting(x,y,o_block_par)) {
+
+zfloor=0;
+
+}
 	
-if !_keyJumpHeld {show_debug_message("SE HA SOLTADO EL BOTÓN");  
+	
+if !_keyJumpHeld {///show_debug_message("SE HA SOLTADO EL BOTÓN");  
 	
 		z -= zgrav/5; /*apply downforce on z pos*/
 	zgrav += 0.1; /*grav gets stronger each step*/
@@ -711,6 +706,7 @@ if !_keyJumpHeld {show_debug_message("SE HA SOLTADO EL BOTÓN");
 }
 
 
+
 if _movePad==true { 
 	
 
@@ -723,7 +719,7 @@ instleft = (instance_place(bbox_left-spd-2,y,o_block_par))
 if (!instleft) or (instleft.z <= z)
 { 
 	x -= spd/5;  
-} if instleft!=noone {_colz=instleft.z;} else {_colz=noone;}
+} if instleft!=noone {_colz=instleft.z; } else {_colz=noone;}
 }
 
 if _keyRight {  _keyUp=false; _keyLeft=false; _keyDown=false;
@@ -733,7 +729,7 @@ instright = (instance_place(bbox_right+spd+2,y,o_block_par))
 if (!instright) or (instright.z <= z)
 {
 	x += spd/5; 
-}if instright!=noone {_colz=instright.z;} else {_colz=noone;}
+}if instright!=noone {_colz=instright.z; } else {_colz=noone;}
 }
 
 if _keyDown { _keyUp=false; _keyLeft=false; _keyRight=false;
@@ -743,7 +739,7 @@ instdown = (instance_place(x,y+spd+1,o_block_par))
 if (!instdown) or (instdown.z <= z)
 {
 	y += spd/5;  
-}if instdown!=noone {_colz=instdown.z;} else {_colz=noone;}
+}if instdown!=noone {_colz=instdown.z; } else {_colz=noone;}
 }
 
 
@@ -752,12 +748,14 @@ instup = noone; _keyDown=false; _keyLeft=false; _keyRight=false;
 //instance in path
 instup = (instance_place(x,y-spd-1,o_block_par))
 if (!instup) or (instup.z <= z)
-{y -= spd/5;  }  if instup!=noone {_colz=instup.z;} else {_colz=noone;}
+{y -= spd/5;  }  if instup!=noone {_colz=instup.z; } else {_colz=noone;}
 }
 }
 
 
 }
+
+
 
 
 
@@ -857,311 +855,28 @@ if hit_Coll!=noone {
 
 
 
+#region ///COLISIONAR CON PLATAFORMA EN MOVIMIENTO
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-if !instance_exists(oHat) {
-var HatEquip = instance_create_layer(x,y,"Instances",oHat); HatEquip._owner=id;
-
-
-depth=-floor(y/32)+1;
-
-
-
-}
-
-*/
-
-/*
-
-
-var _keyLeft = keyboard_check(ord("A")); 
-var _keyRight = keyboard_check(ord("D"));
-var _keyDown = keyboard_check(ord("S"));
-var _keyUp = keyboard_check(ord("W"));
-var _keyNo = keyboard_check(vk_nokey);
-var _keyRun = keyboard_check(ord("J"));
-var _keyJump =	keyboard_check_pressed(ord("K"));				// if (piso==1 and salto==1) // {if keyboard_check_pressed(ord("K")) {playerstate=state.jump  salto=0 jump_time=0.0;}}
-var _keyRestart = keyboard_check_pressed(ord("R"));
-
-if _keyRestart {game_restart(); }
-
-
-
-/*
-
-
-
-*/
-
-
-
-
-
-/*
-
-
-
-
-
-
-
-
-
-
-if  ActualPlayerState!=PlayerStates.Stairs 
-{
-	stair_init_y=noone;
-	stair_end_y=noone;
-}
-
-
-
-
-
-
-switch (ActualPlayerState) 
-{
-	
-	case PlayerStates.INACTIVE:  _statePrint="INACTIVE";
-	///show_debug_message("INACTIVE");
-	break;
-	
-	
-	case PlayerStates.Stairs:  _statePrint="STAIRS"; ///show_debug_message("STAIRS");
-	
-	if _keyLeft  {if place_meeting(x-1,y+1,oBlockStair) 
-		{
+var _colPlatform = instance_place(x,y,ofloatingPlatform);
+if _colPlatform!=noone && _colPlatform._moving==true  {
+	var _colz = _colPlatform.z;
+	if (zfloor)==_colz {	///show_debug_message("IZI PIZI PARISI");
+		
+		
+		
+		_colPlatform._onPlatform=true;
+		if (!_keyLeft && !_keyRight && !_keyUp && !_keyDown) { x = _colPlatform.x; 
+			y = _colPlatform.y+16//-_colz;
+			}}
 			
-			if (stair_init_y!=noone) && (stair_end_y!=noone) 
-			{
-				if stair_init_y>stair_end_y  ///SI INIT ESTÁ MÁS ABAJO QUE END
-				{
-					x-=3; y+=3; sprite_index=sprPlayerRun; image_xscale=-1;
-					} else if	stair_init_y<stair_end_y {x-=3; y-=3; sprite_index=sprPlayerRun; image_xscale=-1;}}}	else {x-=16; y-=10; ActualPlayerState=PlayerStates.Stand;} }		
-					
-	
-	if _keyRight {if  place_meeting(x+1,y+1,oBlockStair)	
-	{
-			if (stair_init_y!=noone) && (stair_end_y!=noone) 
-			{ if stair_init_y>stair_end_y  {x+=3; y-=3;  sprite_index=sprPlayerRun; image_xscale=1;} ///SI INIT ESTÁ MÁS ABAJO QUE END
-			if stair_init_y<stair_end_y  {x+=3; y+=3;  sprite_index=sprPlayerRun; image_xscale=1;} 
-	
-}}
-		else { x+=16; y-=10; ActualPlayerState=PlayerStates.Stand;} }
-	if _keyNo { sprite_index=sprPlayerStand; }
-	
-	
-	
-
-	
-	if !place_meeting(x,y+3,oBlockStair) { ActualPlayerState=PlayerStates.Stand;}
-	
-	break;	
-	
-	
-	case PlayerStates.Stand:  ///show_debug_message("STAND");
-
-
-
-
-
-
-	_vel=2;
-	_statePrint="STAND";
-	y+=0; x+=0; sprite_index=sprPlayerStand;
-	if ( _keyLeft or _keyRight or _keyDown or _keyUp) {ActualPlayerState=PlayerStates.Walk;}
-	if _keyNo && ActualPlayerState=!PlayerStates.Jump {y+=0; x+=0; sprite_index=sprPlayerStand; ActualPlayerState=PlayerStates.Stand;}
-	if _keyJump {if CanJump==1 && _Grounded==1 { vspeed=_jumpSpeed; CanJump=0; ActualPlayerState=PlayerStates.Jump; }}   
-	if _keyRun {exit;}
-	
-
-
-	break;	
-	
-	
-	case PlayerStates.Walk: 
-	_vel=2;
-	_statePrint="WALK"; ///show_debug_message("WALK");
-
-if _KeyAttack_0 {ActualPlayerState=PlayerStates.Attack_0;}	
-	if _keyJump {if CanJump==1 && _Grounded==1 { vspeed=_jumpSpeed; CanJump=0; ActualPlayerState=PlayerStates.Jump; }}   
-	if _keyRun { ActualPlayerState=PlayerStates.Run;}
-	if _keyLeft { x-=_vel;    image_xscale=-1; sprite_index=sprPlayerWalk;}
-	if _keyRight {x+=_vel;  image_xscale=1; sprite_index=sprPlayerWalk;}
-	if _keyDown {y+=_vel;  sprite_index=sprPlayerWalk;}
-	if _keyUp {y-=_vel;  sprite_index=sprPlayerWalk;}
-	if _keyNo {y+=0; x+=0; sprite_index=sprPlayerStand; ActualPlayerState=PlayerStates.Stand;}
-	
-	
-	
-	break;
-	
-	
-	
-	case PlayerStates.Run: 
-if _KeyAttack_0 {ActualPlayerState=PlayerStates.Attack_0;}
-	_statePrint="RUN"; ///show_debug_message("RUN");
-	_vel=4;
-		if _keyJump {if CanJump==1 && _Grounded==1 { vspeed=_jumpSpeed; CanJump=0; ActualPlayerState=PlayerStates.Jump; }}   
-		if ( !_keyLeft && !_keyRight && !_keyDown && !_keyUp) {ActualPlayerState=PlayerStates.Stand;}
-	if _keyLeft { x-=_vel;  image_xscale=-1; sprite_index=sprPlayerRun;}
-	if _keyRight {x+=_vel;  image_xscale=1; sprite_index=sprPlayerRun;}
-	if _keyDown {y+=_vel;  sprite_index=sprPlayerRun;}
-	if _keyUp {y-=_vel;  sprite_index=sprPlayerRun;}
-	if _keyNo {y+=0; x+=0; sprite_index=sprPlayerStand; ActualPlayerState=PlayerStates.Stand;}
-	if !_keyRun {ActualPlayerState=PlayerStates.Walk;}
-	
-	
-	break;
-	
-	
-
-	
-	
-	
-	
-	
-	case PlayerStates.Jump:
-	
-	_statePrint="JUMP"; show_debug_message("JUMP");
-	_jumpTime+=1;
-	///if place_meeting(x,y+1,oShadow) {ActualPlayerState=PlayerStates.Stand; CanJump=1;}
-  //tangible=1; ocupado=1;
-//sprite_index=spr_3 
-///if vspeed<0 {image_index=0 o_solid.image_index=1}
-//if vspeed>0 {image_index=1  o_solid.image_index=0}
-
-	if _keyLeft { x-=_vel;  image_xscale=-1; sprite_index=sprPlayerRun;}
-	if _keyRight {x+=_vel;  image_xscale=1; sprite_index=sprPlayerRun;}
-	if _keyDown {y+=_vel; sprite_index=sprPlayerRun; Shadow.y+=_vel;}
-	if _keyUp {y-=_vel;  sprite_index=sprPlayerRun; Shadow.y-=_vel;}
-
-
-
-
-/*
-
-
-image_speed=0 ;
-if (keyboard_check(ord("A"))) {x-=vel_ image_xscale=1} 
-if (keyboard_check(ord("D"))) {x+=vel_ image_xscale=-1} 
-if (keyboard_check(ord("W"))) {y-=vel_ o_solid.y-=vel_}
-if (keyboard_check(ord("S"))) {y+=vel_  o_solid.y+=vel_}
-if jump_time>=45 {playerstate=state.walk jump_time=0 ocupado=0};
-*/
-
-/*
-break;
-
-	
-
-	
-}
-
-
-/*
-switch _Grounded 
-{
-	case 1 :  	with(Shadow) { x = oPlayer.x;  y=oPlayer.y;} break;
-	
-	
-	
-	case 0: with(Shadow) { x = oPlayer.x; } break;
-}
-
-
-*/
-
-/*
-
-
-
-
-
-/*
-
-
-repeat (5) {
-if place_meeting(x+1,y,oPlatformx32) && depth==oPlatformx32.depth  {x-=2;}
-if place_meeting(x-1,y,oPlatformx32) && depth==oPlatformx32.depth  {x+=2;}}
-
-if place_meeting(x,y,oPlatformx32) {
-var platform_coll =  instance_place(x,y,oPlatformx32)
-if depth == platform_coll.depth {show_debug_message("VALE SUBIRSE!");}
-
-}
-
-
-if place_meeting(x,bbox_bottom,oPlatformx32) && depth==oPlatform.depth  {
-if onPlatform==false {oShadow.y=oPlatformx32.y-8; onPlatform=true;}
-
-
-
-
-///oPlatformx32.
-oPlatformx32.coll_with_player=true;
-
-show_debug_message("¡MONTADO EN UNA PLATAFORMA!");
-
-
-///if !place_meeting(x,bbox_bottom+1,oPlatformx32) && _keyUp {show_debug_message("TE HAS BAJADO DE LA PLATAFORMA")}
-if !place_meeting(x,y+1,oPlatformx32) && _keyDown { oShadow.y=oPlatform.y; show_debug_message("TE HAS BAJADO DE LA PLATAFORMA")}
-
-///if !place_meeting(x,bbox_bottom,oPlatformx32) {   oShadow.y=oPlatformx32._owner.y; }
-}
-
-
-if onPlatform==true && !place_meeting(x,y+1,oPlatformx32) {onPlatform=false; show_debug_message("NO SE COLLISIONA CON LA PLATAFORMA!"); depth=oShadow.depth;  oShadow.y=oPlatform.y;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+			
+			if (z)<_colz { ///_blendColor=make_color_rgb(233,233,243);  ///_blendColor=c_red;
+				
+				}
+			
+			
+			}
+#endregion

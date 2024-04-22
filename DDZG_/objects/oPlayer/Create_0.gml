@@ -1,4 +1,5 @@
 spd = 3; /*xy speed*/
+_onplatformminusZ=false;
 //z var
 z = 0; /*z pos*/
 zfloor = 0; /*z pos of floor beneath you*/
@@ -16,7 +17,7 @@ _blendColor=c_white;
 
 maskInplatform=false;
 _alpha=1;
-
+///_blendimagecolor=c_white;
 _tangible=true;
 _notangibleTime=0;
 
@@ -145,3 +146,9 @@ _hand : oPosRoomplayer.equiChestPlayer,
 _chest : oPosRoomplayer.equiHandPlayer,
 
 }
+
+
+
+
+
+
