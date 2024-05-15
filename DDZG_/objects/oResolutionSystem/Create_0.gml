@@ -42,8 +42,8 @@ ACTUALSYSTEMSTATE=SYSTEMSTATES.Initgame_System;
 alphaTrans = 0;
 
 if instance_exists(oCameraFollow){
-target_x = oCameraFollow;
-target_y  =oCameraFollow;}
+target_x = oCameraFollow.x;
+target_y  =oCameraFollow.y;}
 
 hp=0;
 
@@ -99,6 +99,13 @@ display_reset(0, true);
 
 
 
+view_enabled = true;
+view_visible[0] = true;
+
+camera = camera_create_view(0, 0, RES_W, RES_H);
+view_set_camera(0, camera);
+global.Pause_Game=false;
+global.player_hp=1;
 
 
 

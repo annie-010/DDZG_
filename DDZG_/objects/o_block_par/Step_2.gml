@@ -2,7 +2,7 @@
 // Puede escribir su código en este editor
 
 
-depth = -floor(bbox_bottom/32)+1;
+depth = -floor(bbox_bottom/32);
 
 
 

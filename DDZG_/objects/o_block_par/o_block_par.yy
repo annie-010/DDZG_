@@ -10,8 +10,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "_PLATFORM",
-    "path": "folders/Objects/_PLATFORM.yy",
+    "name": "_SOLID & PLATFORM",
+    "path": "folders/Objects/_SOLID & PLATFORM.yy",
   },
   "parentObjectId": {
     "name": "oEntity_Parent",

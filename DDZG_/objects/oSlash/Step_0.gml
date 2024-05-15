@@ -70,19 +70,13 @@ if _owner!=noone
 
 		}}}
 ///actualEnemyState=enemie_state.hurt_
-
-var SlashCol = collision_rectangle(x1,y1,x2,y2,oEnemyTest_02,true,true);  
+/*
+var SlashCol = collision_rectangle(x1,y1,x2,y2,oEnemyTest_Knife,true,true);  
 if SlashCol!=noone {///show_debug_message("El Target Marcado Es" + string(SlashCol));
 ///show_debug_message("El Target Hurtred = " + string(SlashCol.Hurtred));
 if SlashCol.actualEnemyState!=enemie_state.hurt_ {SlashCol.actualEnemyState=enemie_state.hurt_; SlashCol.InertiaForce=HitForce; SlashCol.z-=HitForce SlashCol.HurtsndSound=true;}
-
-
-
-	///if SlashCol.Hurtred==false  {SlashCol.Hurtred=true; show_debug_message("ENEMIGO HURT = " + string(SlashCol.Hurtred));}
-	
 }
-
-
+*/
 
 
 

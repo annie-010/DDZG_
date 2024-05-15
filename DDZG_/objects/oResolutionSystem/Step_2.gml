@@ -56,13 +56,6 @@ vy = camera_get_view_y(camera);
 	camera_set_view_pos(camera, vx+random_range(-10,10), vy+random_range(-10,10));
 	global.earthquake=false;
 	}
-	
-	
-	
-	
-	
-	
-	
 	}
 	
 

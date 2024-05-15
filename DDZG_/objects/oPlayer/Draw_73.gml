@@ -1,6 +1,9 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
 ///DRAW_SILUETE
+
+/*
+
 gpu_set_blendmode_ext(bm_dest_alpha,bm_inv_dest_alpha)
 gpu_set_alphatestenable(true);
 

@@ -1,7 +1,9 @@
-spd = 3; /*xy speed*/
+spd = 1; /*xy speed*/
 _onplatformminusZ=false;
 //z var
 z = 0; /*z pos*/
+zbodylimit=120;
+zbodycol=0;
 zfloor = 0; /*z pos of floor beneath you*/
 zspeed = 8.5; /*speed of jump*/
 zgrav = 0; /*changes, applies downforce*/
@@ -20,13 +22,18 @@ _alpha=1;
 ///_blendimagecolor=c_white;
 _tangible=true;
 _notangibleTime=0;
-
+_cantadvanceplatform=false;
 x_scale = image_xscale;
 
 
 
 
 
+
+
+//////TO SHADOW
+_Platformshadow_x=0;
+_Platformshadow_y=0;
 
 
 
@@ -42,7 +49,6 @@ x_scale = image_xscale;
 sectionId=noone;
 
 physics_=true;
-
 _vel=2;
 enum PlayerStates 
 {

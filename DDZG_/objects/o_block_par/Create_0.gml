@@ -3,6 +3,7 @@
 _thickness=0;
 z=0;
 _playerOnplatform=false;
+_platformType = "Solid";
 ////depth=-floor(bbox_bottom/32)+1;
 
 

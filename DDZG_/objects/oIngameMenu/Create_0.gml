@@ -186,7 +186,15 @@ _Descr : "you can feel the magic power in this #paper mache hat"
 }
 
 
-
+_kittyDress= {
+_Name : "KittyDress " ,
+_Spr : sprkittyDress, //Sprite
+_Def : 1, //Defense
+_Vel : 2, //Velocity
+_Mattack : 5, //Magic Attack
+_Pattack : 1, //Physics Attack
+_Descr : "you can feel the magic power in this #paper mache hat"
+}
 
 
 ///ARRAY_CHEST_INVENTORY;
@@ -195,8 +203,8 @@ _Descr : "you can feel the magic power in this #paper mache hat"
 _arrayChest [0] = 0;
 _arrayChest [1] = 1;
 _arrayChest [2] = _witchDress;
-//_arrayChest [3] = _porcupineHat
-//_arrayChest [4] = _kittyHat;
+_arrayChest [3] = _porcupineBagpack;
+_arrayChest [4] = _kittyDress;
 //_arrayChest [5] = _constructHat;
 
 
@@ -208,8 +216,8 @@ _chestEquip=ds_list_create();
 ds_list_add(_chestEquip,_arrayChest[0]);
 ds_list_add(_chestEquip,_arrayChest[1]);
 ds_list_add(_chestEquip,_arrayChest[2]);
-//ds_list_add(_chestEquip,_arrayChest[3]);
-//ds_list_add(_chestEquip,_arrayChest[4]);
+ds_list_add(_chestEquip,_arrayChest[3]);
+ds_list_add(_chestEquip,_arrayChest[4]);
 //ds_list_add(_chestEquip,_arrayChest[5]);
 
 _chestEquipList = ds_list_size(_chestEquip);

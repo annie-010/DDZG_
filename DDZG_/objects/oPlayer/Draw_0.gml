@@ -10,14 +10,8 @@ if drawInventory {
 
 //show_debug_message(" BLEND COLOR  :  " + string(_blendColor));
 
-
-
-
-
-
-
 draw_set_color(c_red);
-draw_text(x-32,y+25,"DetphPlayer = " + string(depth));
+///draw_text(x-32,y+50,"DetphPlayer = " + string(depth));
 
 
 
@@ -27,15 +21,17 @@ draw_sprite(sprPlayerShadowFront,image_index,x,y-zfloor);
 
 //draw_set_alpha(0.3);
 draw_set_color(c_blue);
-draw_text(x,y+25,"Z_ =" + string(z));
-draw_set_color(c_white);
+
+draw_set_color(c_black);
+///draw_text(x-25,y-128,"ACTUAL STATE = " + string(_statePrint));
+draw_set_color(c_white)
 ///draw_rectangle(x-27,y-z-134,x+27,y-z+3,false);
 //draw_set_color(c_white);
 ///draw_set_alpha(0.3);
 ///draw_sprite_ext(mask_index,0,x,y,1,1,0,c_white,0.5);
 //draw_set_alpha(1);
 ////draw_set_alpha(1);
-//draw_text(x-25,y-128,"ACTUAL STATE = " + string(_statePrint));
+
 //draw_text(x-25,y+128,"DASH TIME = " + string(_BackDashtime));
 //draw_text(x,y,"ACTUAL DEPTH = " + string(depth));
 ///draw_text(x-64,y-150, "COL_Z = " + string(_colz));
@@ -122,10 +118,10 @@ if _actualInventory._chest!=noone {draw_sprite_ext(_actualInventory._chest._Spr,
 
 var _block = instance_place(x,y,ofloatingPlatform);
 if place_meeting(x,y,ofloatingPlatform) && _block!=noone {
-	show_debug_message("SISTEMA DE SOMBRA")
+	//show_debug_message("SISTEMA DE SOMBRA")
 var shadow_x1,shadow_x2,shadow_y1,shadow_y2;
 
-
+/*
 
 #region DRAW_SILUETA_SOMBRA_TESTEO
 
@@ -148,7 +144,7 @@ gpu_set_blendenable(true);
 
 
 #endregion
-
+*/
 
 
 

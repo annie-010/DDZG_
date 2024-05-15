@@ -13,8 +13,8 @@
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "_PLATFORM",
-    "path": "folders/Objects/_PLATFORM.yy",
+    "name": "_FLOATING PLATFORM",
+    "path": "folders/Objects/_SOLID & PLATFORM/_FLOATING PLATFORM.yy",
   },
   "parentObjectId": {
     "name": "o_block_par",

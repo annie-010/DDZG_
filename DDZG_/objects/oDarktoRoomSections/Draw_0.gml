@@ -4,7 +4,7 @@
 
 draw_self();
 
-if sectionId!=noone {draw_text(x,y,"Section Id = " + string(sectionId))}
+///if sectionId!=noone {draw_text(x,y,"Section Id = " + string(sectionId))}
 
 
 

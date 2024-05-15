@@ -9,26 +9,53 @@ draw_set_color(c_blue);
 
 
 ///draw_sprite(_sprmovefloorshadow,0,x,y);//+16);
-
+//_thickness=16;
 draw_sprite(sprite_index,0,x,y-(z-16));
-draw_set_alpha(0.3);
+////draw_set_alpha(0.3);
 //var platformtop=(y-(z+16));
-//draw_rectangle(x-32,_platformtop,x+32,_platformtop+64,false);
-draw_text(x-25,y+25,"depth  : " + string(depth));
-draw_text(x-25,y+50,"z : " + string(z));
-draw_set_alpha(1);
+///draw_rectangle(x-32,_platformtop,x+32,_platformtop+64,false);
+//draw_text(x-25,y+25,"DP : " + string(depth));
+//draw_text(x-25,y+50,"ZP : " + string(z)); 
+//draw_text(x-25,y+75,"TP : " + string(z-(_thickness))); //+ string(z));
+//draw_set_alpha(1);
 draw_set_color(c_white);
 
 ///draw_sprite(mask_index,0,x,y)
 
 
- var _player_depth = oPlayer.depth;
+///DRAW DIRECTION AUTOMATIC FLOOR ("_toRight","_toUp","_toLeft","_toDown");
 
-    // Forzar la capa de dibujo de la sombra a un depth mayor que el del jugador
-   /// layer_force_draw_depth(layer_get_id("INSTANCES"), _player_depth + 1);
-//layer_force_draw_depth(true,_player_depth-20);
-    // Dibujar la sombra
-    draw_sprite(_sprmovefloorshadow, 0, x, y);
+if _automaticfloor==true && _automaticfloordir!=noone {
+
+switch _automaticfloordir {
+
+case  "toRight" :  
+draw_sprite(_sprautomaticmovedir,1,x,y-(z-16));
+break;
+
+
+case  "toUp" : 
+draw_sprite(_sprautomaticmovedir,3,x,y-(z-16));
+break;
+
+
+case  "toLeft" : 
+draw_sprite(_sprautomaticmovedir,4,x,y-(z-16));
+break;
+
+
+case  "toDown" : 
+draw_sprite(_sprautomaticmovedir,2,x,y-(z-16));
+break;
+
+case  "tozUp" : 
+draw_sprite(_sprautomaticmovedir,5,x,y-(z-16));
+break;
+
+}
+
+}
+
 
 
 

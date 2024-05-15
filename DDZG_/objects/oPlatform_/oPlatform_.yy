@@ -10,7 +10,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "_SOLID",
-    "path": "folders/Objects/_PLATFORM/_SOLID.yy",
+    "path": "folders/Objects/_SOLID & PLATFORM/_SOLID.yy",
   },
   "parentObjectId": {
     "name": "o_block_par",

@@ -32,7 +32,7 @@
   "origin": 9,
   "parent": {
     "name": "Enemy_test_01",
-    "path": "folders/Sprites/_ENEMYSPRITES/_ENEMY_TEST/Enemy_test_01.yy",
+    "path": "folders/Sprites/ENEMIES/_ENEMYSPRITES/_ENEMY_TEST/Enemy_test_01.yy",
   },
   "preMultiplyAlpha": false,
   "sequence": {

@@ -2,10 +2,10 @@
 
 switch _moving {
 
-case true: depth = -floor(bbox_bottom/32)-2;
+case true: depth = -floor(bbox_bottom/32)//-2;
 break;
 
-case false: depth = -floor(bbox_bottom/32); 
+case false: depth = -floor(bbox_bottom/32)//+1; 
 break;
 
 }

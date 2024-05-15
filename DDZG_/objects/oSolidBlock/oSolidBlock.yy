@@ -7,7 +7,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "_SOLID_WALL",
-    "path": "folders/Objects/_PLATFORM/_SOLID_WALL.yy",
+    "path": "folders/Objects/_SOLID & PLATFORM/_SOLID_WALL.yy",
   },
   "parentObjectId": null,
   "persistent": false,
