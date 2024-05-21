@@ -70,40 +70,17 @@ var display_height = display_get_height();
 var window_width = RES_W * RES_SCALE;
 var window_height = RES_H * RES_SCALE;
 
-////window_set_position((display_width / 2 - window_width / 2), (display_height / 2 - window_height / 2));
+window_set_position((display_width / 2 - window_width / 2), (display_height / 2 - window_height / 2));
 
 display_reset(0, true);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
 view_enabled = true;
 view_visible[0] = true;
 
-camera = camera_create_view(0, 0, RES_W, RES_H);
-view_set_camera(0, camera);
+
+
 global.Pause_Game=false;
 global.player_hp=1;
 

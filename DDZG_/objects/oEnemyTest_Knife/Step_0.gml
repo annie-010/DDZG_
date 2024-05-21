@@ -1,6 +1,25 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
 
+switch (_alreadyattack) {
+
+case true : 
+
+if _timetowait>=1 {_timetowait-=1;} if _timetowait<=0 {_alreadyattack=false; _timetowait=60;}
+
+
+
+break;
+
+
+case false:
+_timetowait=60;
+break;
+
+
+
+}
+
 
 
 
@@ -123,7 +142,7 @@ y2=noone;
 	///if distance_<0 {}
 	if distance_<distanceMintoReact {actualEnemyState=enemie_state.walk_;}
 	if distance_<distanceMintoRun {actualEnemyState=enemie_state.walk_;}
-	if distance_<=distanceMintoAttack {actualEnemyState=enemie_state.attack_;}
+	if distance_<=distanceMintoAttack && _alreadyattack==false {actualEnemyState=enemie_state.attack_;}
 	
 	
 	break;
@@ -168,7 +187,7 @@ y2=noone;
 
 	if distance_>=distanceMintoReact {actualEnemyState=enemie_state.stand_;}
 	if distance_>=distanceMintoRun {actualEnemyState=enemie_state.walk_;}
-	if distance_<=distanceMintoAttack {actualEnemyState=enemie_state.attack_;}
+	if distance_<=distanceMintoAttack && _alreadyattack==false {actualEnemyState=enemie_state.attack_;}
 
 
 	var _target = oPlayer; 
@@ -214,10 +233,7 @@ if distance_to_point(oPlayer.x,oPlayer.y)<=50 {hspeed=0;}}
 		
 		case 15 : hspeed=10*sign(image_xscale);
 		break;
-		
-		
-		
-		
+	
 		
 		case 30:
 		  _stela=false;
@@ -234,7 +250,7 @@ if distance_to_point(oPlayer.x,oPlayer.y)<=50 {hspeed=0;}}
 		
 		
 		
-		case 50: sprite_index=sprKnifeAttack; image_index=0; attackDur=0; actualEnemyState=enemie_state.stand_;
+		case 50: sprite_index=sprKnifeAttack; image_index=0; attackDur=0; actualEnemyState=enemie_state.stand_; _alreadyattack=true;
 		break;
 		
 	} attackDur++;

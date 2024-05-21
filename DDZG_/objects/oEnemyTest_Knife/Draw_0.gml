@@ -25,7 +25,11 @@ draw_text(x,y,"SECTION ID = " + string(sectionId));
 }
 
 if instance_exists(oPlayer) {
-draw_text(x,y+15,("Distance : " + string(distance_to_point(oPlayer.x,oPlayer.y))));}
+draw_text(x,y+15,("Distance : " + string(distance_to_point(oPlayer.x,oPlayer.y))));
+
+draw_text(x,y+32,("_alreadyattack :" + string(_alreadyattack) + "  " + "time to wait : " + string(_timetowait)));
+
+}
 
 
 

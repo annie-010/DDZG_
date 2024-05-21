@@ -28,7 +28,8 @@ distanceMintoAttack=150;
 ///STELLA
 _stela=false;
 
-
+_alreadyattack=false;
+_timetowait=60;
 
 
 

@@ -200,9 +200,6 @@ else if (!instance_place(x,y,o_block_par)) or (z<instance_place(x,y,o_block_par)
 {
 zfloor = 0; /*zfloor is ground level*/
 }
-
-
-
 //if not on ground
 if (!z <= zfloor) 
 {
