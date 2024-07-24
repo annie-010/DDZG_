@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "_menuPadFunctions",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "_Menu",
-    "path": "folders/Scripts/_Menu.yy",
+  "$GMScript":"v1",
+  "%Name":"_menuPadFunctions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"_menuPadFunctions",
+  "parent":{
+    "name":"_Menu",
+    "path":"folders/Scripts/_Menu.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

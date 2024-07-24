@@ -8,7 +8,7 @@ if _iluminar!=noone && _iluminar._canbesee==true
 {
 	visible=0; image_blend=c_red; show_debug_message("Luz Debería ser invisible");} else {visible=1;}
 
-var subject = max(oPlayer); ///,oTextBox_test_01
+var subject = oPlayer;///max(oPlayer); ///,oTextBox_test_01
 
 
 

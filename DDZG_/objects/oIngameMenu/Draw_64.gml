@@ -66,13 +66,13 @@ case _optionsmenu.Equip_head:
 draw_sprite(_arrow,0,(startX-32), (startY+16) + spacing * _mpos);
 var acces__headEquip = _equiphead_list;
 
-if !ds_list_empty(_equiphead_list) {
+if !ds_list_empty(acces__headEquip) {
 
 
 for (_i = 0; _i < ds_list_size(acces__headEquip); _i += 1) {
 	var hatStruct = ds_list_find_value(acces__headEquip,_i);
 	
-	var hatStructName = "0";
+	///var hatStructName = "0";
 
 	
 	if hatStruct!=0  && hatStruct!=1 {hatStructName=hatStruct._Name; 

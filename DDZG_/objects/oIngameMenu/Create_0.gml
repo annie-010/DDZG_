@@ -134,12 +134,12 @@ _equiphead_list=ds_list_create();
 ds_list_add(_equiphead_list,0);
 ds_list_add(_equiphead_list,1);
 
-//ds_list_add(_headEquip,_arrayHat[0]);
-///ds_list_add(_headEquip,_arrayHat[1]);
-//ds_list_add(_headEquip,_arrayHat[2]);
-///ds_list_add(_headEquip,_arrayHat[3]);
-///ds_list_add(_headEquip,_arrayHat[4]);
-///ds_list_add(_headEquip,_arrayHat[5]);
+ds_list_add(_headEquip,_arrayHat[0]);
+ds_list_add(_headEquip,_arrayHat[1]);
+ds_list_add(_headEquip,_arrayHat[2]);
+ds_list_add(_headEquip,_arrayHat[3]);
+ds_list_add(_headEquip,_arrayHat[4]);
+ds_list_add(_headEquip,_arrayHat[5]);
 /*
 _headEquipList = ds_list_size(_headEquip);
 
@@ -269,10 +269,6 @@ _Pattack : 1, //Physics Attack
 _Descr : "No abrir en interiores, riesgo de parecer . . .",
 _Amount : 1,
 }
-
-
-
-
 
 
 _witchStick = {

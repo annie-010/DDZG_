@@ -1,6 +1,3 @@
-/// @description Inserte aquí la descripción
-// Puede escribir su código en este editor
-
 _platformType = "Platform";
 vel_=1.5;
 z = 32;
