@@ -1,0 +1,1 @@
+Ya convertiste las arrays en una lista ds_

@@ -1,0 +1,1 @@
+if PlayerStats._hpCurrent<=5 {StatColor=c_red;}
