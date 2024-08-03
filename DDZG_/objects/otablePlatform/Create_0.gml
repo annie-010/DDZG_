@@ -10,6 +10,7 @@ _platformtop=(y-(z+16));
 _moving = false;
 _automaticfloor=false;
 _automaticfloordir=noone;
+
 _dir=noone;
 _returnway=false;
 _timetoReturn=320;

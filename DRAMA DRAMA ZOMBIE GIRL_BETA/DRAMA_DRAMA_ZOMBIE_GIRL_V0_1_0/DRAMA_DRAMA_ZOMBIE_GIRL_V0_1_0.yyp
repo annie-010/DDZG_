@@ -48,7 +48,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.600.0.575",
+    "IDEVersion":"2024.4.1.152",
   },
   "name":"DRAMA_DRAMA_ZOMBIE_GIRL_V0_1_0",
   "resources":[
@@ -81,8 +81,8 @@
     {"id":{"name":"spr_headequip_sombreroembrujadoFront","path":"sprites/spr_headequip_sombreroembrujadoFront/spr_headequip_sombreroembrujadoFront.yy",},},
     {"id":{"name":"spr_headequip_sombrespinBack","path":"sprites/spr_headequip_sombrespinBack/spr_headequip_sombrespinBack.yy",},},
     {"id":{"name":"spr_headequip_sombrespinFront","path":"sprites/spr_headequip_sombrespinFront/spr_headequip_sombrespinFront.yy",},},
-    {"id":{"name":"spr_paltform64base","path":"sprites/spr_paltform64base/spr_paltform64base.yy",},},
     {"id":{"name":"spr_pl_saki_portraitBase","path":"sprites/spr_pl_saki_portraitBase/spr_pl_saki_portraitBase.yy",},},
+    {"id":{"name":"spr_platform64base","path":"sprites/spr_platform64base/spr_platform64base.yy",},},
     {"id":{"name":"spr_solidblockwhitex64","path":"sprites/spr_solidblockwhitex64/spr_solidblockwhitex64.yy",},},
     {"id":{"name":"sprcharequip","path":"sprites/sprcharequip/sprcharequip.yy",},},
     {"id":{"name":"sprcursor","path":"sprites/sprcursor/sprcursor.yy",},},

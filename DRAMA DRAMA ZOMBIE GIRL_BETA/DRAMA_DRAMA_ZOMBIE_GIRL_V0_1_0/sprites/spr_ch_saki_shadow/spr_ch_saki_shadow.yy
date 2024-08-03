@@ -19,7 +19,7 @@
   "height":28,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"e2e37fa8-8066-48cb-9fa3-a103d1ce0bc5","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"e2e37fa8-8066-48cb-9fa3-a103d1ce0bc5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"e2e37fa8-8066-48cb-9fa3-a103d1ce0bc5","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"e2e37fa8-8066-48cb-9fa3-a103d1ce0bc5","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"0cc3e75c-0897-43be-bf0b-4627ffa4d46a","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"0cc3e75c-0897-43be-bf0b-4627ffa4d46a","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
   ],
   "name":"spr_ch_saki_shadow",
