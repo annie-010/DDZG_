@@ -1,0 +1,2 @@
+_CurrentLifeState=_PossibleEntityLifeState._Alive;
+_PlayerStatsManager.PlayerStats._hpCurrent=_PlayerStatsManager.PlayerStats._hpMax;  

@@ -1,0 +1,9 @@
+el menu está tecnicamente funcionando, el inventario está mal posicionado,
+hay que solucionarlo en cuanto se pueda.
+
+
+Hay que refinar las plataformas aún más, y empezar a cambiarle los colores para que sean B/N 
+
+Los textos están bastante avanzados, vamos a esperar un tiempo más y aprender de esto, y después 
+sacaremos los txtos del juego
+

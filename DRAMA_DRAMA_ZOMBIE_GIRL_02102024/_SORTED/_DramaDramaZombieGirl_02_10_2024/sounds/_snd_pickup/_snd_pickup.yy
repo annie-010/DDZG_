@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"_snd_pickup",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.85576,
+  "name":"_snd_pickup",
+  "parent":{
+    "name":"_snd",
+    "path":"folders/Sonidos/_snd.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"_snd_pickup.ogg",
+  "type":0,
+  "volume":1.0,
+}
