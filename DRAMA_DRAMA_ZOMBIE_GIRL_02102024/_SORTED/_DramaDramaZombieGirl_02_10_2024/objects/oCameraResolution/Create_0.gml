@@ -4,6 +4,12 @@
 #macro GUI_HEIGTH 864
 #macro CAMERA_TARGET oCameraTarget
 
+
+_fadein=true;
+_fadevalue=2;
+
+
+
 global._gamesecondsTranscurred=0;
 
 xto =x;

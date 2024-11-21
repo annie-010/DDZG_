@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"_bgm_publicpark.OGG",
   "type":0,
-  "volume":0.27,
+  "volume":0.41,
 }

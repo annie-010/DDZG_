@@ -3,6 +3,15 @@ if instance_exists(oCameraTarget) {
     yto = oCameraTarget.target_y;
 }
 
+
+if (_fadein) && _fadevalue==2 {
+alarm_set(0,128);
+_fadevalue=1;
+} if (_fadein)==false {
+	_fadevalue-=0.01;
+}
+
+
 // Interpolación suave hacia el objetivo
 x = lerp(x, xto, 0.04); // Usa lerp para interpolación suave
 y = lerp(y, yto, 0.04); // Factor de 0.04 para un movimiento suave

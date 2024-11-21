@@ -417,8 +417,8 @@ if _itemTouse._equipset!="Noone" {
 
     draw_sprite_ext(sprcharequip, 0, 64, 358, 1, 1, 0, c_white, 1);
     draw_sprite_ext(sprDesc, 0, 64, 120, 1, 1, 0, c_white, 1);
-	    draw_text(70, 100, "Descripcion");
-    draw_text_ext(54, 150, _invItem._Descr, 16, 450);
+	    draw_text(128, 140, "Descripcion");
+    draw_text_ext(96, 196, _invItem._Descr, 16, 450);
 
 
 
