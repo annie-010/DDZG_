@@ -1,4 +1,4 @@
-#macro OWNER oPlayer
+#macro OWNER  oPlayer
 
 z=0;
 StatColor = c_green;
@@ -563,171 +563,122 @@ for (var _k = 0; _k<array_length(_array); _k++) {
 inv_showed=false;
 
 
+
 inv_emptyplace = {
-_Name : "EMPTY EMPTY EMPTY",
-_cantidad : 0,
-_Descr : "EMPTY EMPTY EMPTY",
-_Funct : "Healt",
-///_Fun : global.hp_player=5,
-
-}
-
-
-
-
-
-
+    _Name: "EMPTY EMPTY EMPTY",
+    _Descr: "EMPTY EMPTY EMPTY",
+    _Funct: "",
+    _FunctEffect: oPlayer._effConfusion,
+    _cantidad: 0
+};
 
 inv_RETROCEDER = {
-_Name : "RETROCEDER",
-_cantidad : 1,
-_Descr : "RETROCEDER",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
-
-
-
-inv_emptyplace = {
-_Name : "EMPTY EMPTY EMPTY",
-_cantidad : 0,
-_Descr : "EMPTY EMPTY EMPTY",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-
-}
-
+    _Name: "RETROCEDER",
+    _Descr: "RETROCEDER",
+    _FunctEffect: oPlayer._effFear,
+    _cantidad: 1
+};
 
 inv_chokocookies = {
-_Name : "Chocogalletas",
-_cantidad : 3,
-_Descr : "[Cura + 2]",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
+    _Name: "Chocogalletas",
+    _Descr: "[Cura + 2]",
+    _FunctEffect: oPlayer._effConfusion,
+    _cantidad: irandom_range(1, 10)
+};
 
 inv_apple = {
-_Name : "Manzana",
-_cantidad : 2,
-_Descr : "[Cura + 2]",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
+    _Name: "Manzana",
+    _Descr: "[Cura + 2]",
+    _FunctEffect: oPlayer._effFear,
+    _cantidad: irandom_range(1, 10)
+};
 
 inv_gummyfingers = {
-_Name : "Gomidedos",
-_cantidad : 4,
-_Descr : ("[Cura + 2]"),
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
+    _Name: "Gomidedos",
+    _Descr: "[Cura + 2]",
+    _FunctEffect: oPlayer._effLevelthreeBurned,
+    _cantidad: irandom_range(1, 10)
+};
 
 inv_doridoripicantes = {
-_Name : "Doridoripicantes",
-_cantidad : 5,
-_Descr : "[Cura Estado : Veneno]",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
-	
+    _Name: "Doridoripicantes",
+    _Descr: "[Cura Estado : Veneno]",
+    _FunctEffect: oPlayer._effUpcanLook,
+    _cantidad: irandom_range(1, 10)
+};
+
 inv_glitter = {
-_Name : "Barrita luminosa",
-_cantidad : 5,
-_Descr : "[Luminoso! #2min]",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
+    _Name: "Barrita luminosa",
+    _Descr: "[Luminoso! #2min]",
+    _FunctEffect: oPlayer._effLevelfiveDissipationofego,
+    _cantidad: irandom_range(1, 10)
+};
 
 inv_badges = {
-_Name : "Chapitas",
-_cantidad : 5,
-_Descr : "[Intercambiables]",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
-
+    _Name: "Chapitas",
+    _Descr: "[Intercambiables]",
+    _FunctEffect: oPlayer._effDownDowncanLook,
+    _cantidad: irandom_range(1, 10)
+};
 
 inv_candymocka = {
-_Name : "Dulce de mocka",
-_cantidad : 4,
-_Descr : "[Defensa + 5 #2min]",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
-
+    _Name: "Dulce de mocka",
+    _Descr: "[Defensa + 5 #2min]",
+    _FunctEffect: oPlayer._effLeveltwoDissipationofego,
+    _cantidad: irandom_range(1, 10)
+};
 
 inv_candymacchiato = {
-_Name : "Dulce de Macchiato",
-_cantidad : 5,
-_Descr : "[Velocidad + 5 2min]",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
-
+    _Name: "Dulce de Macchiato",
+    _Descr: "[Velocidad + 5 2min]",
+    _FunctEffect: oPlayer._effLeveloneBurned,
+    _cantidad: irandom_range(1, 10)
+};
 
 inv_candycoffemilk = {
-_Name : "Dulce de CoffeMilk",
-_cantidad : 4,
-_Descr : "[Atq Fisic. + 5 2min]",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
-
+    _Name: "Dulce de CoffeMilk",
+    _Descr: "[Atq Fisic. + 5 2min]",
+    _FunctEffect: oPlayer._effUpUpcanLook,
+    _cantidad: irandom_range(1, 10)
+};
 
 inv_candycapuccino = {
-_Name : "Dulce de Capuccino",
-_cantidad : 5,
-_Descr : "[Atq Mag. + 5 2min]",
-_FunctTarget : oPlayer,
-_FunctType : "Healt",
-_FunctAmount : 2,
-_FunctTime : 5, 
-_FunctRest : false,
-}
+    _Name: "Dulce de Capuccino",
+    _Descr: "[Atq Mag. + 5 2min]",
+    _FunctEffect: oPlayer._effLeveltwoPoisoned,
+    _cantidad: irandom_range(1, 10)
+};
 
 
 
-inv_emptyplace = {
-_Name : "EMPTY EMPTY EMPTY",
-_cantidad : 0,
-_Descr : "EMPTY EMPTY EMPTY",
-_Funct :"",// _StateAlterer_Effects(oPlayer,"Healt",2,2,pointer_null),
 
-}
+/*
 
+_effArray[0] = _effUpcanLook;
+_effArray[1] = _effUpUpcanLook;
+_effArray[2] = _effUpHealt;
+_effArray[3] = _effUpUpHealt;
+_effArray[4] = _effDowncanLook;
+_effArray[5] = _effDownDowncanLook;
+_effArray[6] = _effDownHealt;
+_effArray[7] = _effUpDownDownHealt;
+_effArray[8] = _EffProhibitedHealt;
+_effArray[9] = _effLeveloneBurned;
+_effArray[10] = _effLeveltwoBurned;
+_effArray[11] = _effLevelthreeBurned;
+_effArray[12] = _effLevelonePoisoned;
+_effArray[13] = _effLeveltwoPoisoned;
+_effArray[14] = _effLevelthreePoisoned;
+_effArray[15] = _effLeveloneDissipationofego;
+_effArray[16] = _effLeveltwoDissipationofego;
+_effArray[17] = _effLevelthreeDissipationofego;
+_effArray[18] = _effLevelfourDissipationofego;
+_effArray[19] = _effLevelfiveDissipationofego;
+_effArray[20] = _effConfusion;
+_effArray[21] = _effFear;
+
+
+*/
 
 //inv_list = ds_list_create();
 //ds_list_add(inv_list,0);

@@ -1,1 +1,1 @@
-return delta_time/1000000;
+return delta_time / 1000000; 

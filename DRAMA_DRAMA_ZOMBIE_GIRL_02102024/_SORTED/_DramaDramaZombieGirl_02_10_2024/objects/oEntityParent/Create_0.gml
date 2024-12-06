@@ -13,10 +13,48 @@
 #macro STAT_DEFENSE_BASE 1
 #macro STAT_SPECIALDEFENSE_BASE 1
 
+
+
+
+
+
+///////////////////////////
+///						///
+///	Basic Enemies Stats ///
+///						///
+///						///
+///////////////////////////
+
+
+_hp=0;
+_defphy=0;
+_defesp=0;
+_vel=0;
+_atkphy=0;
+_atkesp=0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 floorZ=0;
 
-tilemap=pointer_null;
-
+//tilemap=pointer_null;
+tilemap = layer_tilemap_get_id("Tiles_00_coll");
 _colheight = 130;
 image_speed=1;
 _onPlatform=false;
@@ -49,24 +87,24 @@ function _platformcollisionsystem() {
     var _platformsensor = collision_line(x, y, x + (_sensorcoll * image_xscale), y, oplatformparent, true, true);
     
     if (_platformcolling) { 
-        ///show_debug_message("encontrada colisión");
-        ///show_debug_message("platform id : " + string(_platformcolling.custom_id));
+        ///("encontrada colisión");
+        ///("platform id : " + string(_platformcolling.custom_id));
         
         var _platformsurface = _platformcolling._surface;
 
         if (z > _platformsurface) {
             if (abs(z - (_platformsurface + _platformcolling._colheight)) > _colheight) {
-                //show_debug_message("transitas bajo la plataforma");
+                //("transitas bajo la plataforma");
 				depth = _platformcolling.depth+1;
             } else {			
                 move_y = 0; 
                 move_x = 0;  
-           ///     show_debug_message("estás bloqueado de la plataforma");
+           ///     ("estás bloqueado de la plataforma");
             }
         } else if (z <= _platformsurface) {
-            //show_debug_message("estás por encima de la plataforma");
+            //("estás por encima de la plataforma");
             if (_platformcolling.object_index == omoveplatform_parent) {
-              ///  show_debug_message("estás en una plataforma móvil");
+              ///  ("estás en una plataforma móvil");
                 
 if (_CurrentPlayerState != _EnumPlayerState._jump) {
     // Mover el personaje con la plataforma
@@ -116,10 +154,10 @@ _sensorcoll=16;
 function _platformcollisionsystem() {
  var _platformcolling=instance_place(x+move_x,y+move_y,oplatformparent);
  var _platformsensor=collision_line(x,y,x+(_sensorcoll*image_xscale),y,oplatformparent,true,true);
-if _platformcolling { show_debug_message("encontrada colision");
+if _platformcolling { ("encontrada colision");
 	var _platformsurface = _platformcolling._surface;
-	if z>_platformsurface { move_y=0; move_x=0;  show_debug_message("estas debajo de la plataforma");} else if z < _platformsurface 
-	{show_debug_message("estas por encima de la plataforma"); floorZ=_platformsurface;  depth=_platformcolling.depth-5; //z+=_platformsurface;
+	if z>_platformsurface { move_y=0; move_x=0;  ("estas debajo de la plataforma");} else if z < _platformsurface 
+	{("estas por encima de la plataforma"); floorZ=_platformsurface;  depth=_platformcolling.depth-5; //z+=_platformsurface;
 		}
 } if _platformcolling==noone { floorZ=0; depth=floor(-y/16);}
 } 
@@ -137,9 +175,9 @@ var xyMeeteting = instance_place(player_x,player_y,_objplatformparent);
 var zMeeting = false;
 
 if xyMeeteting!=noone {
-	show_debug_message("se encontro plataforma collision");
+	("se encontro plataforma collision");
 	if player_z<_objplatformparent._height {
-		show_debug_message("deberias poder subir");
+		("deberias poder subir");
 		_onPlatform = true;
 		depth=xyMeeteting.depth-1;
 	floorZ=_objplatformparent._height;
@@ -197,72 +235,349 @@ _shadowspr=spr_ch_saki_shadow;
 
 #region EFFECTS 
 
-///UP UP UP 
+/// UP UP UP
 _effUpcanLook = {
-_state : false, 
-_duration : 5,
-_spr : spr_AlteredEffect,
-_img : 1
-}
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 1
+};
 
 _effUpUpcanLook = {
-_state : false, 
-_duration : 5,
-_spr : spr_AlteredEffect,
-_img : 2
-}
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 2
+};
 
 _effUpHealt = {
-_state : false, 
-_duration : 5,
-_spr : spr_AlteredEffect,
-_img : 6
-}
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 7
+};
 
 _effUpUpHealt = {
-_state : false, 
-_duration : 5,
-_spr : spr_AlteredEffect,
-_img : 7
-}
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 7
+};
 
-
-//DOWN DOWN DOWN
+/// DOWN DOWN DOWN
 _effDowncanLook = {
-_state : false, 
-_duration : 5,
-_spr : spr_AlteredEffect,
-_img : 3
-}
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 3
+};
 
 _effDownDowncanLook = {
-_state : false, 
-_duration : 5,
-_spr : spr_AlteredEffect,
-_img : 4
-}
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 4
+};
 
 _effDownHealt = {
-_state : false, 
-_duration : 5,
-_spr : spr_AlteredEffect,
-_img : 6
-}
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 6
+};
 
 _effUpDownDownHealt = {
-_state : false, 
-_duration : 5,
-_spr : spr_AlteredEffect,
-_img : 7
-}
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 7
+};
 
-///PROHIBITED
-_EffProhibitedHealt  = {
-_state : false, 
-_duration : 5,
-_spr : spr_AlteredEffect,
-_img : 5
-}
+/// PROHIBITED
+_EffProhibitedHealt = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 5
+};
+
+/// BURNED
+_effLeveloneBurned = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 29
+};
+
+_effLeveltwoBurned = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 30
+};
+
+_effLevelthreeBurned = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 31
+};
+
+
+
+
+/// CUTTED
+_effLeveloneCutted = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 20
+};
+
+_effLeveltwoCutted = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 21
+};
+
+_effLevelthreeCutted = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 22
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/// POISONED
+_effLevelonePoisoned = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 23
+};
+
+_effLeveltwoPoisoned = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 24
+};
+
+_effLevelthreePoisoned = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 25
+};
+
+/// DISSIPATION OF EGO
+_effLeveloneDissipationofego = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 32
+};
+
+_effLeveltwoDissipationofego = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 33
+};
+
+_effLevelthreeDissipationofego = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 34
+};
+
+_effLevelfourDissipationofego = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 35
+};
+
+_effLevelfiveDissipationofego = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 36
+};
+
+/// CONFUSION AND FEAR
+_effConfusion = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 38
+};
+
+_effFear = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 39
+};
+
+
+_effInvulnerability = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 40
+};
+
+_effLink = {
+    _state: false, 
+    _duration: 20,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 41
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 _effArray[0] = _effUpcanLook;
 _effArray[1] = _effUpUpcanLook;
@@ -273,8 +588,33 @@ _effArray[5] = _effDownDowncanLook;
 _effArray[6] = _effDownHealt;
 _effArray[7] = _effUpDownDownHealt;
 _effArray[8] = _EffProhibitedHealt;
+_effArray[9] = _effLeveloneBurned;
+_effArray[10] = _effLeveltwoBurned;
+_effArray[11] = _effLevelthreeBurned;
+_effArray[12] = _effLevelonePoisoned;
+_effArray[13] = _effLeveltwoPoisoned;
+_effArray[14] = _effLevelthreePoisoned;
+_effArray[15] = _effLeveloneCutted;
+_effArray[16] = _effLeveltwoCutted;
+_effArray[17] = _effLevelthreeCutted; 
+_effArray[18] = _effLeveloneDissipationofego;
+_effArray[19] = _effLeveltwoDissipationofego;
+_effArray[20] = _effLevelthreeDissipationofego;
+_effArray[21] = _effLevelfourDissipationofego;
+_effArray[22] = _effLevelfiveDissipationofego;
+_effArray[23] = _effConfusion;
+_effArray[24] = _effFear;
+_effArray[25] = _effInvulnerability;
+_effArray[26] = _effLink;
+
+
+
+
+
+
 
 _effDsList = ds_list_create();
+///ds_list_add(_effDsList,_effArray[0]);
 
 
 
@@ -310,24 +650,83 @@ move_x=(_weaponTotalVel)*sign(_weaponImageXscale);  //	=(total_vel*2)*(-image_xs
 
 
 
+function process_effects() {
+    // Si la lista está vacía, no hay nada que hacer
+    if (ds_list_empty(_effDsList)) return;
+
+    // Iterar sobre la lista de efectos activos
+    for (var i = ds_list_size(_effDsList) - 1; i >= 0; i--) {
+        var effect = _effDsList[| i]; // Obtener la referencia del efecto
+
+        // Incrementar el tiempo actual del efecto
+        effect._currentseg += (_deltatimeSec()/2);//delta_time / 1000000; // Delta time en segundos
+
+
+        // Verificar si el efecto debe ejecutar acciones por cada segundo
+        if (floor(effect._currentseg) > floor(effect._currentseg - (_deltatimeSec()/2))) 
+		{
+            // Switch basado en la estructura del efecto
+            switch (effect) {
+                case _effInvulnerability:
+                    // Acciones específicas para _effInvulnerability
+                    ///show_debug_message("Invulnerabilidad pasa turno.");
+                    break;
+					
+					
+					
+					
+					
+                case _effLeveloneCutted:
+                    // Acciones específicas para _effInvulnerability
+                    ///show_debug_message("Corte pasa turno.");
+					if object_index==oPlayer {///show_debug_message("Saki afectada.");
+						_PlayerStatsManager.PlayerStats._hpCurrent-=0.3;
+						}
+                    break;					
+					
+					
+					
+					
+					
+
+                case _effLink:
+                    // Acciones específicas para _effLink
+                    ///show_debug_message("Link pasa turno.");
+                    break;
+
+                default:
+                    // Otros casos no definidos explícitamente
+                    ///show_debug_message("Efecto desconocido: " + string(effect));
+                    break;
+            }
+        } 
+
+
+
+
+        // Verificar si el efecto ha expirado
+        if (effect._currentseg >= effect._duration) {
+            // Restaurar las propiedades del efecto
+            effect._state = false;
+            effect._currentseg = 0;
+
+            // Eliminar el efecto de la lista
+            ds_list_delete(_effDsList, i);
+
+            // Debug opcional
+            ///show_debug_message("Efecto terminado y eliminado: " + string(effect));
+        }
+    }
+}
 
 
 
 
 
-
-
-/*
-
-
-
-
-
-
-
-
-
-
+enum _EnumEnemieState {_inactive,_stand,_walk,_run,_menu,_jump,_backdash,_attack00,_hurt,_counter,_dialog}
+_CurrentEnemieState = _EnumEnemieState._inactive; 
+_CurrentStatePrint="Noone";
+///alarm_set(0,30);
 
 
 

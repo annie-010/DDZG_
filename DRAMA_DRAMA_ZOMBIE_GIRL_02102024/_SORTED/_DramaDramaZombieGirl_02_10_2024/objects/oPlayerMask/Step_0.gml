@@ -1,7 +1,65 @@
+if _owner!=noone {
+	
+	var _coll = collision_rectangle(_owner.x-25,_owner.y-134+_owner.z,_owner.x+25,_owner.y+_owner.z,oEnemyDmg,true,true);
+	
+	if _coll!=noone {
+		if _check_z_collision(_owner, _coll)  {
+		
+	if _owner._CurrentPlayerState!=_EnumPlayerState._hurt {
+		_owner._PlayerStatsManager.PlayerStats._hpCurrent-=_coll._dmg;
+		oCameraResolution._earthquake=true;
+		_owner._CurrentPlayerState=_EnumPlayerState._hurt;
+		_coll.used=true;
+	}}
+	
+	}
+	
+	
+}
+
+
+
+/*
+
+	
+	
+	
 
 
 
 
+
+
+
+
+if _coll or _isplayerhurtred==true {///show_debug_message("player fue golpeado efectivamente!");
+	
+///show_debug_message("daño : "+ string(_coll._dmg));
+
+
+
+
+
+with(_coll) {instance_destroy();}
+	
+	
+	_isplayerhurtred=false;
+	
+	} 
+else {}	
+	
+
+
+} else if _owner._CurrentPlayerState=_EnumPlayerState._hurt {}
+
+
+
+
+
+
+
+
+}
 
 
 
@@ -22,7 +80,7 @@ if _bodyColl!=noone && instance_exists(_bodyColl) {
 		_owner._PlayerStatsManager.PlayerStats._hpCurrent-=1;
 		oCameraResolution._earthquake=true;
 		_owner.hspeed=0;
-	////show_debug_message("Contacto hecho");
+	////("Contacto hecho");
 	audio_play_sound(_owner._hurtsnd,1,false);
 	_owner._CurrentPlayerState=_EnumPlayerState._hurt
 	}
@@ -116,7 +174,7 @@ with (_owner) {
 _isTangible=false;
 timeToHurtred=60;
 _notTangibleTime=60;
-////show_debug_message("type hit : Noone ");
+////("type hit : Noone ");
 }
 break;
 
@@ -127,7 +185,7 @@ with (_owner) {
 	timeToHurtred=60;
 	_isTangible=false;
 _notTangibleTime=60;
-////show_debug_message("type hit : Normal ");
+////("type hit : Normal ");
 }
 break;
 
@@ -140,7 +198,7 @@ with (_owner) {
 _notTangibleTime=60;
 	_canAttack=false;
 	_ProhibitedAttackTime=60;
-	////show_debug_message("type hit : Heavy ");
+	////("type hit : Heavy ");
 }
 break;
 

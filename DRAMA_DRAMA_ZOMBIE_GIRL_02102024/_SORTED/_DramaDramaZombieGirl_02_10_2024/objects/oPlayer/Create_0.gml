@@ -15,7 +15,7 @@ _CurrentActiveState=_PossibleEntityActiveState._Active;
 _debugShowisOn=false;
 
 MOVE_CURRENT_SPEED = 0;
-tilemap = layer_tilemap_get_id("Tiles_00_coll");
+
 _limitzJump=-100;
 z=0;
 floorZ = 0;
@@ -73,19 +73,20 @@ alarm_set(0,30);
 if !instance_exists(oPlayerMenu) {
 _PlayerStatsManager = instance_create_layer(0,0,"_Entities",oPlayerMenu);
 }
-
+/*
 if !instance_exists(oPlayerMask) {
 _maskBody = instance_create_layer(x,y+z,"_Entities",oPlayerMask);
 _maskBody._owner=oPlayer;
 _maskBody.sprite_index=spr_pl_saki_bodymask;
 }
 
+*/
+
 _currentequipPlayer = {
 _Head : pointer_null,
 _Chest : pointer_null,
 _Weapon : pointer_null,
 }
-
 
 
 
@@ -108,7 +109,7 @@ _hurtsnd=choose(_snd_pl_saki_hurt,_snd_pl_saki_hurt_1);
 
 
 
-
+/*
 function _check_z_collision(_obj1, _obj2) {
     // Obtener los valores de z y colheight del primer objeto (personaje)
     var obj1_z = _obj1.z;

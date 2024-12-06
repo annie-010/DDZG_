@@ -1,3 +1,10 @@
+/// @description Inserte aquí la descripción
+// Puede escribir su código en este editor
+
+// Inherit the parent event
+event_inherited();
+
+
 var _keyK = KEY_K_PRESSED;
 var _keyL = KEY_L_PRESSED;
 var _keyKHold = KEY_K_HOLD;
@@ -23,7 +30,7 @@ _maskBody.z=z;
 
 */
 
-
+/*
 // Uso de la función en el evento de colisión
 var _enemyDMGcoll = instance_place(x, y, oEnemyDmg);
 if (_enemyDMGcoll) {
@@ -39,7 +46,7 @@ if (_enemyDMGcoll) {
     }
 }
 
-
+*/
 
 
 
@@ -148,12 +155,12 @@ break;}}
 	
 	if keyboard_check_pressed(ord("E")) {
 	
-	////show_debug_message("total vel : " + string(total_vel));
-	////show_debug_message("total pat : " + string(total_physical_attack));
-	////show_debug_message("total sat : " + string(total_special_attack));
-	////show_debug_message("total def : " + string(total_defense));
-	////show_debug_message("total sdf : " + string(total_special_defense));
-	////show_debug_message("total luc : " + string(total_lucky));
+show_debug_message("total vel : " + string(total_vel));
+show_debug_message("total pat : " + string(total_physical_attack));
+show_debug_message("total sat : " + string(total_special_attack));
+show_debug_message("total def : " + string(total_defense));
+show_debug_message("total sdf : " + string(total_special_defense));
+show_debug_message("total luc : " + string(total_lucky));
 	}
 	
 	
@@ -168,8 +175,40 @@ break;}}
 //////////////////////////////////////////////////////////////////////////	
 #endregion
 
+
+
+
+
+
+
+
+
+/*
+
+///DATA
+_name : "Saki",
+_profilePicture : spr_pl_saki_portraitBase,
+///_PLAYER_STATS
+_statMin : 0, 
+_statVel : 1,
+_statPhisycAttack : 1,
+_statSpecialAttack : 1,
+_statLucky : 1,
+_statDefense : 1,
+_statSpecialDefense : 1,
+
+
+
+
+*/
+
+
+
+
+
+
 if _PlayerStatsManager.PlayerStats._hpCurrent<=0 && _CurrentLifeState==_PossibleEntityLifeState._Alive {
-	show_debug_message("MUERTA")
+	///("MUERTA")
 _CurrentLifeState=_PossibleEntityLifeState._Dead;
 alarm_set(10,120);
 }
@@ -178,14 +217,18 @@ alarm_set(10,120);
 
 
 if 	_currentequipPlayer._Head!=pointer_null {
-
 _PlayerStatsManager.PlayerStats._statVel=STAT_VEL_BASE+(_currentequipPlayer._Head._equipvel);
+
+
+
+
+
 }else if _currentequipPlayer._Head==pointer_null {
 	
 } 
 
 if 	_currentequipPlayer._Chest!=pointer_null {
-_PlayerStatsManager.PlayerStats._statVel=STAT_VEL_BASE
+_PlayerStatsManager.PlayerStats._statDefense   =STAT_VEL_BASE
 }
 
 
@@ -194,7 +237,7 @@ if 	_currentequipPlayer._Weapon!=pointer_null {
 }
 if _currentequipPlayer._Head!=pointer_null && _currentequipPlayer._Chest!=pointer_null && _currentequipPlayer._Weapon!=pointer_null {
 if (_currentequipPlayer._Head._equipset==_currentequipPlayer._Weapon._equipset) &&  (_currentequipPlayer._Head._equipset==_currentequipPlayer._Chest._equipset) 
-{ ////show_debug_message("Todos tus Equips tienen el mismo SET") 
+{ ////("Todos tus Equips tienen el mismo SET") 
 	if !instance_exists(oBobBee) {
 		var _patnert = instance_create_layer(0,0,"_Entities",oBobBee);
 	} }
@@ -290,7 +333,7 @@ switch(_CurrentPlayerState) {
 	}
 	sprite_index=sprPlayerBackDash;
 	move_x=(total_vel*2)*(-image_xscale);
-	//////show_debug_message("total vel");
+	//////("total vel");
 	break;
 	
 	case _EnumPlayerState._counter:
@@ -342,7 +385,7 @@ switch(_CurrentPlayerState) {
 	case "_Basic_Jump_0_" :
 	sprite_index=spr_ch_saki_jumpattack_0;
 	_weaponConfigtoUse(oPlayerWeapon,"Normal",total_physical_attack,total_vel,image_xscale,sprPlayerAttackBlade_2); 
-///////show_debug_message("image_index :" +string(image_index));
+///////("image_index :" +string(image_index));
 	break;	
 	
 	}
@@ -422,7 +465,7 @@ _CurrentPlayerState=_EnumPlayerState._attack00;
 	if _keybackpress  && _PlayerStatsManager.isMenuOpen==false { _PlayerStatsManager._mPos=0;
 		 _keybackpress=false; 
 		_CurrentPlayerState=_EnumPlayerState._menu; _PlayerStatsManager.isMenuOpen=true;
-		////show_debug_message("ABRIENDO MENU LINEA 148 CURRENT STATE _STAND");	
+		////("ABRIENDO MENU LINEA 148 CURRENT STATE _STAND");	
 	}
 
 	
@@ -507,20 +550,20 @@ _currentCombo="_Basic_Jump_0_";
 _canAttack=false;
 _CurrentPlayerState=_EnumPlayerState._attack00;
 image_index=-1;
-///////show_debug_message("image_index : " + string(image_index));
+///////("image_index : " + string(image_index));
 break;}
 }
 		
-	///////show_debug_message("Alcanzado punto maximo de salto _current z : " + string(z));
+	///////("Alcanzado punto maximo de salto _current z : " + string(z));
 	}
 	
 	if (_pastZ != 0) { 
     if (_pastZ > z) {
-        ///////show_debug_message("ESTÁ SUBIENDO");
+        ///////("ESTÁ SUBIENDO");
 		sprite_index=spr_ch_saki_jump_01;
 		 image_index=0;
     } else if (_pastZ < z) {
-        ///////show_debug_message("ESTÁ BAJANDO");
+        ///////("ESTÁ BAJANDO");
 		sprite_index=spr_ch_saki_jump_00;
 			image_index=1;
 		}}
@@ -540,30 +583,7 @@ break;}
 	
 	
 	
-	#region
-// Verificar si la lista está vacía
-if ds_list_empty(_effDsList) {
-    for (var u_ = 0; u_ < array_length(_effArray); u_++) {
-        if _effArray[u_]._state != false {
-            ds_list_add(_effDsList, _effArray[u_]);
-            ////show_debug_message("Valor añadido 235Pas");
-        }
-    }
-} else {
-    for (var u_ = 0; u_ < array_length(_effArray); u_++) {
-        if _effArray[u_]._state != false {
-            // Verificar si el valor ya está en la lista antes de agregarlo
-            if ds_list_find_index(_effDsList, _effArray[u_]) == -1 {
-                ds_list_add(_effDsList, _effArray[u_]);
-                ////show_debug_message("Valor añadido 235Pas");
-            }
-        }
-    }
-}
 
-	
-	
-	#endregion
 	
 	
 	
@@ -581,9 +601,9 @@ _canContinueComboTime-=_deltatimeSec();
 
 if _bodyMask==noone {
 _bodyMask=instance_create_layer(x,y,"_Entities",oPlayerMask);
-_bodyMask.sprite_index=sprite_index;
+_bodyMask.sprite_index=spr_pl_saki_bodymask;
 _bodyMask._owner=id;
-////show_debug_message("Created Mask BodyCol Player step10");
+////("Created Mask BodyCol Player step10");
 } else if _bodyMask!=noone {
 _bodyMask.x=x;
 _bodyMask.y=y+z;

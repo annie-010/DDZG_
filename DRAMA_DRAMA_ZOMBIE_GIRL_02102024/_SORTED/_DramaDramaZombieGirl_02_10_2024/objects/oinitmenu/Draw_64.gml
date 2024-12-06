@@ -10,7 +10,7 @@ draw_set_font(fnt_default_12);
 
 for (var _i = 0; _i < array_length(_menu); _i++) {
     draw_text((hbar + 32), ((room_height / 2) + 178) + (32 * _i), _menu[_i]);
-    show_debug_message("_i : " + string(_i));
+    ///show_debug_message("_i : " + string(_i));
 }
 
 

@@ -1,3 +1,4 @@
+
 /*
 #macro VIEW_WIDTH 1152
 #macro VIEW_HEIGHT 864 
@@ -20,8 +21,8 @@ var arrayfor = pointer_null;
 
 if oPlayer._CurrentPlayerState==_EnumPlayerState._dialog {} else {
 draw_sprite_ext(PlayerStats._profilePicture, 0, _margin, (768), 1, 1, 0, c_white, 1);
-var _lifeBar = draw_line_width_color((_margin*2), number, 96 + (16 * PlayerStats._hpCurrent), number, 34, StatColor, c_green);
-draw_text(136, 800 , string(PlayerStats._name));
+var _lifeBar = draw_line_width_color((_margin*2), number, 96 + (16 * floor(PlayerStats._hpCurrent)), number, 34, StatColor, c_green);
+draw_text(136, 800 , string(PlayerStats._name)); draw_text(136, 840 , string(floor(PlayerStats._hpCurrent))); 
 } 
 
 

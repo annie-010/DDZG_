@@ -4,7 +4,7 @@ typeDialog = noone;
 num = 0;
 ///_text[0] = "Test Text"; 
 _text[0] = "saki@@@@@@ Este texto aparecera cuando no se le haya dado un texto que mostrar. es un Debug?";
-
+_switched=false;
 
 
 
@@ -53,11 +53,16 @@ function _dialogSystem(_dialogtype, _dialogarray) {
     } 
 	
 	else if (_bg != noone) {
+
         draw_set_color(c_white);
-        draw_sprite(_bg, 0, 0, 0);
+		    if window_get_fullscreen()
+			{draw_sprite_ext(_bg, 0, 0, 0,.8,.8,0,c_white,1); }
+			else if !window_get_fullscreen() {draw_sprite_ext(_bg, 0, 0, 0,1,1,0,c_white,1);}
         draw_sprite(sprtextbox_0, 0, 0, 664);
+		
 
-
+		
+		
         if (_dialogpos >= 0 && _dialogpos < _dialogarraylenght) {
 
             // Asignar el texto del diálogo actual
@@ -82,23 +87,23 @@ function _dialogSystem(_dialogtype, _dialogarray) {
 				switch (_chindex) {
     case 0:
         // Acción para el personaje "saki"
-        show_debug_message("Personaje: saki");
+        ///show_debug_message("Personaje: saki");
         break;
     case 1:
         // Acción para el personaje "robot"
-        show_debug_message("Personaje: robot");
+        ///show_debug_message("Personaje: robot");
         break;
     case 2:
         // Acción para el personaje "npc1"
-        show_debug_message("Personaje: npc1");
+        ///show_debug_message("Personaje: npc1");
         break;
     case 3:
         // Acción para el personaje "npc2"
-        show_debug_message("Personaje: npc2");
+        ///show_debug_message("Personaje: npc2");
         break;
     default:
         // Acción si no se encuentra un personaje en _ch
-        show_debug_message("No hay coincidencias");
+        ///show_debug_message("No hay coincidencias");
         break;
 }
 				
@@ -117,7 +122,7 @@ function _dialogSystem(_dialogtype, _dialogarray) {
 				
 				
 				
-				show_debug_message("current drawing char : "+ string(_currentdrawingchar) + "   dialog string lenght : " + string(_dialogstringlength) + "  current dialogpos : " + string(_dialogpos));
+				///show_debug_message("current drawing char : "+ string(_currentdrawingchar) + "   dialog string lenght : " + string(_dialogstringlength) + "  current dialogpos : " + string(_dialogpos));
 				
 				
 				        if (_currentdrawingchar<_charlimit) {
@@ -176,7 +181,7 @@ if (_actionkey) {
         
         // Avanzar al siguiente diálogo
         _dialogpos++;
-		show_debug_message("current dialogpos: " + string(_dialogpos));
+		///show_debug_message("current dialogpos: " + string(_dialogpos));
     }
 }
 

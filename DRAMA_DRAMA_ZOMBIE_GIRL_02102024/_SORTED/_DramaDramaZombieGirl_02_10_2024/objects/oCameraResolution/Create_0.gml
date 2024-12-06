@@ -5,8 +5,8 @@
 #macro CAMERA_TARGET oCameraTarget
 
 
-_fadein=true;
-_fadevalue=2;
+//_fadein=true;
+//_fadevalue=2;
 
 
 

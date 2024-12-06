@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_Hit02.ogg",
   "type":0,
-  "volume":0.5,
+  "volume":0.21,
 }

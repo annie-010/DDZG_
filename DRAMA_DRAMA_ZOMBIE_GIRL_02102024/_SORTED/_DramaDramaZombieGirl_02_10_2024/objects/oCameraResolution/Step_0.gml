@@ -3,24 +3,32 @@ if instance_exists(oCameraTarget) {
     yto = oCameraTarget.target_y;
 }
 
-
+/*
 if (_fadein) && _fadevalue==2 {
 alarm_set(0,128);
 _fadevalue=1;
 } if (_fadein)==false {
 	_fadevalue-=0.01;
 }
-
-
+*/
 // Interpolación suave hacia el objetivo
 x = lerp(x, xto, 0.04); // Usa lerp para interpolación suave
 y = lerp(y, yto, 0.04); // Factor de 0.04 para un movimiento suave
-
 // Verificar si la tecla "E" fue presionada para activar el terremoto
-
-
 // Actualizar el tiempo transcurrido global
-global._gamesecondsTranscurred += _deltatimeSec();
+
+if (instance_exists(oPlayer)) {
+	global._gamesecondsTranscurred +=(_deltatimeSec()/2);
+}
+///var frame_time = 1 / 60; // Tiempo ideal por frame (60 FPS)
+///var actual_time = _deltatimeSec();
+
+/////show_debug_message("Ideal: " + string(frame_time) + ", Real: " + string(actual_time));
+
+
+
+
+
 ///=false;
 // Manejo del terremoto con un "switch"
 if (_earthquake==true) {

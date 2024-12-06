@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"bg_ts_gridfloor",
   "bboxMode":0,
-  "bbox_bottom":63,
+  "bbox_bottom":127,
   "bbox_left":64,
   "bbox_right":255,
   "bbox_top":0,

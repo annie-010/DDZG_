@@ -7,4 +7,5 @@ if !sprite_index==noone {
 	image_index=0;
 	
 }
-///////show_debug_message("weapon created");
+///////("weapon created");
+_used=false;

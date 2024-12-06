@@ -19,7 +19,8 @@
   "height":512,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"629415ac-ae05-4500-8e8c-ca048dd9f954","blendMode":0,"displayName":"default","isLocked":false,"name":"629415ac-ae05-4500-8e8c-ca048dd9f954","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"f088ed24-65b8-4ef1-bcad-be464d731633","blendMode":0,"displayName":"default (2)","isLocked":false,"name":"f088ed24-65b8-4ef1-bcad-be464d731633","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"629415ac-ae05-4500-8e8c-ca048dd9f954","blendMode":0,"displayName":"default","isLocked":false,"name":"629415ac-ae05-4500-8e8c-ca048dd9f954","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":false,},
   ],
   "name":"bg_coll_tile",
   "nineSlice":null,

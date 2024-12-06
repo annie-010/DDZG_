@@ -1,1 +1,1 @@
-if PlayerStats._hpCurrent<=5 {StatColor=c_red;}
+if PlayerStats._hpCurrent<=5 {StatColor=c_red;} else if PlayerStats._hpCurrent>5 {StatColor=c_green;}

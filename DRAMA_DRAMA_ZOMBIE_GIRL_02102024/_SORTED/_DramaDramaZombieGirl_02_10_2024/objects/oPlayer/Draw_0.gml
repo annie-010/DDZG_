@@ -37,34 +37,7 @@ draw_sprite_ext((_currentequipPlayer._Weapon._equipspritefront),0,x,(y-(48))+z,1
 
 
 
-#region //EFECTOS
 
-
-if !ds_list_empty(_effDsList) {
-    var maxEffects = min(ds_list_size(_effDsList), 6); // Máximo de 6 efectos a mostrar
-    var yOffset = ds_list_size(_effDsList) > 3 ? (y - 176 + z) : (y - 150 + z);
-
-    for (var a_ = 0; a_ < maxEffects; a_++) {
-        var _dslistEffectValue = ds_list_find_value(_effDsList, a_);
-        var xPos = x - 32 + (38 * (a_ % 3)); // Posición horizontal
-        var yPos = yOffset + (38 * floor(a_ / 3)); // Posición vertical
-
-        draw_sprite_ext(
-            _dslistEffectValue._spr,   // Índice del sprite
-            _dslistEffectValue._img,   // Subimagen del sprite
-            xPos,                      // Posición x de dibujo
-            yPos,                      // Posición y de dibujo
-            1.3,                       // Escala x
-            1.3,                       // Escala y
-            0,                         // Ángulo de rotación
-            c_white,                   // Color de mezcla
-            1                          // Alpha (opacidad)
-        );
-    }
-}
-
-
-#endregion
 
 ///draw_rectangle(x-32,(y-134)+z,x+32,(y+z),false);
 

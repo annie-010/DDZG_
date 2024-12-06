@@ -10,7 +10,7 @@ y = oPlayer.y + sin(orbita_ang) * radio; // Nueva posición Y
 z = centrodeorbitra + sin(orbita_ang) * tamanodeorbita; // Movimiento vertical
 
 // Mostrar debug (opcional)
-// show_debug_message("x: " + string(x) + ", y: " + string(y) + ", z: " + string(z));
+// ("x: " + string(x) + ", y: " + string(y) + ", z: " + string(z));
 
 if instance_exists(oPlayer) {
     var _dist = distance_to_point(oPlayer.x, oPlayer.y);

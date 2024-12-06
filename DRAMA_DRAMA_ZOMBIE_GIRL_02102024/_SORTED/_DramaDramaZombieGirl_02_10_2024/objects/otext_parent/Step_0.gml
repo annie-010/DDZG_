@@ -4,8 +4,14 @@
 switch (_isdialogactive) {
 
 case true:
+if _switched==false {
 instance_deactivate_all(true);
-///show_debug_message("instance count : " + string(instance_count));
+instance_activate_object(oCameraResolution);
+_switched=true;
+
+}
+
+///("instance count : " + string(instance_count));
 break;
 
 case false:

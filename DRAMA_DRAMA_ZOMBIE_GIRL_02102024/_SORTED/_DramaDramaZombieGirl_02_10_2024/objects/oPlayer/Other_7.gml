@@ -27,7 +27,7 @@ alarm[5]=15;
 }
 
 if sprite_index==spr_ch_saki_jumpattack_0 {
-	////show_debug_message("end animation jump attack");
+	////("end animation jump attack");
 	alarm[5]=15///_ToleranceTimeAttack/60*_deltatimeSec();///*_deltatimeSec();
 	///hspeed=0;
 	_CurrentPlayerState=_EnumPlayerState._jump;
