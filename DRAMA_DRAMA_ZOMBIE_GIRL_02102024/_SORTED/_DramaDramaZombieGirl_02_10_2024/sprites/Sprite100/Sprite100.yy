@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"ROOM_STUFF",
-    "path":"folders/Sprites/OTHER/ROOM_STUFF.yy",
+    "path":"folders/Sprites/_DECORATION/ROOM_STUFF.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

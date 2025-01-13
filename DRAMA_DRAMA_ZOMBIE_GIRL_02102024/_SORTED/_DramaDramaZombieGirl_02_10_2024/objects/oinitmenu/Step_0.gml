@@ -27,7 +27,7 @@ if _keyk {
 switch (_arrowpos) {
 
 case 0:
-room_goto(r_Test_00);
+room_goto(_initRoom);
 
 break;
 

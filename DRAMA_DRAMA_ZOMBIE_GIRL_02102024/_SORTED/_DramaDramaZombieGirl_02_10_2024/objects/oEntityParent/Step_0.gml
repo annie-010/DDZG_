@@ -14,7 +14,7 @@ if ds_list_empty(_effDsList) {
             // Verificar si el valor ya está en la lista antes de agregarlo
             if ds_list_find_index(_effDsList, _effArray[u_]) == -1 {
                 ds_list_add(_effDsList, _effArray[u_]);
-                ////("Valor añadido 235Pas");
+                ////("Valor añadido 235Pas"); 
             }
         }
     }
@@ -43,6 +43,89 @@ if ds_list_empty(_effDsList) {
 			visible=true;
 			}
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+_hp       = (_currenthp     != 0) ? _currenthp     : _hp;
+_defphy   = (_currentdefphy != 0) ? _currentdefphy : _defphy;
+_defesp   = (_currentdefesp != 0) ? _currentdefesp : _defesp;
+_vel      = (_currentvel    != 0) ? _currentvel    : _vel;
+_atkphy   = (_currentatkphy != 0) ? _currentatkphy : _atkphy;
+_atkesp   = (_currentatkesp != 0) ? _currentatkesp : _atkesp;
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

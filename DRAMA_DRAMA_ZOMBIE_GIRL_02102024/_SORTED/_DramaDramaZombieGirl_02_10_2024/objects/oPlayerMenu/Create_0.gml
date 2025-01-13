@@ -42,7 +42,7 @@ _ingameMenuRootOptionsArray[1] = "Inventario"
 _ingameMenuRootOptionsArray[2] = "Objetos Clave"
 _ingameMenuRootOptionsArray[3] = "Acerca de . . ."
 _ingameMenuRootOptionsArray[4] = "INFO"
-_ingameMenuRootOptionsArray[5] = "Opciones"
+_ingameMenuRootOptionsArray[5] = "Salir a menu ext."
 _ingameMenuRootOptionsArray[6] = "Cerrar Menu"
 
 var _mainpagearrayList = array_length(_ingameMenuRootOptionsArray);

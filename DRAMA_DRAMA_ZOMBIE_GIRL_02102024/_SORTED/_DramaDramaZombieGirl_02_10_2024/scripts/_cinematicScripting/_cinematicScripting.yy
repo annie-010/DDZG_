@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"_cinematicScripting",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"_cinematicScripting",
+  "parent":{
+    "name":"_cinematicScripts",
+    "path":"folders/Scripts/_cinematicScripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

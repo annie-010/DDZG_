@@ -8,9 +8,27 @@ draw_text(x-64,(y+80)+z,"_CurrentActiveState : "+ string ( _CurrentActiveState )
 draw_text(x-64,(y+96)+z,"_CurrentDepth : "+ string ( depth ));
 */
 
+
+draw_set_font(fnt_default_08);
+draw_set_color(c_red);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 draw_sprite_ext(_shadowspr,0,x,y+floorZ,1,1,0,c_white,0.5);
 if _hp!=0 {
-draw_text(x,y+z, "hp : " + string(_hp));
+///draw_text(x,y+z, "hp : " + string(_hp));
 }
 
 
@@ -50,3 +68,28 @@ if !ds_list_empty(_effDsList) {
 
 
 #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+var stat_list = [_defphy, _defesp];
+
+for (var i = 0; i < array_length(stat_list); i++) {
+    draw_text(x,y-96 + i * 16, string(stat_list[i])); // Dibuja la variable como texto
+}
+
+

@@ -65,7 +65,7 @@ _maskFloor = spr_ch_saki_mask_floor;
 _shadowspr = spr_ch_saki_shadow;
 ///_maskBody = oPlayerMask;
 
- enum _EnumPlayerState {_inactive,_stand,_walk,_run,_menu,_jump,_backdash,_attack00,_hurt,_counter,_dialog}
+ enum _EnumPlayerState {_inactive,_stand,_walk,_run,_menu,_jump,_backdash,_attack00,_hurt,_counter,_dialog,_cinematic}
 _CurrentPlayerState = _EnumPlayerState._inactive; 
 _CurrentStatePrint="Noone";
 alarm_set(0,30);

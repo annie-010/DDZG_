@@ -4,11 +4,13 @@ event_inherited();
 
 
 _hp=20;
-_defphy=2;
-_defesp=0;
+_defphy=5;
+_defesp=5;
 _vel=5;
 _atkphy=3;
 _atkesp=1;
+
+_atkrecieved=noone;
 
 
 

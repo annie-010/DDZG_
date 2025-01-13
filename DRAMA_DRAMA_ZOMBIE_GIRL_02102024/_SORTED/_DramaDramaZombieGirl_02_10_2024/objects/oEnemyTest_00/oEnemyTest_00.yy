@@ -12,8 +12,8 @@
   "name":"oEnemyTest_00",
   "overriddenProperties":[],
   "parent":{
-    "name":"_ENEMIES",
-    "path":"folders/Objetos/_ENTITIES/_ENEMIES.yy",
+    "name":"knife_parentTest",
+    "path":"folders/Objetos/_ENTITIES/_ENEMIES/knife_parentTest.yy",
   },
   "parentObjectId":{
     "name":"oEntityParent",

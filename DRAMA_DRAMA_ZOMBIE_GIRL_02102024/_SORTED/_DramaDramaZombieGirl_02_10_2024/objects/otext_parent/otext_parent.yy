@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"_TEXT_TEST",
-    "path":"folders/Objetos/_ENTITIES/_TEXT_TEST.yy",
+    "path":"folders/Objetos/_SYSTEM/_TEXT_TEST.yy",
   },
   "parentObjectId":null,
   "persistent":false,

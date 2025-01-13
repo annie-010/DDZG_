@@ -26,7 +26,7 @@
   "origin":7,
   "parent":{
     "name":"SprMask",
-    "path":"folders/Sprites/OTHER/Machine_prize/SprMask.yy",
+    "path":"folders/Sprites/_DECORATION/Machine_prize/SprMask.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

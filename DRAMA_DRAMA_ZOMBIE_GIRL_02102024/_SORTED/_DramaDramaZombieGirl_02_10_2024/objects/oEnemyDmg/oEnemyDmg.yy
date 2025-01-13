@@ -12,7 +12,10 @@
     "name":"_PARENTS",
     "path":"folders/Objetos/_ENTITIES/_PARENTS.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"ocornertowershootbullet",
+    "path":"objects/ocornertowershootbullet/ocornertowershootbullet.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

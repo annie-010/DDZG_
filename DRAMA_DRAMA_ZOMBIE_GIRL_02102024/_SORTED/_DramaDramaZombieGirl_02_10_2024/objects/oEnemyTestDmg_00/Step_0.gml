@@ -1,8 +1,16 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
+
+/*
+
+
+
+
 if _owner!=noone {
 x=_owner.x; y=_owner.y;
 }
+*/
+
 
 var playercoll =collision_rectangle(x-16,y-16,x+16,y+16,oPlayer,true,true);
 
@@ -40,10 +48,10 @@ switch(_selected) {
 	
 case 1: playercoll._effLeveloneCutted._state=true;
 ///show_debug_message("effect on");
-var _texteffect=(instance_create_layer(x,y,"_Entities",otext_parent,{
-}));
-_texteffect.typeDialog="_instead";
-_texteffect._text[0]="saki@@@@@@ Ha sido cortada!";		
+//var _texteffect=(instance_create_layer(x,y,"_Entities",otext_parent));
+//_texteffect.typeDialog="_instead";
+//_texteffect._text[0]="saki@@@@@@ Ha sido cortada! (-1 Pdv c/3 segundos!)";		
+
 
 //instance_destroy();
 break;

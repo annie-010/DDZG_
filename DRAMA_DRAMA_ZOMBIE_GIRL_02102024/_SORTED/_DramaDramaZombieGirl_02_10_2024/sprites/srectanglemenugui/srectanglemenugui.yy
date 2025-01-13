@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"_MENUGUI",
-    "path":"folders/Sprites/_MENUGUI.yy",
+    "path":"folders/Sprites/_menu_gnral/_MENUGUI.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

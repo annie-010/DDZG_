@@ -9,3 +9,5 @@ if !sprite_index==noone {
 }
 ///////("weapon created");
 _used=false;
+
+show_debug_message("instance_weapon_creada!");

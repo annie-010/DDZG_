@@ -18,6 +18,10 @@
 
 
 
+
+
+
+
 ///////////////////////////
 ///						///
 ///	Basic Enemies Stats ///
@@ -32,6 +36,48 @@ _defesp=0;
 _vel=0;
 _atkphy=0;
 _atkesp=0;
+
+
+
+///////////////////////////
+///						///
+///	Default Enemies Stats ///
+///						///
+///						///
+///////////////////////////
+
+
+
+_defaulthp=_hp;
+_defaultdefphy=_defphy;
+_defaultdefesp=_defesp;
+_defaultvel=_vel;
+_defaultatkphy=_atkphy;
+_defaultatkesp=_atkesp;
+
+
+
+
+
+
+
+
+
+
+
+
+//////////////////////////
+///					//////
+/// Effect enemies e///
+/////////////////////////
+
+_currenthp=0;
+_currentdefphy=0;
+_currentdefesp=0;
+_currentvel=0;
+_currentatkphy=0;
+_currentatkesp=0;
+
 
 
 
@@ -59,11 +105,10 @@ _colheight = 130;
 image_speed=1;
 _onPlatform=false;
 depth=floor(-y/16); 
-
+_canblade=true;
 _sensorcoll=64;
 
-/// @function separate_from_wall
-/// @description Desplaza al personaje fuera de las paredes del tilemap en caso de quedarse atascado
+
 
 function separate_from_wall() {
     var move_push_distance = 4; // Distancia para alejarse de la pared en caso de colisión
@@ -77,6 +122,70 @@ function separate_from_wall() {
     if place_meeting(x, y + move_y, tilemap) {
         y -= move_push_distance * sign(move_y); // Empuja en el eje Y
     }
+	
+	
+	
+	
+	
+	
+	
+    if place_meeting(x + move_x, y, olimitwallparent) {
+        x -= move_push_distance * sign(move_x); // Empuja en el eje X
+    }
+
+    // Verificación de colisiones en el eje Y
+    if place_meeting(x, y + move_y, olimitwallparent) {
+        y -= move_push_distance * sign(move_y); // Empuja en el eje Y
+    }	
+	
+	
+	
+	
+	
+	
+	
+
+	var x_doorcoll = instance_place(x + move_x, y, odoor);
+	var y_doorcoll = instance_place(x, y + move_y, odoor);
+	
+
+	
+	    if x_doorcoll!=noone {
+			if x_doorcoll._state=="closed" {x -= move_push_distance * sign(move_x);
+				
+
+				
+				
+				}
+			else if x_doorcoll._state=="open" {
+}
+    } 
+	
+	
+	
+	
+	
+	
+	
+	
+
+    // Verificación de colisiones en el eje Y
+    if  y_doorcoll!=noone {
+		
+		if y_doorcoll._state=="closed" {
+		y -= move_push_distance * sign(move_y);
+				
+		}
+		
+		
+		else if y_doorcoll._state=="open" {
+		} 
+         // Empuja en el eje Y _actionbutton=false;
+    }	
+	
+	
+	
+	
 }
 
 
@@ -455,7 +564,7 @@ _effConfusion = {
 
 _effFear = {
     _state: false, 
-    _duration: 20,
+    _duration: 3,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 39
@@ -464,7 +573,7 @@ _effFear = {
 
 _effInvulnerability = {
     _state: false, 
-    _duration: 20,
+    _duration: 3,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 40
@@ -472,7 +581,7 @@ _effInvulnerability = {
 
 _effLink = {
     _state: false, 
-    _duration: 20,
+    _duration: 3,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 41
@@ -632,8 +741,11 @@ _effDsList = ds_list_create();
 
 function _weaponConfigtoUse(_weaponInstance,_weaponType,_weaponTotalDamage,_weaponTotalVel,_weaponImageXscale,_weaponSprite) {
 
-var _collver = collision_line(x,(y+z-64),x+(64*sign(image_xscale)),(y+z-64),olimitwallparent,true,true);
-///var _collver = collision_line(x,(y+z-64),x+(64*sign(image_xscale)),(y+z-64),olimitwallparent,true,true);
+
+
+
+
+
 if !(instance_exists(oPlayerWeapon)) {///floor(image_index)==0
 	with (instance_create_layer(x,y+z,"_Entities",oPlayerWeapon)) {
 		image_index=0;
@@ -642,8 +754,17 @@ if !(instance_exists(oPlayerWeapon)) {///floor(image_index)==0
 		_Dmg=_weaponTotalDamage;
 		image_xscale=_weaponImageXscale;
 	}
+} else if (instance_exists(oPlayerWeapon)) {
+	if oPlayerWeapon._used!=true {
+	move_x=(_weaponTotalVel)*sign(_weaponImageXscale);} else {move_x=0;}
+	
+///show_debug_message("weapon existe.");
 }
-move_x=(_weaponTotalVel)*sign(_weaponImageXscale);  //	=(total_vel*2)*(-image_xscale);
+
+var _collver = collision_line(x,(y+z-64),x+(64*sign(image_xscale)),(y+z-64),olimitwallparent,true,true);
+///var _collver = collision_line(x,(y+z-64),x+(64*sign(image_xscale)),(y+z-64),olimitwallparent,true,true);
+
+  //	=(total_vel*2)*(-image_xscale);
 }
 
 
@@ -668,8 +789,12 @@ function process_effects() {
             // Switch basado en la estructura del efecto
             switch (effect) {
                 case _effInvulnerability:
-                    // Acciones específicas para _effInvulnerability
-                    ///show_debug_message("Invulnerabilidad pasa turno.");
+				
+				if object_index==oEnemyTest_00 {
+					_currentdefphy=9999;
+					_currentdefesp=9999;
+				}
+
                     break;
 					
 					
@@ -709,6 +834,49 @@ function process_effects() {
             // Restaurar las propiedades del efecto
             effect._state = false;
             effect._currentseg = 0;
+			
+			
+            switch (effect) {
+                case _effInvulnerability:
+				
+				if object_index==oEnemyTest_00 {
+					_currentdefphy=0;
+					_currentdefesp=0;
+					_defphy=_defaultdefphy;
+					_defesp=_defaultdefesp;
+				}
+
+                    break;
+					
+					
+					
+					
+					
+                case _effLeveloneCutted:
+                    // Acciones específicas para _effInvulnerability
+                    ///show_debug_message("Corte pasa turno.");
+			///		if object_index==oPlayer {///show_debug_message("Saki afectada.");
+				//		_PlayerStatsManager.PlayerStats._hpCurrent-=0.3;
+					//	}
+                    break;					
+					
+					
+					
+					
+					
+
+                case _effLink:
+                    // Acciones específicas para _effLink
+                    ///show_debug_message("Link pasa turno.");
+                    break;
+
+                default:
+                    // Otros casos no definidos explícitamente
+                    ///show_debug_message("Efecto desconocido: " + string(effect));
+                    break;
+            }
+			
+			
 
             // Eliminar el efecto de la lista
             ds_list_delete(_effDsList, i);
@@ -723,7 +891,7 @@ function process_effects() {
 
 
 
-enum _EnumEnemieState {_inactive,_stand,_walk,_run,_menu,_jump,_backdash,_attack00,_hurt,_counter,_dialog}
+////enum _EnumEnemieState {_inactive,_stand,_walk,_run,_menu,_jump,_backdash,_attack00,_hurt,_counter,_dialog}
 _CurrentEnemieState = _EnumEnemieState._inactive; 
 _CurrentStatePrint="Noone";
 ///alarm_set(0,30);

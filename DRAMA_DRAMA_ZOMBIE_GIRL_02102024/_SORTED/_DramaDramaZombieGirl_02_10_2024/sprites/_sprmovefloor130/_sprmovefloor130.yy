@@ -28,7 +28,7 @@
   "origin":9,
   "parent":{
     "name":"_MOVEFLOOR",
-    "path":"folders/Sprites/_MOVEFLOOR.yy",
+    "path":"folders/Sprites/_platform/_MOVEFLOOR.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

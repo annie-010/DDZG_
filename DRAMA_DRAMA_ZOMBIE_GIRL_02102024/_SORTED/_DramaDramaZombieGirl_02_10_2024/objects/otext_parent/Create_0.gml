@@ -1,8 +1,10 @@
+
+
 _isdialogactive = false;///
 _bg = noone;
 typeDialog = noone;
 num = 0;
-///_text[0] = "Test Text"; 
+
 _text[0] = "saki@@@@@@ Este texto aparecera cuando no se le haya dado un texto que mostrar. es un Debug?";
 _switched=false;
 
@@ -37,10 +39,10 @@ function _dialogSystem(_dialogtype, _dialogarray) {
 	static  _chindex = -1;
 	
     var _textBoxpos = 664,
-        _actionkey = keyboard_check_pressed(ord("J")),
+
         _dialogarraylenght = array_length(_dialogarray),
         _ch = ["saki@@@@@@", "robot@@@@@", "npc1@@@@@@@", "npc2@@@@@@@"],
-     
+		_actionkey = keyboard_check_pressed(ord("U")),
         _dialogstringlength = string_length(_dialogarray[_dialogpos]);
 
 

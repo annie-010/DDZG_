@@ -122,7 +122,7 @@ if (_canattack == true) {
     image_index = 6;
 }			   
 						   
-			if _playerattackcol {//////show_debug_message("Golpeo en el counter");
+			if _playerattackcol {show_debug_message("Golpeo en el counter");
 				oCameraResolution._earthquake=true;
 				
 				        if (instance_exists(_instancedmg)) {
@@ -138,7 +138,7 @@ if (_canattack == true) {
     }
 
     if (floor(image_index) >= 6) {
-		if _playerattackcol {//////show_debug_message("Golpeo en la debilidad");
+		if _playerattackcol {show_debug_message("Golpeo en la debilidad");
 			}	
         _target_x = 0;
         _target_y = 0;
@@ -162,7 +162,11 @@ if (_canattack == true) {
 	var _colwithplayer = place_meeting(x,y,oPlayerMask);
 	
 	if _colwithplayer {
+///var _texteffect=(instance_create_layer(x,y,"_Entities",otext_parent));
+//_texteffect.typeDialog="_instead";
+//_texteffect._text[0]="robot@@@@@ Usa proteccion arbitraria! (Leer ? JSi/KNo)";		
 	_effInvulnerability._state=true;
+
 	}
 	
 	}

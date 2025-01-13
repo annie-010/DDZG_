@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"_bgm_choir",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":204.0,
+  "name":"_bgm_choir",
+  "parent":{
+    "name":"_AMBIENT",
+    "path":"folders/Sounds/_AMBIENT.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"_bgm_choir.ogg",
+  "type":0,
+  "volume":0.0,
+}

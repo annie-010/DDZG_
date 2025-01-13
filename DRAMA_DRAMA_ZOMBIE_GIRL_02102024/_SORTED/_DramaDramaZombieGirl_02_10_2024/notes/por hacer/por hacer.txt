@@ -1,9 +1,26 @@
-el menu está tecnicamente funcionando, el inventario está mal posicionado,
-hay que solucionarlo en cuanto se pueda.
+-hecho se agregó salida desde el juego al menu exterior.
+-Arreglar la vida del personaje (está movida)
+
+Ha pasado tiempo josé, agregaré algunas cosas borrando todo lo anterior, espero no te moleste.
+
+MENU (MENU EXTERNO)
+-Agregar cierre del juego
+
+PLATAFORMEO (EN EL JUEGO)
+-Agregar/arreglar raycast para que el player detecte las plataformas que son más altas que las que está colisionando
+-Agregar plataformas que muevan al personaje
+-agregar plataformas que suban y bajen (z)
 
 
-Hay que refinar las plataformas aún más, y empezar a cambiarle los colores para que sean B/N 
 
-Los textos están bastante avanzados, vamos a esperar un tiempo más y aprender de esto, y después 
-sacaremos los txtos del juego
+MENÚ (EN EL JUEGO)
+-Apariencias, Agregar al menos una.
+-Agregar las opcines faltantes del menú (INFO, Acerca de...)
+
+
+
+
+
+-Enemigos 
+-crear la función para que los enemigos puedan "rodear" a saki mientras caminan alrededor de saki no pueden atacar
 

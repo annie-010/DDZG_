@@ -8,6 +8,7 @@ _CurrentPlayerState = _EnumPlayerState._stand;
 
 if sprite_index==spr_ch_saki_attack_00 {
 _CurrentPlayerState = _EnumPlayerState._stand;
+
 move_x=0;
 alarm[5]=5///_ToleranceTimeAttack/60*_deltatimeSec();///(_ToleranceTimeAttack/60*20)*_deltatimeSec();
 
@@ -15,6 +16,7 @@ alarm[5]=5///_ToleranceTimeAttack/60*_deltatimeSec();///(_ToleranceTimeAttack/60
 
 if sprite_index==spr_ch_saki_attack_01 {
 _CurrentPlayerState = _EnumPlayerState._stand;
+
 move_x=0;
 alarm[5]=5
 
@@ -22,6 +24,7 @@ alarm[5]=5
 
 if sprite_index==spr_ch_saki_attack_02 {
 _CurrentPlayerState = _EnumPlayerState._stand;
+_canAttack=true;
 move_x=0;
 alarm[5]=15;
 }
@@ -31,6 +34,7 @@ if sprite_index==spr_ch_saki_jumpattack_0 {
 	alarm[5]=15///_ToleranceTimeAttack/60*_deltatimeSec();///*_deltatimeSec();
 	///hspeed=0;
 	_CurrentPlayerState=_EnumPlayerState._jump;
+
 }
 
 

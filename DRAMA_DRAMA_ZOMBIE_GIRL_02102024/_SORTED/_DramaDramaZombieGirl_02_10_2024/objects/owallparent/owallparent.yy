@@ -8,8 +8,8 @@
   "name":"owallparent",
   "overriddenProperties":[],
   "parent":{
-    "name":"_DEPTHWALLSYSTEM",
-    "path":"folders/Objetos/_DEPTHWALLSYSTEM.yy",
+    "name":"_FUNCTIONALDECORATION",
+    "path":"folders/Objetos/_DECORATION/_FUNCTIONALDECORATION.yy",
   },
   "parentObjectId":null,
   "persistent":false,

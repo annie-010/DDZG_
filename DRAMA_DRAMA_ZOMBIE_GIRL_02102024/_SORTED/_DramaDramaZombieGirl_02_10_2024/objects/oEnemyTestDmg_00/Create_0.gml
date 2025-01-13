@@ -4,9 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
-///show_debug_message("_creado dmg");
+show_debug_message("_creado dmg");
 _selected = noone;
-
+_owner=noone;
 
 
 z=0;

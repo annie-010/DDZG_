@@ -1,1 +1,1 @@
-///show_debug_message("instance_destroyed");
+show_debug_message("instance_dmgparent_destroyed");

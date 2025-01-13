@@ -87,7 +87,9 @@ if isMenuOpen == true {
         break;
 
       case 5:
-	    _currentingameMenuPage = _ingameMenuPage._UNDEFINEDPAGE; _mPos=0;
+	    ///_currentingameMenuPage = _ingameMenuPage._UNDEFINEDPAGE;
+		game_restart();
+		_mPos=0;
         _keyuse = false;
         break;
 

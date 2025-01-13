@@ -5,7 +5,7 @@
   "bbox_bottom":80,
   "bbox_left":1,
   "bbox_right":95,
-  "bbox_top":48,
+  "bbox_top":54,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
@@ -26,7 +26,7 @@
   "origin":7,
   "parent":{
     "name":"ROOM_STUFF",
-    "path":"folders/Sprites/OTHER/ROOM_STUFF.yy",
+    "path":"folders/Sprites/_DECORATION/ROOM_STUFF.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

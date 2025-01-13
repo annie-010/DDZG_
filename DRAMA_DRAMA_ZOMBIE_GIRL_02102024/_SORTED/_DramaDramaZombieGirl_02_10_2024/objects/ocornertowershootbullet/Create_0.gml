@@ -1,0 +1,1 @@
+tilemap = layer_tilemap_get_id("Tiles_00_coll");

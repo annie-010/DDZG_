@@ -27,7 +27,7 @@
   "origin":7,
   "parent":{
     "name":"Machine_prize",
-    "path":"folders/Sprites/OTHER/Machine_prize.yy",
+    "path":"folders/Sprites/_DECORATION/Machine_prize.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

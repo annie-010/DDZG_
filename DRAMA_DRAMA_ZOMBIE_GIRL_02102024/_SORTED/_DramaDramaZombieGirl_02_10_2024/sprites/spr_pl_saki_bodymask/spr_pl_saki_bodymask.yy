@@ -19,7 +19,7 @@
   "height":134,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"807051ec-0e24-4ccf-a609-8482bbd86857","blendMode":0,"displayName":"default","isLocked":false,"name":"807051ec-0e24-4ccf-a609-8482bbd86857","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"807051ec-0e24-4ccf-a609-8482bbd86857","blendMode":0,"displayName":"default","isLocked":false,"name":"807051ec-0e24-4ccf-a609-8482bbd86857","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_pl_saki_bodymask",
   "nineSlice":null,

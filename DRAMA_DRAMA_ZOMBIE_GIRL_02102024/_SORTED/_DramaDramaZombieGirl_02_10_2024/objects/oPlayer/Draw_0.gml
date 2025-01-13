@@ -11,7 +11,7 @@ event_inherited();
 //_CurrentTangibleState = _PossibleEntityTangibleState._Tangible;
 //_CurrentActiveState=_PossibleEntityActiveState._Active;
 
-
+///draw_text(x,y+64,"can attack ? " + string(_canAttack) )
 
 
 
@@ -47,8 +47,8 @@ draw_set_alpha(1);
 
 
 draw_set_font(fnt_default_08);
-draw_text(x,y-160+z, "z : " + string(z));
-draw_text(x,y-180+z, "z_floor : " + string(floorZ));
+///draw_text(x,y-160+z, "z : " + string(z));
+//draw_text(x,y-180+z, "z_floor : " + string(floorZ));
 //draw_text(x-128,y-64,"equip head : " + string(_currentequipPlayer._Head) )
 //draw_rectangle(x-32,y-32,x+32,y+32)
 ///draw_sprite_ext(mask_index,0,x,y,1,1,0,c_white,.5);

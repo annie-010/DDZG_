@@ -153,37 +153,11 @@ break;}}
     var total_lucky = STAT_LUCKY_BASE + chest_stat_luck + weapon_stat_luck + head_stat_luck ;
 	
 	
-	if keyboard_check_pressed(ord("E")) {
-	
-show_debug_message("total vel : " + string(total_vel));
-show_debug_message("total pat : " + string(total_physical_attack));
-show_debug_message("total sat : " + string(total_special_attack));
-show_debug_message("total def : " + string(total_defense));
-show_debug_message("total sdf : " + string(total_special_defense));
-show_debug_message("total luc : " + string(total_lucky));
-	}
 	
 	
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////	
-#endregion
-
-
-
-
-
-
-
-
-
-/*
+	
+	
+	/*
 
 ///DATA
 _name : "Saki",
@@ -201,6 +175,37 @@ _statSpecialDefense : 1,
 
 
 */
+	_PlayerStatsManager.PlayerStats._statVel=total_vel;
+	_PlayerStatsManager.PlayerStats._statPhisycAttack=total_physical_attack;
+	_PlayerStatsManager.PlayerStats._statSpecialAttack=total_special_attack;
+	_PlayerStatsManager.PlayerStats._statLucky=total_lucky;
+	_PlayerStatsManager.PlayerStats._statDefense=total_defense;
+	_PlayerStatsManager.PlayerStats._statSpecialDefense=total_special_defense;	
+	
+	if keyboard_check_pressed(ord("E")) {
+	
+show_debug_message("total vel : " + string(total_vel));
+show_debug_message("total pat : " + string(total_physical_attack));
+show_debug_message("total sat : " + string(total_special_attack));
+show_debug_message("total def : " + string(total_defense));
+show_debug_message("total sdf : " + string(total_special_defense));
+show_debug_message("total luc : " + string(total_lucky));
+	}
+	
+//////////////
+/////APPLY////
+//////////////
+#endregion
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -215,26 +220,19 @@ alarm_set(10,120);
 
 
 
-
+/*
 if 	_currentequipPlayer._Head!=pointer_null {
-_PlayerStatsManager.PlayerStats._statVel=STAT_VEL_BASE+(_currentequipPlayer._Head._equipvel);
-
-
-
-
-
+_PlayerStatsManager.PlayerStats._statVel=head_stat_vel;///STAT_VEL_BASE+(_currentequipPlayer._Head._equipvel);
 }else if _currentequipPlayer._Head==pointer_null {
-	
 } 
-
 if 	_currentequipPlayer._Chest!=pointer_null {
 _PlayerStatsManager.PlayerStats._statDefense   =STAT_VEL_BASE
 }
-
-
 if 	_currentequipPlayer._Weapon!=pointer_null {
-
 }
+*/
+
+
 if _currentequipPlayer._Head!=pointer_null && _currentequipPlayer._Chest!=pointer_null && _currentequipPlayer._Weapon!=pointer_null {
 if (_currentequipPlayer._Head._equipset==_currentequipPlayer._Weapon._equipset) &&  (_currentequipPlayer._Head._equipset==_currentequipPlayer._Chest._equipset) 
 { ////("Todos tus Equips tienen el mismo SET") 
@@ -326,6 +324,16 @@ switch(_CurrentPlayerState) {
 	_CurrentStatePrint="Inactive";
 	break; 
 	
+	
+	
+	
+	
+	case _EnumPlayerState._cinematic:
+	_CurrentStatePrint="Cinematic";
+	break; 	
+	
+	
+	
 	case _EnumPlayerState._backdash :
 	_CurrentStatePrint="BackDash";
 		if !place_meeting(x,y,oplatformparent) {
@@ -347,6 +355,38 @@ switch(_CurrentPlayerState) {
 	_CurrentTangibleState = _PossibleEntityTangibleState._Intangible;
 	sprite_index=spr_ch_saki_hurt_00;
 	move_x=0;
+	move_y=0;
+	
+	
+	
+	
+	
+_canAttack=true;
+_ProhibitedAttackTime=0;
+_currentStateAttack="Noone";
+_currentCombo="Noone";
+_canContinueComboTime=0;
+_ToleranceTimeAttack=5;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	break;
 	
 	
@@ -398,7 +438,7 @@ switch(_CurrentPlayerState) {
 	hspeed=0;
 	move_x=0;
 	move_y=0;
-	if (_keyL && _canAttack==true)  { _keyL=false;
+	if (_keyL) && _canAttack==true { _keyL=false; _canAttack=false;
 		///hspeed=total_vel*(sign(image_xscale));
 		
 		
@@ -432,7 +472,7 @@ image_index=-1;
 _CurrentPlayerState=_EnumPlayerState._attack00;		
 
 			break;			
-			}} 
+			} } 
 	
 	
 	
@@ -539,7 +579,7 @@ move_x = 0;
 	
 	if z<(floorZ-_limitzJump) {
 		
-			if (_keyL && _canAttack==true)  {
+			if (_keyL)  {
 			_keyL=false;
 			switch(_currentCombo) {
 			
@@ -629,6 +669,10 @@ _platformcollisionsystem();
 
 
 move_and_collide(move_x,move_y,[tilemap,olimitwallparent],4,16*sign(move_x),16*sign(move_y));
+
+
+
+separate_from_wall(); 
 separate_from_wall(); 
 
 
