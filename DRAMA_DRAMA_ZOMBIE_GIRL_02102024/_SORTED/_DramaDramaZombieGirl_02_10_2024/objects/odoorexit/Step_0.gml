@@ -53,6 +53,10 @@ switch (room) {
 
 case r_playable_5th_neonoffice :
 room_goto(r_playable_exitcorridor_);
+with (oPlayer) {
+	oPlayer.x = 576;
+	oPlayer.y = 640;
+}
 break;
 
 

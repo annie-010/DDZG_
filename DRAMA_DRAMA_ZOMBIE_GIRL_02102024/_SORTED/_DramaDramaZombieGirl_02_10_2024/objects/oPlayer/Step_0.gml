@@ -157,8 +157,7 @@ break;}}
 	
 	
 	
-	/*
-
+/*
 ///DATA
 _name : "Saki",
 _profilePicture : spr_pl_saki_portraitBase,
@@ -170,17 +169,21 @@ _statSpecialAttack : 1,
 _statLucky : 1,
 _statDefense : 1,
 _statSpecialDefense : 1,
-
-
-
-
 */
+	
+	
+	
 	_PlayerStatsManager.PlayerStats._statVel=total_vel;
 	_PlayerStatsManager.PlayerStats._statPhisycAttack=total_physical_attack;
 	_PlayerStatsManager.PlayerStats._statSpecialAttack=total_special_attack;
 	_PlayerStatsManager.PlayerStats._statLucky=total_lucky;
 	_PlayerStatsManager.PlayerStats._statDefense=total_defense;
 	_PlayerStatsManager.PlayerStats._statSpecialDefense=total_special_defense;	
+	
+	
+	
+	
+	
 	
 	if keyboard_check_pressed(ord("E")) {
 	
