@@ -251,7 +251,7 @@ if (_currentequipPlayer._Head._equipset==_currentequipPlayer._Weapon._equipset) 
 
 
 if move_z<10 {
-move_z+=GRAVITY;
+move_z+=GRAVITY * _deltatimeSec();
 }
 
 
@@ -263,7 +263,7 @@ if (z+move_z>floorZ) {
 }
 
 
-z+=move_z;
+z+=move_z*(_deltatimeSec()*10)
 
 
 /*
@@ -294,7 +294,7 @@ _keyLeft=KEY_LEFT_HOLD;
 // Movimiento vertical
 if (_keyDown != noone || _keyUp != noone) {
     if (_keyRight != noone && _keyLeft != noone) {
-        move_y = (_keyDown - _keyUp) * MOVE_CURRENT_SPEED;
+        move_y = ((_keyDown - _keyUp) * MOVE_CURRENT_SPEED) * (_deltatimeSec()*30);
     }
 }
 
