@@ -254,7 +254,7 @@ if (_currentequipPlayer._Head._equipset==_currentequipPlayer._Weapon._equipset) 
 
 
 if move_z<10 {
-move_z+=GRAVITY * _deltatimeSec();
+move_z+=GRAVITY * _deltatimeSec()*60;
 }
 
 
@@ -266,7 +266,7 @@ if (z+move_z>floorZ) {
 }
 
 
-z+=move_z*(_deltatimeSec()*10)
+z+=move_z*(_deltatimeSec()*60);
 
 
 /*
@@ -297,14 +297,14 @@ _keyLeft=KEY_LEFT_HOLD;
 // Movimiento vertical
 if (_keyDown != noone || _keyUp != noone) {
     if (_keyRight != noone && _keyLeft != noone) {
-        move_y = ((_keyDown - _keyUp) * MOVE_CURRENT_SPEED) * (_deltatimeSec()*30);
+        move_y = (((_keyDown - _keyUp) * MOVE_CURRENT_SPEED)) * _deltatimeSec()*60 ;
     }
 }
 
 // Movimiento horizontal
 if (_keyRight != noone || _keyLeft != noone) {
     if (_keyDown != noone && _keyUp != noone) {
-        move_x = (_keyRight - _keyLeft) * MOVE_CURRENT_SPEED;
+        move_x = (((_keyRight - _keyLeft) * MOVE_CURRENT_SPEED) * _deltatimeSec()*60) ;
     }
 }
 
@@ -343,7 +343,7 @@ switch(_CurrentPlayerState) {
 		floorZ=0;
 	}
 	sprite_index=sprPlayerBackDash;
-	move_x=(total_vel*2)*(-image_xscale);
+	move_x=((total_vel*2)*(-image_xscale)) * _deltatimeSec()*60;
 	//////("total vel");
 	break;
 	
@@ -449,7 +449,7 @@ _ToleranceTimeAttack=5;
 		switch(_currentCombo) {
 			
 			case "Noone":
-_canContinueComboTime=60*_deltatimeSec();//60
+_canContinueComboTime=60*_deltatimeSec();
 _currentCombo="_Basic_01_";
 _canAttack=false;
 image_index=-1;
@@ -504,7 +504,7 @@ _CurrentPlayerState=_EnumPlayerState._attack00;
 		
 		
 	
-	if _keyK {move_z=-MOVE_SPEED_JUMP_BASE;	_CurrentPlayerState=_EnumPlayerState._jump;}
+	if _keyK {move_z=-(MOVE_SPEED_JUMP_BASE) *( _deltatimeSec()*60) ;	_CurrentPlayerState=_EnumPlayerState._jump;}
 	if _keybackpress  && _PlayerStatsManager.isMenuOpen==false { _PlayerStatsManager._mPos=0;
 		 _keybackpress=false; 
 		_CurrentPlayerState=_EnumPlayerState._menu; _PlayerStatsManager.isMenuOpen=true;
@@ -562,7 +562,12 @@ move_x = 0;
 	if _keyK {move_z=-MOVE_SPEED_JUMP_BASE;	_CurrentPlayerState=_EnumPlayerState._jump;}
 	sprite_index=spr_ch_saki_run_00;
 	_CurrentStatePrint="Run";
-	if PAD_MOVE==false {_CurrentPlayerState=_EnumPlayerState._stand;} else if PAD_MOVE!=false && (_keyJ)=noone {_CurrentPlayerState=_EnumPlayerState._walk} 
+	if PAD_MOVE==false {_CurrentPlayerState=_EnumPlayerState._stand;} 
+	///else if PAD_MOVE && (_keyJ)=noone {_CurrentPlayerState=_EnumPlayerState._walk} 
+	
+	
+	if (!_keyJ) {_CurrentPlayerState=_EnumPlayerState._stand;}
+	
 	break; 	
 	
 	case _EnumPlayerState._menu:
@@ -675,7 +680,6 @@ move_and_collide(move_x,move_y,[tilemap,olimitwallparent],4,16*sign(move_x),16*s
 
 
 
-separate_from_wall(); 
 separate_from_wall(); 
 
 
