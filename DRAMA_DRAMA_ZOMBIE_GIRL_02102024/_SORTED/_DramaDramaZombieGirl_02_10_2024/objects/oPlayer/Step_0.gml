@@ -8,15 +8,18 @@ event_inherited();
 var _keyK = KEY_K_PRESSED;
 var _keyL = KEY_L_PRESSED;
 var _keyKHold = KEY_K_HOLD;
-var _keybackpress = KEY_U_PRESSED;
+var _keyMenu = KEY_U_PRESSED;
 var _keydebug = keyboard_check_pressed(ord("P"));
 var _keyo = KEY_O_PRESSED;
 var _keyJ = KEY_J_HOLD;
 ///var _keyT = keyboard_check_pressed(ord("T"));
 
+var _neardorr = distance_to_object(odoor);
 
+////show_debug_message(string(_neardorr));
 
-
+	if ((_keyMenu  && _PlayerStatsManager.isMenuOpen==false) && _CurrentPlayerState==_EnumPlayerState._stand) && _neardorr>=60 { _PlayerStatsManager._mPos=0;
+		 _keyMenu=false; _CurrentPlayerState=_EnumPlayerState._menu; _PlayerStatsManager.isMenuOpen=true;}
 
 
 
@@ -173,6 +176,8 @@ _statSpecialDefense : 1,
 	
 	
 	
+	if instance_exists(_PlayerStatsManager) {
+		
 	_PlayerStatsManager.PlayerStats._statVel=total_vel;
 	_PlayerStatsManager.PlayerStats._statPhisycAttack=total_physical_attack;
 	_PlayerStatsManager.PlayerStats._statSpecialAttack=total_special_attack;
@@ -180,6 +185,8 @@ _statSpecialDefense : 1,
 	_PlayerStatsManager.PlayerStats._statDefense=total_defense;
 	_PlayerStatsManager.PlayerStats._statSpecialDefense=total_special_defense;	
 	
+	}
+
 	
 	
 	
@@ -369,7 +376,7 @@ _ProhibitedAttackTime=0;
 _currentStateAttack="Noone";
 _currentCombo="Noone";
 _canContinueComboTime=0;
-_ToleranceTimeAttack=5;
+_ToleranceTimeAttack=5*_deltatimeSec()*60;
 	
 	
 	
@@ -504,29 +511,24 @@ _CurrentPlayerState=_EnumPlayerState._attack00;
 		
 		
 	
-	if _keyK {move_z=-(MOVE_SPEED_JUMP_BASE) *( _deltatimeSec()*60) ;	_CurrentPlayerState=_EnumPlayerState._jump;}
-	if _keybackpress  && _PlayerStatsManager.isMenuOpen==false { _PlayerStatsManager._mPos=0;
-		 _keybackpress=false; 
-		_CurrentPlayerState=_EnumPlayerState._menu; _PlayerStatsManager.isMenuOpen=true;
-		////("ABRIENDO MENU LINEA 148 CURRENT STATE _STAND");	
-	}
+	if _keyK {move_z=-(MOVE_SPEED_JUMP_BASE) *( _deltatimeSec()*60); _CurrentPlayerState=_EnumPlayerState._jump;}
+	
+	
+
 
 	
 	sprite_index=spr_ch_saki_stand_00;
 	
-///	if PAD_MOVE { if (_keyJ) {_EnumPlayerState._run;} else if !(_keyJ) {_EnumPlayerState._WAL}}
+
 if PAD_MOVE {if (_keyJ) {_CurrentPlayerState=_EnumPlayerState._run} if (_keyJ==false) {_CurrentPlayerState=_EnumPlayerState._walk}}
 	
 	break; 
-	
-	
 	case _EnumPlayerState._dialog:
-	
-	
+		_CurrentStatePrint="Dialog";
  _keyK = false;
  _keyL = false;
  _keyKHold =false;
- _keybackpress = false;
+ _keyMenu = false;
  _keyDown=false;
  _keyUp=false;
  _keyRight=false;
@@ -635,7 +637,7 @@ break;}
 	
 	
 	
-	///if _ProhibitedAttackTime>0 {_ProhibitedAttackTime--; _canAttack=false;} 
+
 
 if _canContinueComboTime>0 {
 _canContinueComboTime-=_deltatimeSec();

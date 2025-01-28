@@ -19,7 +19,7 @@ break;
 var _instanceplayerColl = place_meeting(x,y,oPlayer);
 
 if _instanceplayerColl {
+depth=oPlayer.depth+4;
 
-depth=9999;///=_instanceplayerColl.depth+4;
 
 }

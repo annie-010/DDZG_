@@ -1,11 +1,11 @@
-var _keyi = keyboard_check_pressed(ord("I"));
+var _keyi = KEY_I_PRESSED;
 if instance_exists(oPlayer) {
 var _dist = distance_to_point(oPlayer.x,oPlayer.y);
 
 if _keyi {
 _keyi=false;
 
-if _dist<=32 {
+if _dist<=32 && oPlayer._PlayerStatsManager.isMenuOpen==false {
 
 
 

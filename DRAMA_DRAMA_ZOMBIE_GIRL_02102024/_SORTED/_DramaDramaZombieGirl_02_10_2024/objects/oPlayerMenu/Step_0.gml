@@ -1,13 +1,13 @@
 var _keydown = KEY_DOWN_PRESSED;
 var _keyup = KEY_UP_PRESSED;
 var _keyuse = KEY_I_PRESSED;
+var _keyback = KEY_U_PRESSED;
 ////var _keyu = KEY_U_PRESSED;
 
 
 
 if PlayerStats._hpCurrent<=0 {
-	//("MUERTA"); 
-	
+	//("MUERTA");
 	} else if  PlayerStats._hpCurrent>0 {
 //("hp :" + string(PlayerStats._hpCurrent));
 }
@@ -20,9 +20,10 @@ if PlayerStats._hpCurrent<=0 {
 //if oPlayer._EnumPlayerState==_hurt {}
 
 
-if oPlayer._CurrentPlayerState==_EnumPlayerState._hurt {
+if oPlayer._CurrentPlayerState==_EnumPlayerState._hurt  or oPlayer._CurrentPlayerState==_EnumPlayerState._dialog {
 	isMenuOpen=false;
 	_mPos=0;
+	currentWaittoBlockbutton=0;
 	_currentingameMenuPage = _ingameMenuPage._indexPage;
 }
 
@@ -54,6 +55,11 @@ if isMenuOpen == true {
   switch (_currentingameMenuPage) {
 
   case _ingameMenuPage._indexPage:
+  
+  
+  
+
+  
 
     if _keyuse {
       switch (_mPos) {
@@ -89,6 +95,8 @@ if isMenuOpen == true {
       case 5:
 	    ///_currentingameMenuPage = _ingameMenuPage._UNDEFINEDPAGE;
 		game_restart();
+		global.game_restarted=true;
+		currentWaittoBlockbutton=0;
 		_mPos=0;
         _keyuse = false;
         break;
@@ -97,7 +105,7 @@ if isMenuOpen == true {
 	  _keyuse=false; 
 	  _mPos=0;
 	  isMenuOpen=false;
-	  
+	  currentWaittoBlockbutton=0;
         break;
 
       case 7:
@@ -356,3 +364,130 @@ if ds_list_empty(_invDsList) {
 
 
 
+if isMenuOpen==true {
+if canbeClosed==false {
+	if currentWaittoBlockbutton<3 {
+		show_debug_message(string(currentWaittoBlockbutton));
+		
+	currentWaittoBlockbutton+=_deltatimeSec();
+	} else if currentWaittoBlockbutton>=3 {
+	currentWaittoBlockbutton=0;
+	canbeClosed=true;
+	}} else if canbeClosed==true {
+		
+		
+		
+	if _keyback {
+	
+	switch(_currentingameMenuPage) { 
+		
+		case  _ingameMenuPage._indexPage :
+		
+
+	isMenuOpen=false;
+	_mPos=0;
+	canbeClosed=false;
+	_keyback=false;
+	currentWaittoBlockbutton=0;
+	
+	_currentingameMenuPage = _ingameMenuPage._indexPage;
+	
+		break;
+		
+		
+		case  _ingameMenuPage._equipPage :
+		
+	//isMenuOpen=false;
+	_mPos=0;
+	canbeClosed=false;
+	_keyback=false;
+	currentWaittoBlockbutton=0;
+	_currentingameMenuPage = _ingameMenuPage._indexPage;
+
+		
+		break;
+
+		case  _ingameMenuPage._equipHeadPage_ :
+			_mPos=0;
+	canbeClosed=false;
+	_keyback=false;
+	currentWaittoBlockbutton=0;
+	_currentingameMenuPage = _ingameMenuPage._equipPage;
+		break;		
+		
+		
+		case  _ingameMenuPage._equipChestPage_ :
+			_mPos=0;
+	canbeClosed=false;
+	_keyback=false;
+	currentWaittoBlockbutton=0;
+	_currentingameMenuPage = _ingameMenuPage._equipPage;
+		break;
+		
+		case  _ingameMenuPage._equipHandPage_ :
+			_mPos=0;
+	canbeClosed=false;
+	_keyback=false;
+	currentWaittoBlockbutton=0;
+	_currentingameMenuPage = _ingameMenuPage._equipPage;
+		break;
+
+		case  _ingameMenuPage._inventoryConsumiblePage :
+			_mPos=0;
+	canbeClosed=false;
+	_keyback=false;
+	currentWaittoBlockbutton=0;
+	_currentingameMenuPage = _ingameMenuPage._indexPage;
+		break;
+
+		case  _ingameMenuPage._inventoryKeysPage :
+			_mPos=0;
+	canbeClosed=false;
+	_keyback=false;
+	currentWaittoBlockbutton=0;
+	_currentingameMenuPage = _ingameMenuPage._indexPage;
+		break;
+
+
+		case  _ingameMenuPage._infoPage :
+			_mPos=0;
+	canbeClosed=false;
+	_keyback=false;
+	currentWaittoBlockbutton=0;
+	_currentingameMenuPage = _ingameMenuPage._indexPage;
+		break;
+
+		case  _ingameMenuPage._UNDEFINEDPAGE :
+			_mPos=0;
+	canbeClosed=false;
+	_keyback=false;
+	currentWaittoBlockbutton=0;
+	_currentingameMenuPage = _ingameMenuPage._indexPage;
+		break;
+		
+		}
+	}
+	}
+
+/*
+  if canbeClosed { 
+	  
+	  if  _keyback    {isMenuOpen=false;
+	_mPos=0;
+	_currentingameMenuPage = _ingameMenuPage._indexPage;}
+
+  }
+
+
+
+enum _ingameMenuPage {_indexPage,_equipPage,_equipHeadPage_,_equipChestPage_,_equipHandPage_,_inventoryConsumiblePage,_inventoryKeysPage,_infoPage,_UNDEFINEDPAGE}
+_currentingameMenuPage = _ingameMenuPage._indexPage;
+
+
+
+
+
+*/
+
+
+}

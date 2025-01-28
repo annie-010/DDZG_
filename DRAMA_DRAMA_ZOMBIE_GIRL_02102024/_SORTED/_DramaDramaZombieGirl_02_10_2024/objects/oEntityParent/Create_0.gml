@@ -100,7 +100,7 @@ _currentatkesp=0;
 floorZ=0;
 
 //tilemap=pointer_null;
-tilemap = layer_tilemap_get_id("Tiles_00_coll");
+tilemap =noone/// layer_tilemap_get_id("Tiles_00_coll");
 _colheight = 130;
 image_speed=1;
 _onPlatform=false;

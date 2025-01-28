@@ -9,7 +9,7 @@ if (KEY_ALT && KEY_ENTER) {
 
 
 if KEY_GAME_RESTART {
-game_restart();
+global.game_restarted=true;
 }
 //if KEY_ROOM_RESTART {
 //room_restart();

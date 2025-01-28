@@ -20,9 +20,10 @@ var number = 784;
 var arrayfor = pointer_null;
 var _currenthp = floor(PlayerStats._hpCurrent)
 
-draw_text(136, 800 , string(PlayerStats._name)); draw_text(136, 840 , string(floor(PlayerStats._hpCurrent))); 
 
 if oPlayer._CurrentPlayerState==_EnumPlayerState._dialog {} else {
+	
+draw_text(136, 800 , string(PlayerStats._name)); draw_text(136, 840 , string(floor(PlayerStats._hpCurrent))); 
 draw_sprite_ext(PlayerStats._profilePicture, 0, _margin+1, (768), 1, 1, 0, c_white, 1);
 var _lifeBar = draw_line_width_color((128), number, 128 + (16 * _currenthp), number, 34, StatColor, c_green);
 
@@ -32,11 +33,39 @@ var _lifeBar = draw_line_width_color((128), number, 128 + (16 * _currenthp), num
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 switch (isMenuOpen) {
 
 case true :
 
-draw_sprite_ext(sprItemMenutable, 0, 738, (120), 1, 1, 0, c_white, 1);
+/*
+
+ ((_currentingameMenuPage==_ingameMenuPage._UNDEFINEDPAGE or _currentingameMenuPage==_ingameMenuPage._equipChestPage_) 
+or (_currentingameMenuPage==_ingameMenuPage._equipHandPage_ or _currentingameMenuPage==_ingameMenuPage._equipHeadPage_) or 
+(_currentingameMenuPage==_ingameMenuPage._equipPage or _currentingameMenuPage==_ingameMenuPage._indexPage) or 
+(_currentingameMenuPage==_ingameMenuPage._inventoryConsumiblePage or _currentingameMenuPage==_ingameMenuPage._inventoryKeysPage)) && !_currentingameMenuPage=_ingameMenuPage._infoPage
+
+
+*/
+
+
+if (_currentingameMenuPage != _ingameMenuPage._infoPage)
+{
+    draw_sprite_ext(sprItemMenutable, 0, 738, 120, 1, 1, 0, c_white, 1);
+}
+
+
 draw_set_font(fnt_default_24);
 draw_text(790, 136, "MENU");
 draw_set_font(fnt_default_16);
@@ -457,7 +486,18 @@ if _itemTouse._equipset!="Noone" {
     break;  
   
   
+  case _ingameMenuPage._inventoryKeysPage:
+  break;
   
+  
+  
+  
+   case _ingameMenuPage._infoPage:
+   
+   
+   draw_sprite(sprextendedInfo,0,124,150);
+   
+  break;
   
   }
 

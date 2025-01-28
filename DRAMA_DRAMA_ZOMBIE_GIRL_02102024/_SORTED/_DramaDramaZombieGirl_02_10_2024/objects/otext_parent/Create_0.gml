@@ -7,7 +7,8 @@ num = 0;
 
 _text[0] = "saki@@@@@@ Este texto aparecera cuando no se le haya dado un texto que mostrar. es un Debug?";
 _switched=false;
-
+_canexit=false;
+alarm[0]=30;
 
 
 
@@ -42,7 +43,7 @@ function _dialogSystem(_dialogtype, _dialogarray) {
 
         _dialogarraylenght = array_length(_dialogarray),
         _ch = ["saki@@@@@@", "robot@@@@@", "npc1@@@@@@@", "npc2@@@@@@@"],
-		_actionkey = keyboard_check_pressed(ord("U")),
+		_actionkey = keyboard_check_pressed(ord("I")),
         _dialogstringlength = string_length(_dialogarray[_dialogpos]);
 
 
@@ -174,7 +175,7 @@ function _dialogSystem(_dialogtype, _dialogarray) {
 
 
 
-if (_actionkey) {
+if (_actionkey) && _canexit==true {
  if (_dialogpos <_dialogarraylenght) {
        
         _currentdrawingchar = 0; 

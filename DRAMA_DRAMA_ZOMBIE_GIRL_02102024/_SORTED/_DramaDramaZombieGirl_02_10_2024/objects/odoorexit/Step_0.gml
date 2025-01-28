@@ -1,6 +1,6 @@
 var _disttoreact = 64;
 var _disttobevisible=600;
-var _actionbutton = keyboard_check_pressed(ord("Q"));
+var _actionbutton = KEY_I_PRESSED; ////keyboard_check_pressed(ord("Q"));
 
 /////EASY ACCESS TO COORDENATES
 ///((x-(sprite_width/2)),(y+1),(x+(sprite_width/2)),(y+32),oPlayer,true,true);
@@ -47,20 +47,52 @@ if _distance>_disttoreact {image_alpha=1;}
 if _distance>_disttobevisible {visible=0;} else if _distance<_disttobevisible {visible=1;}
 }
 
-if _actionated!=false {
+if _actionated {
 if _currentalphacount>=1 {
+
 switch (room) {
 
-case r_playable_5th_neonoffice :
-room_goto(r_playable_exitcorridor_);
-with (oPlayer) {
-	oPlayer.x = 576;
-	oPlayer.y = 640;
+case r_playable_5th_neonoffice:
+show_debug_message("using exit from :" + string(room_get_name(r_playable_5th_neonoffice) + "  to :" + string(room_get_name(r_playable_exitcorridor_))));
+with(oPlayer) {
+	_CurrentPlayerState=_EnumPlayerState._dialog;
+x = 575;
+y = 622;
+alarm_set(0,60);
+_CurrentPlayerState=_EnumPlayerState._dialog;
 }
+global._lastroom=r_playable_5th_neonoffice;
+
+
+room_goto(r_playable_exitcorridor_);
+_actionated=false; 
 break;
 
 
+case r_playable_exitcorridor_:
+show_debug_message("using exit from :" + string(room_get_name(r_playable_exitcorridor_) + "  to :" + string(room_get_name(r_playable_5th_neonoffice))));
+with(oPlayer) {
+	
+x = 6064;
+y = 2880;
+alarm_set(0,60);
+_CurrentPlayerState=_EnumPlayerState._dialog;
 }
+global._lastroom=r_playable_5th_neonoffice;
+room_goto(r_playable_5th_neonoffice);
+_actionated=false;
+
+break;
+
+
+
+
+}
+
+
+
+
+
 
 }}
 

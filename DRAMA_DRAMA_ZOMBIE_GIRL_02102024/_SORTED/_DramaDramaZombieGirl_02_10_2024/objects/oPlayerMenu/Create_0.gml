@@ -30,6 +30,9 @@ _statSpecialDefense : 1,
 ////MENU FUNCTIONALLY
 
 isMenuOpen=false;
+canbeClosed=false;
+currentWaittoBlockbutton=0;
+
 
 enum _ingameMenuPage {_indexPage,_equipPage,_equipHeadPage_,_equipChestPage_,_equipHandPage_,_inventoryConsumiblePage,_inventoryKeysPage,_infoPage,_UNDEFINEDPAGE}
 _currentingameMenuPage = _ingameMenuPage._indexPage;

@@ -12,20 +12,35 @@ _fadevalue=2;
 _alphatodraw=1;
 _useblack=false;
     
+	
+	
+	
+	
 
 
+	
+	
+
+global._lastroom="noone";
+
+global.game_restarted=false;
 global._gamesecondsTranscurred=0;
 
-xto =x;
+xto=x;
 yto= y;
 z=0;
 
 _ambient_bgm_music=_bgm_Interludio;
 
-globalvar camera, _viewx, _viewy;
+globalvar camera, _viewx, _viewy, _cameractrl ;
 camera = view_camera[0]; // Asignar la cámara activa (view 0)
 _viewx = camera_get_view_x(camera);
 _viewy = camera_get_view_y(camera);
+_cameractrl=noone;
+
+
+
+
 
 _earthquake=false;
 
@@ -33,9 +48,27 @@ _earthquake=false;
 
 display_set_gui_size(GUI_WIDTH,GUI_HEIGTH);
 ///window_set_fullscreen(true);
-if !instance_exists(okeyctrl) {
-	instance_create_layer(0,0,"_Entities",oCameraTarget);
-	instance_create_layer(0,0,"_Entities",okeyctrl)}
+
+
+
+switch(room) {
+
+case r_menu_00:
+break;
+
+
+case r_playable_5th_neonoffice:
+break;
+
+
+case r_playable_exitcorridor_:
+break;
+
+
+}
+
+
+
 	
 
 
@@ -44,48 +77,6 @@ if !instance_exists(okeyctrl) {
 
 
 depth=-9999999999999999999;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

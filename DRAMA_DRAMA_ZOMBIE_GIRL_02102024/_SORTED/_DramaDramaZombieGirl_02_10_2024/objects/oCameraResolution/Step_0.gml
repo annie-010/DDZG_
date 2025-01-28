@@ -1,3 +1,31 @@
+if global.game_restarted==true {
+	
+with(all) {
+	
+	if instance_id!=oCameraResolution {
+	instance_destroy();
+	} 
+	game_restart();
+}
+	
+	
+global.game_restarted=false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if instance_exists(oCameraTarget) {
     xto = oCameraTarget.target_x;
     yto = oCameraTarget.target_y;
@@ -6,10 +34,9 @@ if instance_exists(oCameraTarget) {
 
 
 // Interpolación suave hacia el objetivo
-x = lerp(x, xto, 0.04); // Usa lerp para interpolación suave
-y = lerp(y, yto, 0.04); // Factor de 0.04 para un movimiento suave
-// Verificar si la tecla "E" fue presionada para activar el terremoto
-// Actualizar el tiempo transcurrido global
+x = lerp(x, xto, 0.04); 
+y = lerp(y, yto, 0.04); 
+
 
 if (instance_exists(oPlayer)) {
 	global._gamesecondsTranscurred +=(_deltatimeSec()/2);

@@ -7,6 +7,6 @@ _menu[3] = "Extras";
 _menu[4] = "Salir";
 
 
-_initRoom=r_Test_02;///r_playable_5th_neonoffice;
+_initRoom=r_playable_5th_neonoffice;///r_playable_5th_neonoffice;
 
 

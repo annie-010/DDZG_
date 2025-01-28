@@ -1,6 +1,6 @@
 var _disttoreact = 64;
 var _disttobevisible=600;
-var _actionbutton = keyboard_check_pressed(ord("Q"));
+var _actionbutton = keyboard_check_pressed(ord("I"));
 
 /////EASY ACCESS TO COORDENATES
 ///((x-(sprite_width/2)),(y+1),(x+(sprite_width/2)),(y+32),oPlayer,true,true);

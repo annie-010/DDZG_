@@ -9,6 +9,13 @@ static _ended = false;
 static _acted = false;
 static _currentCinematicsecond = 0;
 
+
+
+
+
+
+
+
 //if instance_exists(otext_parent) {} else if !instance_exists(otext_parent) {
 
 //}
@@ -19,21 +26,26 @@ _currentCinematicsecond+=_deltatimeSec();
 
 
 if _isplaying==false {
-
-
-
-
-
-
-
+	
+	
+	with(oPlayer) {
+	_CurrentPlayerState=_EnumPlayerState._dialog;
+	}
+	
+	
+	
 switch(floor(_currentCinematicsecond)) {
 
 case 0:
 _useblack=true;
-if _acted==false {
-show_debug_message("playing second : 0");
+
 oCameraResolution.x=oPlayer.x;
 oCameraResolution.y=oPlayer.y;
+
+
+if _acted==false {
+//show_debug_message("playing second : 0");
+
 _acted=true;
 }
 break;
@@ -41,8 +53,16 @@ break;
 
 
 case 2:
-show_debug_message("playing second : 2");
+
+
+oCameraResolution.x=oPlayer.x;
+oCameraResolution.y=oPlayer.y;
+
+
+
+///show_debug_message("playing second : 2");
 if _acted==true {
+
 var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
 _text._text[0]="saki@@@@@@ *Golpean la puerta*";
 _text._text[1]="saki@@@@@@ Senorita?";
@@ -58,7 +78,7 @@ break;
 
 
 case 3:
-show_debug_message("playing second : 2");
+///show_debug_message("playing second : 2");
 
 if _acted==false {
 var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
@@ -77,7 +97,7 @@ if _acted==true {
 var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
 _text._text[0]="saki@@@@@@ Quizas prepararme resulte mas facil con la luz encendida";
 
-}_acted=false;
+}_acted=false; _isplaying=true; 
 
 break;
 
@@ -90,8 +110,16 @@ break;
 ///show_debug_message("Se reprodujo mensaje a pesar de cambiarse el switch.");
 
 
-} else if _isplaying==true {
-if _ended==true {  ///SALIDA PROGRAMADA
+} else if _isplaying==true { _ended=true; 
+if _ended==true {
+	
+	
+_isplaying=false;
+_ended = false;
+_acted = false;
+_currentCinematicsecond = 0;
+ohistoryevents._hevents_0._firstSwitch=true;
+	instance_destroy();///SALIDA PROGRAMADA
 	
 	}
 

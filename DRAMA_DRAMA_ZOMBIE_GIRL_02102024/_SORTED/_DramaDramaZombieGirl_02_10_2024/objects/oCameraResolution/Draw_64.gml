@@ -20,7 +20,7 @@ break;
 
 }
 
-////_usedfade=true;
+_usedfade=true;
 if _alphatodraw<0 or _alphatodraw>1 {
 _usedfade=true;
 }
