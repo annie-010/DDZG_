@@ -128,7 +128,7 @@ _headEquip_RETROCEDER = {
 
 _headEquip_sombrespin = {
 	_equipname : "Sombrespin",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 0,
@@ -145,7 +145,7 @@ _headEquip_sombrespin = {
 
 _headEquip_beelmet = {
 	_equipname : "Beelmet",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 0,
@@ -167,7 +167,7 @@ _headEquip_beelmet = {
 
 _headEquip_kittyhears = {
 	_equipname : "Kitty Hears",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 3,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 1,
@@ -186,7 +186,7 @@ _headEquip_kittyhears = {
 
 _headEquip_sombreroembrujado = {
 	_equipname : "Sombrebrujado",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 1,
@@ -203,7 +203,7 @@ _headEquip_sombreroembrujado = {
 
 _headEquip_ornamentorosasviejas = {
 	_equipname : "Ornamento rosas viejas",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : -2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 0,
@@ -230,6 +230,8 @@ _headEquipArray[6] = _headEquip_beelmet;
 _headEquipArray[7] = _headEquip_EMPTY;
 
 _headEquipDsList = ds_list_create();
+ds_list_add(_headEquipDsList,_headEquipArray[0],_headEquipArray[1]);
+
 
 #endregion
 
@@ -302,7 +304,7 @@ _chestEquip_EMPTY = {
 
 _chestEquip_reinadecorazones = {
 	_equipname : "Reina de Corazones",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 0,
 	_equipphyssicattack : 3,
 	_equipspecialattack : 0,
@@ -319,7 +321,7 @@ _chestEquip_reinadecorazones = {
 
 _chestEquip_beecap = {
 	_equipname : "BeeCap",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 1,
@@ -337,7 +339,7 @@ _chestEquip_beecap = {
 
 _chestEquip_vestidodebruja = {
 	_equipname : "Vestido de bruja",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 4,
@@ -365,7 +367,7 @@ _chestEquipArray[5] = _chestEquip_EMPTY;
 
 
 _chestEquipDsList = ds_list_create();
-
+ds_list_add(_chestEquipDsList,_chestEquipArray[0],_chestEquipArray[1]);
 
 #endregion
 
@@ -502,7 +504,7 @@ _handEquip_bubbleblaster = {
 
 _handEquip_beecane = {
 	_equipname : "Beecane",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 1,
@@ -530,7 +532,7 @@ _handEquipArray[6] = _handEquip_umbrella;
 
 _handEquipDsList = ds_list_create();
 
-
+ds_list_add(_handEquipDsList,_handEquipArray[0],_handEquipArray[1]);
 
 
 

@@ -11,11 +11,22 @@ if _cinematicPlayed==false {
 ///script_execute(_cinematic_00(_currentsecond));
 switch (_movietoplay) {
 case "Office00" :
-
 _cinematic_00();
-
 break;
+
+
+case "Office01" :
+_cinematic_00();
+break;
+
+
+
 }
+
+
+
+
+
 
 }
 

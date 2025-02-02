@@ -44,6 +44,14 @@ if instance_exists(oPlayer) {
 	image_index=1;
 		if _actionbutton {_state="closed"; _actionbutton=false;}
 	break;
+	
+	
+	case "_forceclosed":
+	image_blend=c_red;
+	solid=true;
+	image_index=0;
+	break;
+	
 }	
 		
 		
@@ -69,7 +77,19 @@ if instance_exists(oPlayer) {
 	if _distance>_disttobevisible {visible=0;} else if _distance<_disttobevisible {visible=1;}
 	
 		
+	switch(_state) {
+		
+		
+	case "_forceclosed":
+	image_blend=c_red;
+	solid=true;
+	image_index=0;
+	break;	
 	
+	
+	
+	
+	}
 }
 
 

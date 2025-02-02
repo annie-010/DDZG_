@@ -37,7 +37,7 @@ camera = view_camera[0]; // Asignar la cámara activa (view 0)
 _viewx = camera_get_view_x(camera);
 _viewy = camera_get_view_y(camera);
 _cameractrl=noone;
-
+_adjustvel= 0.04;
 
 
 

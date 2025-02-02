@@ -39,6 +39,7 @@ case 2:
 break;
 
 case 3:
+game_end();
 break;
 
 case 4:

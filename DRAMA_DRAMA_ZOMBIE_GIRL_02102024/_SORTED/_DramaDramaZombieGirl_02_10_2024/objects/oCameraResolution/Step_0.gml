@@ -7,8 +7,6 @@ with(all) {
 	} 
 	game_restart();
 }
-	
-	
 global.game_restarted=false;
 }
 
@@ -32,6 +30,8 @@ if instance_exists(oCameraTarget) {
 }
 
 
+
+_adjustvel= 0.04;
 
 // Interpolación suave hacia el objetivo
 x = lerp(x, xto, 0.04); 

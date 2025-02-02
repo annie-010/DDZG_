@@ -176,9 +176,13 @@ if isMenuOpen == true {
     break;
 
   case _ingameMenuPage._equipHeadPage_:
-
+  
+  
+  
+  
+show_debug_message("ds_list_size : " + string(ds_list_size(_handEquipDsList)))
     ////("mpos " + string(_mPos));
-
+/*
     if ds_list_empty(_headEquipDsList) {
       for (var a_ = 0; a_ < array_length(_headEquipArray); a_++) {
         if _headEquipArray[a_].__cantidad == 1 {
@@ -187,7 +191,13 @@ if isMenuOpen == true {
       }
 
       ////("ds_list_size : " + string(ds_list_size(_headEquipDsList)));
-    } if !ds_list_empty(_headEquipDsList) {
+    }
+	*/
+	
+	
+	
+	
+	if !ds_list_empty(_headEquipDsList) {
 		      if _mPos < 0 {
         _mPos = ds_list_size(_headEquipDsList)-1;
       } else if _mPos>ds_list_size(_headEquipDsList)-1 {
@@ -221,7 +231,9 @@ if isMenuOpen == true {
 
   case _ingameMenuPage._equipChestPage_: //_chestEquipDsList
     ////("mpos " + string(_mPos));
+show_debug_message("ds_list_size : " + string(ds_list_size(_handEquipDsList)))
 
+/*
     if ds_list_empty(_chestEquipDsList) {
       for (var a_ = 0; a_ < array_length(_chestEquipArray); a_++) {
         if _chestEquipArray[a_].__cantidad == 1 {
@@ -230,7 +242,13 @@ if isMenuOpen == true {
       }
 
       ////("ds_list_size : " + string(ds_list_size(_chestEquipDsList)));
-    } if !ds_list_empty(_chestEquipDsList) {
+    }
+	*/
+	
+	
+	
+	
+	if !ds_list_empty(_chestEquipDsList) {
 		      if _mPos < 0 {
         _mPos = ds_list_size(_chestEquipDsList)-1;
       } else if _mPos>ds_list_size(_chestEquipDsList)-1 {
@@ -265,6 +283,10 @@ if isMenuOpen == true {
 
 case _ingameMenuPage._equipHandPage_:
 
+
+
+/*
+show_debug_message("ds_list_size : " + string(ds_list_size(_handEquipDsList)))
     ////("mpos " + string(_mPos));
 
     if ds_list_empty(_handEquipDsList) {
@@ -275,7 +297,12 @@ case _ingameMenuPage._equipHandPage_:
       }
 
       ////("ds_list_size : " + string(ds_list_size(_handEquipDsList)));
-    } if !ds_list_empty(_handEquipDsList) {
+    }
+	
+	*/
+	
+	
+	if !ds_list_empty(_handEquipDsList) {
 		      if _mPos < 0 {
         _mPos = ds_list_size(_handEquipDsList)-1;
       } else if _mPos>ds_list_size(_handEquipDsList)-1 {

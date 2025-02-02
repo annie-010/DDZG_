@@ -126,6 +126,211 @@ ohistoryevents._hevents_0._firstSwitch=true;
 }
 }
 
+
+
+
+
+
+
+function _cinematic_01() {
+
+
+static _isplaying=false;
+static _ended = false;
+static _acted = false;
+static _currentCinematicsecond = 0;
+
+
+
+
+
+
+
+
+//if instance_exists(otext_parent) {} else if !instance_exists(otext_parent) {
+
+//}
+
+_currentCinematicsecond+=_deltatimeSec();
+
+
+
+
+if _isplaying==false {
+	
+	
+	with(oPlayer) {
+	_CurrentPlayerState=_EnumPlayerState._dialog;
+	}
+	
+	
+	
+switch(floor(_currentCinematicsecond)) {
+
+case 0:
+_useblack=true;
+
+oCameraResolution.x=oPlayer.x;
+oCameraResolution.y=oPlayer.y;
+
+
+if _acted==false {
+//show_debug_message("playing second : 0");
+
+_acted=true;
+}
+break;
+
+
+
+case 2:
+
+
+oCameraResolution.x=oPlayer.x;
+oCameraResolution.y=oPlayer.y;
+
+
+
+///show_debug_message("playing second : 2");
+if _acted==true {
+
+var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
+_text._text[0]="saki@@@@@@ *Golpean la puerta*";
+_text._text[1]="saki@@@@@@ Senorita?";
+_text._text[2]="saki@@@@@@ Eh, si!, esta ocupado";
+_text._text[3]="saki@@@@@@ Me parece que sus companeras estan listas";
+_text._text[4]="saki@@@@@@ es usted la cordinadora?";
+_text._text[5]="saki@@@@@@ si";
+_text._text[6]="saki@@@@@@ emm, bajo en cuanto este lista, disculpeme.";
+_acted=false;
+}
+break;
+
+
+
+case 3:
+///show_debug_message("playing second : 2");
+
+if _acted==false {
+var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
+_text._text[0]="saki@@@@@@ *Click*";
+
+} _acted=true;
+
+break;
+
+
+
+
+case 4:
+if _acted==true {
+	_useblack=false;
+var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
+_text._text[0]="saki@@@@@@ Quizas prepararme resulte mas facil con la luz encendida";
+
+}_acted=false; _isplaying=true; 
+
+break;
+
+
+
+}
+
+
+
+///show_debug_message("Se reprodujo mensaje a pesar de cambiarse el switch.");
+
+
+} else if _isplaying==true { _ended=true; 
+if _ended==true {
+	
+	
+_isplaying=false;
+_ended = false;
+_acted = false;
+_currentCinematicsecond = 0;
+ohistoryevents._hevents_0._firstSwitch=true;
+	instance_destroy();///SALIDA PROGRAMADA
+	
+	}
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 
 

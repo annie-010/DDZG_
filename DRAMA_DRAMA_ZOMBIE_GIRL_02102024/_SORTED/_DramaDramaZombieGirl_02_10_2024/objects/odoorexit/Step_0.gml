@@ -48,12 +48,90 @@ if _distance>_disttobevisible {visible=0;} else if _distance<_disttobevisible {v
 }
 
 if _actionated {
-if _currentalphacount>=1 {
+
 
 switch (room) {
 
 case r_playable_5th_neonoffice:
-show_debug_message("using exit from :" + string(room_get_name(r_playable_5th_neonoffice) + "  to :" + string(room_get_name(r_playable_exitcorridor_))));
+
+
+if ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._secondSwitch==false {
+
+
+if !instance_exists(ohistoryeventscommonsensor) {
+show_debug_message("se ejecuta la creacion del sensor dentro de la habitacion.");
+
+
+
+var _commonobjects_0 = instance_create_layer(5569,5278,"_SOLID",otext_keytest) 
+with(_commonobjects_0) {
+	_type = "_gifter";
+	_uniquetype = "_secondtothirdSwitch";
+	_gifttype = "_hand";
+	_gift = oPlayerMenu._handEquipArray[6];
+	_msg = "saki@@@@@@	Has recogido 'Paraguas'";
+	_msg0 = "saki@@@@@@	Firme acero de imitacion";	
+	_msg1= "saki@@@@@@  Se ha guardado en Menu > Equipamiento > Arma  ";
+
+	///_msg[1] = "saki@@@@@@ Ahora se encuentra en Menu > Equipamiento > Arma"; 
+	}
+	
+
+
+with(instance_create_layer(5362,5325,"Platform",ohistoryeventscommonsensor)) {
+ohistoryevents._hevents_0._secondSwitch=true;
+}
+}
+} else if  (ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._secondSwitch==true)  {//&& ohistoryevents._hevents_0._thirdSwitch==false 
+
+
+if oPlayer._currentequipPlayer._Weapon!=pointer_null {
+
+show_message("carajho!")
+
+}
+
+
+
+
+
+
+
+
+/*
+_currentequipPlayer = {
+_Head : pointer_null,
+_Chest : pointer_null,
+_Weapon : pointer_null,
+}
+
+
+*/
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/*
+
+} else if  ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._secondSwitch==true {
+
+
+
+
+
+show_debug_message("Esta funcionando mal");
+
+
+///show_debug_message("using exit from :" + string(room_get_name(r_playable_5th_neonoffice) + "  to :" + string(room_get_name(r_playable_exitcorridor_))));
 with(oPlayer) {
 	_CurrentPlayerState=_EnumPlayerState._dialog;
 x = 575;
@@ -69,6 +147,143 @@ _actionated=false;
 break;
 
 
+}
+
+
+
+*/
+
+
+
+
+
+
+
+
+/*
+
+
+
+_hevents_0 = {
+    _isPlaying: false,
+    _firstSwitch: false,
+
+
+
+*/
+
+
+/*
+case r_playable_exitcorridor_:
+show_debug_message("using exit from :" + string(room_get_name(r_playable_exitcorridor_) + "  to :" + string(room_get_name(r_playable_5th_neonoffice))));
+with(oPlayer) {
+	
+x = 6064;
+y = 2880;
+alarm_set(0,60);
+_CurrentPlayerState=_EnumPlayerState._dialog;
+}
+global._lastroom=r_playable_5th_neonoffice;
+room_goto(r_playable_5th_neonoffice);
+_actionated=false;
+
+break;
+
+*/
+
+
+}
+
+
+
+
+
+
+
+
+
+
+	
+	/*
+if _currentalphacount>=1 {
+
+
+
+
+
+
+
+}
+
+*/
+} 
+
+
+
+ 
+
+
+
+
+	/*
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	switch (room) {
+
+case r_playable_5th_neonoffice:
+
+
+if ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._secondSwitch==false {
+show_debug_message("Aun no está listo");
+
+} else if  ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._secondSwitch==true {
+
+
+
+
+
+show_debug_message("Esta funcionando mal");
+
+
+///show_debug_message("using exit from :" + string(room_get_name(r_playable_5th_neonoffice) + "  to :" + string(room_get_name(r_playable_exitcorridor_))));
+with(oPlayer) {
+	_CurrentPlayerState=_EnumPlayerState._dialog;
+x = 575;
+y = 622;
+alarm_set(0,60);
+_CurrentPlayerState=_EnumPlayerState._dialog;
+}
+global._lastroom=r_playable_5th_neonoffice;
+
+
+room_goto(r_playable_exitcorridor_);
+_actionated=false; 
+break;
+
+
+}
+
+/*
+
+
+
+_hevents_0 = {
+    _isPlaying: false,
+    _firstSwitch: false,
+
+
+
+*/
+
+
+/*
 case r_playable_exitcorridor_:
 show_debug_message("using exit from :" + string(room_get_name(r_playable_exitcorridor_) + "  to :" + string(room_get_name(r_playable_5th_neonoffice))));
 with(oPlayer) {
@@ -89,27 +304,6 @@ break;
 
 }
 
-
-
-
-
-
-}}
-
-
-
-
-	/*
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	
