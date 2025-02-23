@@ -1,4 +1,4 @@
-alarm[0]=30;
+ alarm[0]=30;
 
 
 _hevents_0 = {

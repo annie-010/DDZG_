@@ -142,15 +142,6 @@ static _currentCinematicsecond = 0;
 
 
 
-
-
-
-
-
-//if instance_exists(otext_parent) {} else if !instance_exists(otext_parent) {
-
-//}
-
 _currentCinematicsecond+=_deltatimeSec();
 
 
@@ -195,13 +186,13 @@ oCameraResolution.y=oPlayer.y;
 if _acted==true {
 
 var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
-_text._text[0]="saki@@@@@@ *Golpean la puerta*";
-_text._text[1]="saki@@@@@@ Senorita?";
-_text._text[2]="saki@@@@@@ Eh, si!, esta ocupado";
-_text._text[3]="saki@@@@@@ Me parece que sus companeras estan listas";
-_text._text[4]="saki@@@@@@ es usted la cordinadora?";
-_text._text[5]="saki@@@@@@ si";
-_text._text[6]="saki@@@@@@ emm, bajo en cuanto este lista, disculpeme.";
+_text._text[0]="saki@@@@@@ *Alguien ha apagado la luz!*";
+//_text._text[1]="saki@@@@@@ Senorita?";
+//_text._text[2]="saki@@@@@@ Eh, si!, esta ocupado";
+//_text._text[3]="saki@@@@@@ Me parece que sus companeras estan listas";
+//_text._text[4]="saki@@@@@@ es usted la cordinadora?";
+//_text._text[5]="saki@@@@@@ si";
+//_text._text[6]="saki@@@@@@ emm, bajo en cuanto este lista, disculpeme.";
 _acted=false;
 }
 break;
@@ -215,6 +206,21 @@ if _acted==false {
 var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
 _text._text[0]="saki@@@@@@ *Click*";
 
+
+ohistoryevents._hevents_0._firstSwitch=false;
+ohistoryevents._hevents_0._secondSwitch=false;
+ohistoryevents._hevents_0._thirdSwitch=false;
+with(inst_2EDB245F) {_state="closed";}
+with(inst_79F595DF) {instance_destroy();} 
+with(inst_3E17DD10) {instance_destroy();}
+with(inst_116699A) {instance_change(odoor,true); _state="closed"; }
+ohistoryevents._hevents_0._fourthSwitch=true;
+
+with(inst_2EDB245F) {
+
+_state="_forcedclosed"; ///
+}
+
 } _acted=true;
 
 break;
@@ -225,8 +231,15 @@ break;
 case 4:
 if _acted==true {
 	_useblack=false;
-var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
-_text._text[0]="saki@@@@@@ Quizas prepararme resulte mas facil con la luz encendida";
+
+
+instance_create_layer(5142,5640,"_Entities",_en_basic_test_01_entity);
+
+
+
+
+////var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
+///_text._text[0]="saki@@@@@@ Quizas prepararme resulte mas facil con la luz encendida";
 
 }_acted=false; _isplaying=true; 
 
@@ -249,7 +262,8 @@ _isplaying=false;
 _ended = false;
 _acted = false;
 _currentCinematicsecond = 0;
-ohistoryevents._hevents_0._firstSwitch=true;
+oPlayer._CurrentPlayerState = _EnumPlayerState._stand; 
+////ohistoryevents._hevents_0._firstSwitch=true;
 	instance_destroy();///SALIDA PROGRAMADA
 	
 	}

@@ -1,5 +1,5 @@
-var _disttoreact = 64;
-var _disttobevisible=600;
+var _disttoreact = 128;
+var _disttobevisible=700;
 var _actionbutton = keyboard_check_pressed(ord("I"));
 
 /////EASY ACCESS TO COORDENATES
@@ -19,7 +19,8 @@ _colcenter = collision_rectangle((x-(sprite_width/2)),y,(x+(sprite_width/2)),y-2
 
 if instance_exists(oPlayer) {
 
-	var _distance=distance_to_point(oPlayer.x,oPlayer.y);
+	var _distance=distance_to_point(oEntityParent.x,oEntityParent.y);
+	///var _distancetoenemy=distance_to_point()
 	
 	
 	if (_coldown or _colup) {
@@ -31,7 +32,7 @@ if instance_exists(oPlayer) {
 		
 	switch(_state) {
 	case "closed" :
-	
+	image_blend=c_white;
 	solid=true;
 	image_index=0;
 	
@@ -40,6 +41,7 @@ if instance_exists(oPlayer) {
 	break;
 	
 	case "open":
+	image_blend=c_white;
 	solid=false;
 	image_index=1;
 		if _actionbutton {_state="closed"; _actionbutton=false;}
@@ -50,6 +52,7 @@ if instance_exists(oPlayer) {
 	image_blend=c_red;
 	solid=true;
 	image_index=0;
+	if _actionbutton {_actionbutton=false;}
 	break;
 	
 }	
@@ -78,8 +81,18 @@ if instance_exists(oPlayer) {
 	
 		
 	switch(_state) {
-		
-		
+	
+	
+	case "open":
+	image_blend=c_white;
+	break;	
+	
+	case "closed":
+	image_blend=c_white;
+	break;
+	
+	
+	
 	case "_forceclosed":
 	image_blend=c_red;
 	solid=true;

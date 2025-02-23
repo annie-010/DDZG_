@@ -1,1 +1,1 @@
-draw_self();
+if visible==true {draw_self()};

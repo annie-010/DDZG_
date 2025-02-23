@@ -201,15 +201,5 @@ if (_actionkey) && _canexit==true {
         oPlayer._CurrentPlayerState = _EnumPlayerState._stand;
         instance_destroy();
      }
-
-
-
-
-
-
-
-
-   
 }
-
  oPlayer._CurrentPlayerState = _EnumPlayerState._dialog; 

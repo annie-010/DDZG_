@@ -5,7 +5,7 @@ var _dist = distance_to_point(oPlayer.x,oPlayer.y);
 if _keyi {
 _keyi=false;
 
-if _dist<=32 && oPlayer._PlayerStatsManager.isMenuOpen==false {
+if _dist<=16 && oPlayer._PlayerStatsManager.isMenuOpen==false {
 
 
 

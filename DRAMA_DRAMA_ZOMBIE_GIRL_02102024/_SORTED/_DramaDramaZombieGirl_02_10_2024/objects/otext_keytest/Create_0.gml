@@ -18,3 +18,5 @@ _uniquetype=noone;
 _gifttype = noone;
 _giftamount = noone;
 _gift = noone;
+
+visible=false;
