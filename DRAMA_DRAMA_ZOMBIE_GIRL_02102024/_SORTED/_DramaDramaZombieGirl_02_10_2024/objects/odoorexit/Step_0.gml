@@ -17,6 +17,21 @@ _coldown = collision_rectangle((x - (sprite_width / 2)), (y + 32), (x + (sprite_
 _colup = collision_rectangle((x - (sprite_width / 2)), (y - 61), (x + (sprite_width / 2)), (y - 77), oPlayer, true, true);
 _colcenter = collision_rectangle((x-(sprite_width/2)),y,(x+(sprite_width/2)),y-29,oPlayer,true,true);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 if instance_exists(oPlayer) {
 	var _distance=distance_to_point(oPlayer.x,oPlayer.y);
 	if (_coldown or _colup) {
@@ -55,27 +70,34 @@ switch (room) {
 
 case r_playable_5th_neonoffice:
 
+if ohistoryevents._hevents_0._isPlaying==true  {
 
-
-if ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._fourthSwitch==true {
+if ohistoryevents._hevents_0._fourthSwitch==true {
 
 if (instance_exists(_textfromtutorial)) {
 	show_debug_message("destruyendo texto tutorial");
 with(_textfromtutorial) {instance_destroy();}
 }
 
+
+show_debug_message("using exit from :" + string(room_get_name(r_playable_5th_neonoffice) + "  to :" + string(room_get_name(r_playable_exitcorridor_5th))));
+with(oPlayer) {
+_CurrentPlayerState=_EnumPlayerState._dialog;
+x = 575;
+y = 622;
+alarm_set(0,60);
+
+}
+global._lastroom=r_playable_5th_neonoffice;
+room_goto(r_playable_exitcorridor_5th);
+_actionated=false; 
+
 }
 
 
 
 
-
-
-
-
-
-
-if ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._secondSwitch==false {
+if ohistoryevents._hevents_0._secondSwitch==false {
 
 
 if !instance_exists(ohistoryeventscommonsensor) {
@@ -98,7 +120,7 @@ with(_commonobjects_0) {
 	_msg2= "saki@@@@@@  Recuerda equiparlo para usarlo  ";	
 	}
 	
-	//5999 , 5281
+
 
 
 var _commonobjects_1_text = instance_create_layer(5583,5331,"_SOLID",otext_keytest);
@@ -184,115 +206,24 @@ with(_commonobjects_6_text) {
 }
 with(instance_create_layer(5362,5325,"Platform",ohistoryeventscommonsensor)) {
 ohistoryevents._hevents_0._secondSwitch=true;
-}
-}
-} 
 
 
-
-
-else if  (ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._secondSwitch==true)  {
-	//&& ohistoryevents._hevents_0._thirdSwitch==false 
-
-if oPlayer._currentequipPlayer._Weapon!=pointer_null {
-
-show_message("carajho!")
-
-}
-
-
-
-
-
-
-
-
-/*
-_currentequipPlayer = {
-_Head : pointer_null,
-_Chest : pointer_null,
-_Weapon : pointer_null,
-}
-
-
-*/
 
 
 
 }
 
 
-
-
-
-if ((ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._fourthSwitch==true) {
-	show_debug_message("cuarto switch activo");
 }
-
-
-
-if ((ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._fourthSwitch==true) && _coldown) &&  _actionbutton {
-show_debug_message("using exit from :" + string(room_get_name(r_playable_5th_neonoffice) + "  to :" + string(room_get_name(r_playable_exitcorridor_))));
-with(oPlayer) {
-_CurrentPlayerState=_EnumPlayerState._dialog;
-x = 575;
-y = 622;
-alarm_set(0,60);
-_CurrentPlayerState=_EnumPlayerState._dialog;
 }
-global._lastroom=r_playable_5th_neonoffice;
-room_goto(r_playable_exitcorridor_);
+}
 _actionated=false; 
-}
+ break;
+ 
+ 
 
-
-
-
-
-
-/*
-
-} else if  ohistoryevents._hevents_0._isPlaying==true && ohistoryevents._hevents_0._secondSwitch==true {
-
-
-
-
-
-show_debug_message("Esta funcionando mal");
-
-
-///
-
-
-}
-
-
-
-*/
-
-
-
-
-
-
-
-
-/*
-
-
-
-_hevents_0 = {
-    _isPlaying: false,
-    _firstSwitch: false,
-
-
-
-*/
-
-
-/*
-case r_playable_exitcorridor_:
-show_debug_message("using exit from :" + string(room_get_name(r_playable_exitcorridor_) + "  to :" + string(room_get_name(r_playable_5th_neonoffice))));
+case r_playable_exitcorridor_5th:
+show_debug_message("using exit from :" + string(room_get_name(r_playable_exitcorridor_5th) + "  to :" + string(room_get_name(r_playable_5th_neonoffice))));
 with(oPlayer) {
 	
 x = 6064;
@@ -306,23 +237,34 @@ _actionated=false;
 
 break;
 
-*/
 
 
-}
-
-
-
-
-
-
-
-
-
-
+case r_playable_exitcorridor_1th:
+show_debug_message("using exit from :" + string(room_get_name(r_playable_exitcorridor_1th) + "  to :" + string(room_get_name(r_playable_1th_public))));
+with(oPlayer) {
 	
-	/*
-if _currentalphacount>=1 {
+x = 6064;
+y = 2880;
+alarm_set(0,60);
+_CurrentPlayerState=_EnumPlayerState._dialog;
+}
+global._lastroom=r_playable_1th_public;
+room_goto(r_playable_1th_public);
+_actionated=false;
+
+break;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -331,8 +273,6 @@ if _currentalphacount>=1 {
 
 
 }
-
-*/
 } 
 
 

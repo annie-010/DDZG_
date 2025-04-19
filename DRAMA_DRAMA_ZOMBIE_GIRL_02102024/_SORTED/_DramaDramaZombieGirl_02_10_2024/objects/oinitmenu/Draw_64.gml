@@ -15,3 +15,6 @@ for (var _i = 0; _i < array_length(_menu); _i++) {
 
 
 draw_sprite_ext(_sprarrow,0,hbar,((room_height / 2)+170)+(32*_arrowpos),1,1,0,c_white,1);
+
+
+

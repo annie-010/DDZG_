@@ -3,6 +3,11 @@ _keyup=keyboard_check_pressed(ord("W"));
 _keydown=keyboard_check_pressed(ord("S"));
 _keyk=keyboard_check_pressed(ord("K"));
 
+
+
+
+
+
 if _keyup  {///array_length(_menu)
 	
 if _arrowpos>0 {
@@ -36,6 +41,9 @@ case 1:
 break;
 
 case 2:
+
+
+oSavegame._loadgame();
 break;
 
 case 3:
@@ -51,6 +59,9 @@ game_end();
 break;
 
 
+case 6:
+game_end();
+break;
 
 }
 

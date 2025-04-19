@@ -1,10 +1,12 @@
 -hecho se agregó salida desde el juego al menu exterior.
 -Arreglar la vida del personaje (está movida)
 
-Ha pasado tiempo josé, agregaré algunas cosas borrando todo lo anterior, espero no te moleste.
+No te preocupes, no me molesta
+pero deberíamos comenzar a ser más constante con visitar esta lista. te veo mañana?
 
 MENU (MENU EXTERNO)
--Agregar cierre del juego
+-///Agregar cierre del juego//HECHO
+
 
 PLATAFORMEO (EN EL JUEGO)
 -Agregar/arreglar raycast para que el player detecte las plataformas que son más altas que las que está colisionando

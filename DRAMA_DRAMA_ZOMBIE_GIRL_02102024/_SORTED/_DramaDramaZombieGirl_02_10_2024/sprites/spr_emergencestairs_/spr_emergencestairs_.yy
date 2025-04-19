@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"spr_emergencestairs_",
-  "bboxMode":0,
-  "bbox_bottom":143,
+  "bboxMode":2,
+  "bbox_bottom":48,
   "bbox_left":0,
   "bbox_right":191,
   "bbox_top":0,

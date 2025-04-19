@@ -49,10 +49,11 @@ if instance_exists(oPlayer) {
 	
 	
 	case "_forceclosed":
-	image_blend=c_red;
+	///image_blend=c_red;
+	image_blend=c_white;
 	solid=true;
 	image_index=0;
-	if _actionbutton {_actionbutton=false;}
+	if _actionbutton {_actionbutton=false;} //
 	break;
 	
 }	
@@ -94,7 +95,7 @@ if instance_exists(oPlayer) {
 	
 	
 	case "_forceclosed":
-	image_blend=c_red;
+	image_blend=c_white;
 	solid=true;
 	image_index=0;
 	break;	

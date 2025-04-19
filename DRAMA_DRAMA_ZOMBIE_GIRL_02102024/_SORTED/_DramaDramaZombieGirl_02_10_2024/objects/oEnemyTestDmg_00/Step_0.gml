@@ -39,7 +39,7 @@ if playercoll._effLeveloneCutted._state!=true {
 
 
 if _selected==noone {
-	_selected=choose(0,1,1,0);
+	_selected=choose(0,1,0,1);///
 	///show_debug_message("selected : " + string(_selected));
 } if _selected!=noone {
 

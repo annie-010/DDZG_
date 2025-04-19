@@ -41,5 +41,5 @@
     "name":"sprcol32",
     "path":"sprites/sprcol32/sprcol32.yy",
   },
-  "visible":false,
+  "visible":true,
 }

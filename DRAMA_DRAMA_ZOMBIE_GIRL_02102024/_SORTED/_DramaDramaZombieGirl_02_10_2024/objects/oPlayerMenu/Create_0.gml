@@ -517,6 +517,23 @@ _handEquip_beecane = {
 	_equipset :	"Set Abeja"
 }
 
+_handEquip_knife = {
+	_equipname : "Cuchillo Afilado",
+	__cantidad : 0,
+	_equipvel : 2,
+	_equipphyssicattack : 1,
+	_equipspecialattack : 1,
+	_equipdefense: 1,
+	_equipspecialdefense : 0,	
+	_equiplucky : 4,
+	_equipspritefront : spr_knife,
+	_equipspriteback : spr_knife,
+	_equipdescription : "Por alguna razon te sientes mas Indie",
+	_equipset :	"Noone"
+}
+
+
+
 
 
 
@@ -527,7 +544,7 @@ _handEquipArray[3] = _handEquip_martillo;
 _handEquipArray[4] = _handEquip_bubbleblaster;
 _handEquipArray[5] = _handEquip_beecane;
 _handEquipArray[6] = _handEquip_umbrella;
-
+_handEquipArray[7] = _handEquip_knife;
 
 
 _handEquipDsList = ds_list_create();

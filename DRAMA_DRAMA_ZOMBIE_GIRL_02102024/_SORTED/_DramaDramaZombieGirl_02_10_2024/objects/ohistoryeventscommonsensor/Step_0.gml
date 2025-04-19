@@ -23,4 +23,28 @@ show_debug_message("actualmente la puerta deberia estar cerrada");
 break;
 
 
-}} 
+}
+
+case r_playable_1th_public:
+
+if place_meeting(x,y,oPlayer) {
+
+with(oplch_mimi) {
+_event=5;
+}
+	}
+	
+	
+	
+	//_isPlaying: 1 | _firstSwitch: 1 | _secondSwitch: 0 | _thirdSwitch: 0 | _fourthSwitch: 1 |
+	
+break;
+	//if
+}
+
+
+
+
+
+
+

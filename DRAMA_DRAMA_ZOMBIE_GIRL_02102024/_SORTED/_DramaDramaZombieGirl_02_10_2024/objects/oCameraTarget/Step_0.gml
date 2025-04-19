@@ -1,11 +1,14 @@
+///camera_set_view_pos(cam,x-VIEW_WIDTH/2,y-VIEW_HEIGHT/2);
+
 
 var margin = 128
 if target!=noone {
 	target_x=target.x;
 	target_y=target.y;
 	
-x=target_x;
-y=target_y;
+x = lerp(x, target_x, _currentveltomove); 
+y = lerp(y, target_y, _currentveltomove); 
+
 
 }
 

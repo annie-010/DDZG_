@@ -3,6 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
+var _acceleration = 0.2;  
+var _deceleration = 1; 
 
 
 var _keyK = KEY_K_PRESSED;
@@ -176,7 +178,10 @@ _statSpecialDefense : 1,
 	
 	
 	
-	if instance_exists(_PlayerStatsManager) {
+	if instance_exists(oPlayerMenu) {
+		
+		_PlayerStatsManager=oPlayerMenu
+		
 		
 	_PlayerStatsManager.PlayerStats._statVel=total_vel;
 	_PlayerStatsManager.PlayerStats._statPhisycAttack=total_physical_attack;
@@ -185,7 +190,7 @@ _statSpecialDefense : 1,
 	_PlayerStatsManager.PlayerStats._statDefense=total_defense;
 	_PlayerStatsManager.PlayerStats._statSpecialDefense=total_special_defense;	
 	
-	}
+	} else {_PlayerStatsManager=instance_create_layer(0,0,"SYSTEM",oPlayerMenu);}
 
 	
 	
@@ -282,8 +287,10 @@ z+=move_z*(_deltatimeSec()*60);
 
 */
 
-if _CurrentPlayerState==_EnumPlayerState._walk or _CurrentPlayerState==_EnumPlayerState._run or _CurrentPlayerState==_EnumPlayerState._jump	{
-if _keyJ {MOVE_CURRENT_SPEED = MOVE_SPEED_RUN_BASE} else if _keyJ==false {MOVE_CURRENT_SPEED = MOVE_SPEED_WALK_BASE}
+if _CurrentPlayerState==_EnumPlayerState._walk or _CurrentPlayerState==_EnumPlayerState._run {////or _CurrentPlayerState==_EnumPlayerState._jump	
+if _keyJ {MOVE_CURRENT_SPEED = MOVE_SPEED_RUN_BASE _maxmovelimit=MOVE_SPEED_RUN_BASE;} else if _keyJ==false {MOVE_CURRENT_SPEED = MOVE_SPEED_WALK_BASE
+	_maxmovelimit=MOVE_SPEED_WALK_BASE;
+	}
 
 
 
@@ -294,34 +301,58 @@ _keyUp=KEY_UP_HOLD;
 _keyRight=KEY_RIGHT_HOLD;
 _keyLeft=KEY_LEFT_HOLD;
 
+/*
 
 
 
+*/
 
 
+if (_keyUp) or (_keyDown) {
+if _keyUp && !_keyDown {
+if move_y>-_maxmovelimit {
+	if move_y>0 { move_y=0;}
+move_y -=_acceleration;
+}
+} else if !_keyUp && _keyDown {
+if move_y<_maxmovelimit {
+if move_y<0 { move_y=0;}
+move_y+=_acceleration;
+}}} else if ((!_keyUp) && (!_keyDown)) {
+move_y=0;
 
-
-// Movimiento vertical
-if (_keyDown != noone || _keyUp != noone) {
-    if (_keyRight != noone && _keyLeft != noone) {
-        move_y = (((_keyDown - _keyUp) * MOVE_CURRENT_SPEED)) * _deltatimeSec()*60 ;
-    }
+	
 }
 
-// Movimiento horizontal
-if (_keyRight != noone || _keyLeft != noone) {
-    if (_keyDown != noone && _keyUp != noone) {
-        move_x = (((_keyRight - _keyLeft) * MOVE_CURRENT_SPEED) * _deltatimeSec()*60) ;
-    }
+if (_keyLeft) or (_keyRight) {
+if _keyLeft && !_keyRight {
+	if move_x>0 { move_x=0;}
+if move_x>-_maxmovelimit {
+move_x -=_acceleration;
 }
+} else if !_keyLeft && _keyRight {
+	if move_x<0 { move_x=0;}
+if move_x<_maxmovelimit {
+move_x+=_acceleration;
+}}} else if ((!_keyLeft) && (!_keyRight)) {
+	//if move_x<0{move_x+=_deceleration}
+	//if move_x>0{move_x-=_deceleration}
+	move_x=0;
+
+}
+
+
+
+if !_keyUp && !_keyDown && !_keyLeft && !_keyRight {
+move_x=0;
+move_y=0;
+}
+
+
 
 
 if move_x!=0 {
 if move_x<0 {image_xscale=-1;} else if move_x>0 {image_xscale=1;}}
-
-////PLATFORMING COLLISIONS
-
-
 }
 
 
@@ -377,25 +408,7 @@ _currentStateAttack="Noone";
 _currentCombo="Noone";
 _canContinueComboTime=0;
 _ToleranceTimeAttack=5*_deltatimeSec()*60;
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	break;
 	
@@ -446,10 +459,23 @@ _ToleranceTimeAttack=5*_deltatimeSec()*60;
 	
 	case _EnumPlayerState._stand:
 	hspeed=0;
+
+	
+	
+	
+	
+
 	move_x=0;
 	move_y=0;
+	
+	
+	
+	
+	
+	
 	if (_keyL) && _canAttack==true { _keyL=false; _canAttack=false;
-		///hspeed=total_vel*(sign(image_xscale));
+
+///hspeed=total_vel*(sign(image_xscale));
 		
 		
 		
@@ -489,27 +515,11 @@ _CurrentPlayerState=_EnumPlayerState._attack00;
 	
 	if (_CurrentPlayerState==_EnumPlayerState._stand or _CurrentPlayerState==_EnumPlayerState._walk or
 	_CurrentPlayerState==_EnumPlayerState._run or _CurrentPlayerState==_EnumPlayerState._jump)  {
-		if !place_meeting(x,y,oplatformparent) {floorZ=0;}
-	}
-	
-	
-	
-	
-	
-	
-	
-	
+		if !place_meeting(x,y,oplatformparent) {floorZ=0;}}
 	image_alpha=1;
-	
 	_CurrentStatePrint="Stand";
 	
 	if _keyo {z-=5;	_CurrentPlayerState=_EnumPlayerState._backdash;}
-	
-
-		
-
-		
-		
 	
 	if _keyK {move_z=-(MOVE_SPEED_JUMP_BASE) *( _deltatimeSec()*60); _CurrentPlayerState=_EnumPlayerState._jump;}
 	
@@ -521,6 +531,8 @@ _CurrentPlayerState=_EnumPlayerState._attack00;
 	
 
 if PAD_MOVE {if (_keyJ) {_CurrentPlayerState=_EnumPlayerState._run} if (_keyJ==false) {_CurrentPlayerState=_EnumPlayerState._walk}}
+
+
 	
 	break; 
 	case _EnumPlayerState._dialog:
@@ -549,6 +561,34 @@ move_x = 0;
 	
 	case _EnumPlayerState._walk:
 	
+	
+	
+	
+if _currentwalkdelay<=_walksnddelay {
+	_currentwalkdelay++;
+}	if _currentwalkdelay>=_walksnddelay{
+	audio_play_sound(_walksnd,1,0,2);
+	_currentwalkdelay=0;
+}
+	
+
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		////if !place_meeting(x,y,oplatformparent) {floorZ=0;}
 	if _keyK {move_z=-MOVE_SPEED_JUMP_BASE;	_CurrentPlayerState=_EnumPlayerState._jump;}
 	_CurrentStatePrint="Walk";
@@ -559,6 +599,25 @@ move_x = 0;
 	
 	case _EnumPlayerState._run:
 		///if !place_meeting(x,y,oplatformparent) {floorZ=0;}
+	if _currentwalkdelay<=_runsnddelay {
+	_currentwalkdelay++;
+}	if _currentwalkdelay>=_runsnddelay{
+	audio_play_sound(_walksnd,1,0,2);
+	_currentwalkdelay=0;
+}
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	if _keyK {move_z=-MOVE_SPEED_JUMP_BASE;	_CurrentPlayerState=_EnumPlayerState._jump;}
@@ -619,7 +678,17 @@ break;}
 		}}
 		_pastZ = z;
 	
-	if z==floorZ {_CurrentPlayerState=_EnumPlayerState._stand; image_speed=IMAGESPEED_DEFAULT;}
+	if z==floorZ {
+		
+		if PAD_MOVE or _keyJ {
+		if PAD_MOVE && _keyJ {_CurrentPlayerState=_EnumPlayerState._run; image_speed=IMAGESPEED_DEFAULT;} 
+		if PAD_MOVE && !_keyJ {_CurrentPlayerState=_EnumPlayerState._walk; image_speed=IMAGESPEED_DEFAULT;}
+		if !PAD_MOVE && _keyJ {_CurrentPlayerState=_EnumPlayerState._stand; image_speed=IMAGESPEED_DEFAULT;}
+		}
+		
+		///if _keyJ {_CurrentPlayerState=_EnumPlayerState._run; image_speed=IMAGESPEED_DEFAULT;} 
+		else {_CurrentPlayerState=_EnumPlayerState._stand; image_speed=IMAGESPEED_DEFAULT; 	audio_play_sound(_walksnd,1,0,2);}
+		}
 	
 	break;
 	

@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"bg_ts_gridfloor",
   "bboxMode":0,
-  "bbox_bottom":127,
+  "bbox_bottom":191,
   "bbox_left":0,
   "bbox_right":447,
   "bbox_top":0,
@@ -14,8 +14,8 @@
   "frames":[
     {"$GMSpriteFrame":"","%Name":"003891ae-a658-468a-aaee-923551600193","name":"003891ae-a658-468a-aaee-923551600193","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
-  "gridX":4,
-  "gridY":4,
+  "gridX":32,
+  "gridY":32,
   "height":256,
   "HTile":false,
   "layers":[

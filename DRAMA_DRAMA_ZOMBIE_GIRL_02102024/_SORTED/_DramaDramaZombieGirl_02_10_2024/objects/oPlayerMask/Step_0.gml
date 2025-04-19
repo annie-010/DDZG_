@@ -6,6 +6,8 @@ if _owner!=noone {
 		if _check_z_collision(_owner, _coll)  {
 		
 	if _owner._CurrentPlayerState!=_EnumPlayerState._hurt {
+		var _hurt_snd = choose(_snd_ch_pl_saki_HURT_00,_snd_ch_pl_saki_HURT_01,_snd_ch_pl_saki_HURT_02);
+		audio_play_sound(_hurt_snd,1,false);
 		_owner._PlayerStatsManager.PlayerStats._hpCurrent-=_coll._dmg;
 		oCameraResolution._earthquake=true;
 		_owner._CurrentPlayerState=_EnumPlayerState._hurt;

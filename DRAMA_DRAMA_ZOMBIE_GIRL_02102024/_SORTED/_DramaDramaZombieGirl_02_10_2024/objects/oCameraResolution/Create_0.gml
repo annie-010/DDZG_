@@ -11,13 +11,31 @@ _fadetime=0;
 _fadevalue=2;
 _alphatodraw=1;
 _useblack=false;
-    
-	
-	
-	
+
+_crtfilterOn=false;
 	
 
+tile_count=1600;
+tile_size=8;
+_shaderdraw=false;
+	
+_adjustvel= 0.01;
 
+
+
+
+
+
+_AudioLayersVolume = {
+	
+_bg0 : 1,
+_bg1 : 1,
+_bg2 : 1,
+
+_front0 : 1,
+_front1 : 1,
+_front2 : 1
+} 
 	
 	
 
@@ -32,10 +50,25 @@ z=0;
 
 _ambient_bgm_music=_bgm_Interludio;
 
-globalvar camera, _viewx, _viewy, _cameractrl ;
+globalvar camera, _viewx, _viewy, _cameractrl, cam;
 camera = view_camera[0]; // Asignar la cámara activa (view 0)
-_viewx = camera_get_view_x(camera);
-_viewy = camera_get_view_y(camera);
+cam = camera_create_view(0, 0, VIEW_WIDTH, VIEW_HEIGHT);
+view_set_camera(0, cam);
+_viewx = camera_get_view_x(cam);
+_viewy = camera_get_view_y(cam);
+
+/*
+
+#macro VIEW_WIDTH 1152
+#macro VIEW_HEIGHT 864 
+#macro GUI_WIDTH 1152
+#macro GUI_HEIGTH 864
+#macro CAMERA_TARGET oCameraTarget
+
+
+*/
+
+
 _cameractrl=noone;
 _adjustvel= 0.04;
 
@@ -61,7 +94,16 @@ case r_playable_5th_neonoffice:
 break;
 
 
-case r_playable_exitcorridor_:
+case r_playable_exitcorridor_5th:
+break;
+
+case r_playable_1th_public:
+
+///camera_set_view_pos(camera,6062,2836);
+
+
+
+
 break;
 
 
@@ -109,3 +151,7 @@ function _fadescreen(_type,_time,_initialalpha){
 
 draw_sprite_ext(spr_blackfade_filter,0,0,0,1,1,0,c_black,_alphatodraw);
 }
+
+*/
+
+

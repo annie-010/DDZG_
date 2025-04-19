@@ -1,6 +1,6 @@
 ///MACROS
-#macro MOVE_SPEED_WALK_BASE 2
-#macro MOVE_SPEED_RUN_BASE 4
+#macro MOVE_SPEED_WALK_BASE 3/// 3
+#macro MOVE_SPEED_RUN_BASE 4.5///4.5
 #macro MOVE_SPEED_JUMP_BASE 10
 #macro GRAVITY .60 
 #macro IMAGESPEED_DEFAULT 1
@@ -13,7 +13,7 @@
 #macro STAT_DEFENSE_BASE 1
 #macro STAT_SPECIALDEFENSE_BASE 1
 
-
+_cutted=false;
 
 
 
@@ -111,7 +111,7 @@ _sensorcoll=64;
 
 
 function separate_from_wall() {
-    var move_push_distance = 4; // Distancia para alejarse de la pared en caso de colisión
+    var move_push_distance = 8; // Distancia para alejarse de la pared en caso de colisión
 
     // Verificación de colisiones en el eje X
     if place_meeting(x + move_x, y, tilemap) {
@@ -347,7 +347,7 @@ _shadowspr=spr_ch_saki_shadow;
 /// UP UP UP
 _effUpcanLook = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 1
@@ -355,7 +355,7 @@ _effUpcanLook = {
 
 _effUpUpcanLook = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 2
@@ -363,7 +363,7 @@ _effUpUpcanLook = {
 
 _effUpHealt = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 7
@@ -371,7 +371,7 @@ _effUpHealt = {
 
 _effUpUpHealt = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 7
@@ -380,7 +380,7 @@ _effUpUpHealt = {
 /// DOWN DOWN DOWN
 _effDowncanLook = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 3
@@ -388,7 +388,7 @@ _effDowncanLook = {
 
 _effDownDowncanLook = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 4
@@ -396,7 +396,7 @@ _effDownDowncanLook = {
 
 _effDownHealt = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 6
@@ -404,7 +404,7 @@ _effDownHealt = {
 
 _effUpDownDownHealt = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 7
@@ -413,7 +413,7 @@ _effUpDownDownHealt = {
 /// PROHIBITED
 _EffProhibitedHealt = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 5
@@ -422,7 +422,7 @@ _EffProhibitedHealt = {
 /// BURNED
 _effLeveloneBurned = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 29
@@ -430,7 +430,7 @@ _effLeveloneBurned = {
 
 _effLeveltwoBurned = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 30
@@ -438,7 +438,7 @@ _effLeveltwoBurned = {
 
 _effLevelthreeBurned = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 31
@@ -450,7 +450,7 @@ _effLevelthreeBurned = {
 /// CUTTED
 _effLeveloneCutted = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 20
@@ -458,7 +458,7 @@ _effLeveloneCutted = {
 
 _effLeveltwoCutted = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 21
@@ -466,7 +466,7 @@ _effLeveltwoCutted = {
 
 _effLevelthreeCutted = {
     _state: false, 
-    _duration: 20,
+    _duration: 5,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 22
@@ -780,7 +780,7 @@ function process_effects() {
         var effect = _effDsList[| i]; // Obtener la referencia del efecto
 
         // Incrementar el tiempo actual del efecto
-        effect._currentseg += (_deltatimeSec()/2);//delta_time / 1000000; // Delta time en segundos
+        effect._currentseg += ((_deltatimeSec()/2))*0.3;//delta_time / 1000000; // Delta time en segundos
 
 
         // Verificar si el efecto debe ejecutar acciones por cada segundo
@@ -806,7 +806,9 @@ function process_effects() {
                     ///show_debug_message("Corte pasa turno.");
 					if object_index==oPlayer {///show_debug_message("Saki afectada.");
 						_PlayerStatsManager.PlayerStats._hpCurrent-=0.3;
+						_cutted=true;
 						}
+						
                     break;					
 					
 					

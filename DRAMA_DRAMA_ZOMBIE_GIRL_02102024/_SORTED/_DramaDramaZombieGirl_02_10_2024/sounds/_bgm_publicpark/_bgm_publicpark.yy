@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":67.825485,
+  "duration":0.0,
   "name":"_bgm_publicpark",
   "parent":{
     "name":"_AMBIENT",

@@ -5,6 +5,11 @@ _bg = noone;
 typeDialog = noone;
 num = 0;
 
+
+
+
+
+
 _text[0] = "saki@@@@@@ Este texto aparecera cuando no se le haya dado un texto que mostrar. es un Debug?";
 _switched=false;
 _canexit=false;
@@ -42,9 +47,51 @@ function _dialogSystem(_dialogtype, _dialogarray) {
     var _textBoxpos = 664,
 
         _dialogarraylenght = array_length(_dialogarray),
-        _ch = ["saki@@@@@@", "robot@@@@@", "npc1@@@@@@@", "npc2@@@@@@@"],
+        _ch = ["saki@@@@@@", "robot@@@@@","mimi@@@@@@", "coordinador", "npc2@@@@@@@" , "npc2@@@@@@@" , "" , "" , "" , ""],
 		_actionkey = keyboard_check_pressed(ord("I")),
         _dialogstringlength = string_length(_dialogarray[_dialogpos]);
+		
+		var _spkportvoice=noone;
+		if _spkportvoice==noone {
+		
+		switch(_chindex) {
+			
+			case 0: _spkportvoice=snd_ch_sakivoice;
+			break;
+			
+			
+			case 1: _spkportvoice=snd_ch_robotvoice;
+			break;
+			
+			
+			
+			case 2: _spkportvoice=snd_ch_mimivoice;
+			break;
+
+			case 3: _spkportvoice=snd_ch_mimivoice;
+			break;
+			case 4: _spkportvoice=snd_ch_mimivoice;
+			break;
+			
+			case 5: _spkportvoice=snd_ch_mimivoice;
+			break;
+			
+		
+		}
+		
+		
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
 
     if (_bg == noone) {
@@ -62,8 +109,60 @@ function _dialogSystem(_dialogtype, _dialogarray) {
 			{draw_sprite_ext(_bg, 0, 0, 0,.8,.8,0,c_white,1); }
 			else if !window_get_fullscreen() {draw_sprite_ext(_bg, 0, 0, 0,1,1,0,c_white,1);}
         draw_sprite(sprtextbox_0, 0, 0, 664);
+	
+	
+			
+		
+		var _spkportspr,_spkportvoice;
+				switch (_chindex) {
+    case 0:
+
+_spkportspr = spr_ch_saki_portrait;
+draw_sprite(_spkportspr,0,48,726);
+        break;
+    case 1:
+_spkportspr = spr_ch_robot_portrait;
+draw_sprite(_spkportspr,1,48,726);
+        break;
+    case 2:
+_spkportspr = spr_chtext_portraitBase_00; ///MIMI
+draw_sprite(_spkportspr,1,48,726);
+        break;
+    case 3:
+_spkportspr = spr_chtext_portraitBase_00;
+draw_sprite(_spkportspr,0,48,726);
+        break;
 		
 
+    case 4:
+
+_spkportspr = spr_ch_saki_portrait;
+draw_sprite(_spkportspr,0,48,726);
+        break;
+    case 5:
+_spkportspr = spr_ch_robot_portrait;
+draw_sprite(_spkportspr,1,48,726);
+        break;
+    case 6:
+_spkportspr = spr_chtext_portraitBase_00;
+draw_sprite(_spkportspr,1,48,726);
+        break;
+    case 7:
+_spkportspr = spr_chtext_portraitBase_00;
+draw_sprite(_spkportspr,1,48,726);
+        break;
+
+		
+		
+    default:
+_spkportspr = spr_chtext_portraitBase_00;
+draw_sprite(_spkportspr,1,48,726);
+        break;
+}
+		
+		
+						
+				
 		
 		
         if (_dialogpos >= 0 && _dialogpos < _dialogarraylenght) {
@@ -86,55 +185,22 @@ function _dialogSystem(_dialogtype, _dialogarray) {
                     break;
                 }
             }
-				
-				switch (_chindex) {
-    case 0:
-        // Acción para el personaje "saki"
-        ///show_debug_message("Personaje: saki");
-        break;
-    case 1:
-        // Acción para el personaje "robot"
-        ///show_debug_message("Personaje: robot");
-        break;
-    case 2:
-        // Acción para el personaje "npc1"
-        ///show_debug_message("Personaje: npc1");
-        break;
-    case 3:
-        // Acción para el personaje "npc2"
-        ///show_debug_message("Personaje: npc2");
-        break;
-    default:
-        // Acción si no se encuentra un personaje en _ch
-        ///show_debug_message("No hay coincidencias");
-        break;
-}
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
+
 				///show_debug_message("current drawing char : "+ string(_currentdrawingchar) + "   dialog string lenght : " + string(_dialogstringlength) + "  current dialogpos : " + string(_dialogpos));
 				
 				
 				        if (_currentdrawingchar<_charlimit) {
 							
             _spdchartemp++;
-            if _spdchartemp >= _spdchardraw {
-                _currentdrawingchar++;
-                _spdchartemp = 0;
-            }
+if (_spdchartemp >= _spdchardraw) {
+    _currentdrawingchar++;
+    _spdchartemp = 0;
+
+    // Reproducir sonido solo si no está sonando
+    if (!audio_is_playing(_spkportvoice)) {
+        audio_play_sound(_spkportvoice, 1, false);
+    }
+}
 	            // Formateo para dividir en líneas de acuerdo con _textbarlimit
             if string_length(_stringcopy) >_textbarlimit {
                 var temp_text = "";
@@ -164,9 +230,6 @@ function _dialogSystem(_dialogtype, _dialogarray) {
  }
 
 }
-
-
-
 
 
 

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"_snd_ch_pl_saki_HURT_00",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.374989,
+  "name":"_snd_ch_pl_saki_HURT_00",
+  "parent":{
+    "name":"_CH_SND",
+    "path":"folders/Sounds/_CH_SND.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"_snd_ch_pl_saki_HURT_00.ogg",
+  "type":0,
+  "volume":1.0,
+}

@@ -60,6 +60,7 @@ floorZ = 0;
 move_z = 0;
 move_y = 0;
 move_x = 0;
+_maxmovelimit=0;
 
 _maskFloor = spr_ch_saki_mask_floor;
 _shadowspr = spr_ch_saki_shadow;
@@ -106,7 +107,10 @@ _sensorcoll=32;
 //////////////////////////
 
 _hurtsnd=choose(_snd_pl_saki_hurt,_snd_pl_saki_hurt_1);
-
+_walksnd=_snd_ch_pl_step_ceramic;
+_walksnddelay=30;
+_runsnddelay=20;
+_currentwalkdelay=0;
 
 
 /*

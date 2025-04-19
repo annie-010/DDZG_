@@ -13,7 +13,10 @@ draw_set_font(fnt_default_08);
 draw_set_color(c_red);
 
 
-
+if _cutted==true {
+draw_sprite(spr_totalredcut, 0, x, y);
+_cutted=false;
+}
 
 
 

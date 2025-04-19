@@ -3,10 +3,10 @@
 
 
 draw_sprite_ext(sprite_index,image_index,x,(y+z),image_xscale,image_yscale,0,c_white,1);
-draw_set_font(fnt_default_08);
+//draw_set_font(fnt_default_08);
 
 
-
+/*
 // Obtener la cadena del id de la instancia
 var text = string(id);
 

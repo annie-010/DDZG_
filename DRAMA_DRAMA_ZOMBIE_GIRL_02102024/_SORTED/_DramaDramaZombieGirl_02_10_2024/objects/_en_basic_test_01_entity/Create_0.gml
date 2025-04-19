@@ -9,7 +9,7 @@ var _dist=floor( point_distance(x,y,oPlayer.x,oPlayer.y));
 
 }
 
-_hp=50;///choose(20,25,15,30,10);
+_hp=20;///choose(20,25,15,30,10);
 _defphy=0;
 _defesp=0;
 _vel=0;
@@ -23,9 +23,9 @@ _currentreactvalue=0;
 _valuetoreact=15;
 _alreadyreacted=false;
 _islookingtoplayer=false;
-_mintolook=600;
-_mintoreact=600;
-_mintofollow=500;
+_mintolook=700;
+_mintoreact=700;
+_mintofollow=600;
 _mintofigthfollow=200;
 _mintoattack=70;
 _movetowardsvel=2;
