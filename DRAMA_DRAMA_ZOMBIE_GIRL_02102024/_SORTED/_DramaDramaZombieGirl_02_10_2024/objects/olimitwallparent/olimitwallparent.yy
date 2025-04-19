@@ -35,5 +35,5 @@
     "path":"sprites/spr_solidblacksquare64/spr_solidblacksquare64.yy",
   },
   "spriteMaskId":null,
-  "visible":true,
+  "visible":false,
 }

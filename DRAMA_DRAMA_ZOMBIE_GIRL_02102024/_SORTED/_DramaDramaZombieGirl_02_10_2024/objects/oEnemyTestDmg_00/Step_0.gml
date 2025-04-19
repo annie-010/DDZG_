@@ -15,6 +15,7 @@ x=_owner.x; y=_owner.y;
 var playercoll =collision_rectangle(x-16,y-16,x+16,y+16,oPlayer,true,true);
 
 if playercoll!=noone {
+	playercoll._PlayerStatsManager.PlayerStats._hpCurrent-=1;
 //////show_debug_message("aca");
 
 /// if (_check_z_collision(self, playercoll)) && (_collisioned==false)
