@@ -7,5 +7,5 @@ _menu[3] = "Extras";
 _menu[4] = "Salir";
 
 
-_initRoom=r_playable_5th_neonoffice;///r_playable_1th_public;////////
+_initRoom=r_playable_minus2th_hideway;///r_playable_1th_public;///r_playable_1th_public;//////// r_playable_5th_neonoffice
 

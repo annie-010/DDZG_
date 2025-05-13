@@ -47,7 +47,8 @@ if _event==1 {
 show_debug_message("Evento 1 : ");
 if dist>=1500  && _waittoevent<_wait {
 _waittoevent+=_deltatimeSec();
-show_debug_message("wait to event : " + string(_waittoevent));}}
+///show_debug_message("wait to event : " + string(_waittoevent))0;
+}}
 
 if _waittoevent<_wait {} else if (floor(_waittoevent)==_wait) && _event==1 {
 var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);

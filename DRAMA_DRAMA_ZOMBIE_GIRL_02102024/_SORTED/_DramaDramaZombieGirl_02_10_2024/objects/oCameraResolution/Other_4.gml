@@ -13,6 +13,11 @@ if !instance_exists(oPlayer) {
 	
 	case r_playable_minus1th_hideway : global.oplayerinstance = instance_create_layer(214,390,"_Entities",oPlayer);  
 	break;
+	
+	
+	case r_playable_minus2th_hideway : global.oplayerinstance = instance_create_layer(340,4481,"_Entities",oPlayer);  
+	break;
+	
 	}
 	}
 	
@@ -115,6 +120,11 @@ break;
 case r_playable_minus2th_hideway:
 with (oCameraTarget) {
 target=oPlayer;
+}
+
+if instance_exists(oPlayer) {
+oPlayer.x=3032;
+oPlayer.y=4505;
 }
 break;
 

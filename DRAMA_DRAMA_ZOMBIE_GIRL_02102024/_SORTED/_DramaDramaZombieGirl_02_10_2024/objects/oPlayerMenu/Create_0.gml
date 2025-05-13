@@ -6,8 +6,8 @@ PlayerStats = {
 
 ///_HP_STATS
 _hpMin : 0, 
-_hpMax : 12,
-_hpCurrent : 12,
+_hpMax : 25,
+_hpCurrent : 25,
 _staminaMin : 0,
 _staminaMax : 12,
 _staminaCurrent : 12,
@@ -520,12 +520,12 @@ _handEquip_beecane = {
 _handEquip_knife = {
 	_equipname : "Cuchillo Afilado",
 	__cantidad : 0,
-	_equipvel : 2,
-	_equipphyssicattack : 1,
-	_equipspecialattack : 1,
+	_equipvel : 3,
+	_equipphyssicattack : 4,
+	_equipspecialattack : 2,
 	_equipdefense: 1,
 	_equipspecialdefense : 0,	
-	_equiplucky : 4,
+	_equiplucky : 3,
 	_equipspritefront : spr_knife,
 	_equipspriteback : spr_knife,
 	_equipdescription : "Por alguna razon te sientes mas Indie",
@@ -604,71 +604,107 @@ inv_RETROCEDER = {
 inv_chokocookies = {
     _Name: "Chocogalletas",
     _Descr: "[Cura + 2]",
-    _FunctEffect: oPlayer._effConfusion,
+    _FunctEffect: oPlayer._effUpHealt,///_effConfusion
     _cantidad: irandom_range(1, 10)
 };
+
+
+
+
+inv_bandaid = {
+    _Name: "Curitas",
+    _Descr: "Diseños de osito. Detiene sangrado nivel I.",
+    _FunctEffect: oPlayer._effStopBleedingnvI,
+    _cantidad: irandom_range(1, 10)
+};
+
+inv_bandage = {
+    _Name: "Bendaje",
+    _Descr: "Aplicar presión. Detiene sangrado hasta nivel II.",
+    _FunctEffect: oPlayer._effStopBleedingnvII,
+    _cantidad:0
+};
+
+inv_tourniquet = {
+    _Name: "Torniquete",
+    _Descr: "Uso extremo. Detiene sangrado hasta nivel III.",
+    _FunctEffect: oPlayer._effStopBleedingnvIII,
+    _cantidad:0
+};
+
+inv_water = {
+    _Name: "Agua limpia",
+    _Descr: "Embotellada en plástico. Util para heridas o consumo.",
+    _FunctEffect: oPlayer._effHydrated,
+    _cantidad: irandom_range(1, 10)
+};
+
+/*
+
+
+*/
 
 inv_apple = {
     _Name: "Manzana",
     _Descr: "[Cura + 2]",
     _FunctEffect: oPlayer._effFear,
-    _cantidad: irandom_range(1, 10)
+    _cantidad: 0///irandom_range(1, 10)
 };
 
 inv_gummyfingers = {
     _Name: "Gomidedos",
     _Descr: "[Cura + 2]",
     _FunctEffect: oPlayer._effLevelthreeBurned,
-    _cantidad: irandom_range(1, 10)
+    _cantidad: 0///irandom_range(1, 10)
 };
 
 inv_doridoripicantes = {
     _Name: "Doridoripicantes",
     _Descr: "[Cura Estado : Veneno]",
     _FunctEffect: oPlayer._effUpcanLook,
-    _cantidad: irandom_range(1, 10)
+    _cantidad:0
 };
 
 inv_glitter = {
     _Name: "Barrita luminosa",
     _Descr: "[Luminoso! #2min]",
     _FunctEffect: oPlayer._effLevelfiveDissipationofego,
-    _cantidad: irandom_range(1, 10)
+    _cantidad:0
 };
 
 inv_badges = {
     _Name: "Chapitas",
     _Descr: "[Intercambiables]",
     _FunctEffect: oPlayer._effDownDowncanLook,
-    _cantidad: irandom_range(1, 10)
+    _cantidad: 0
 };
 
 inv_candymocka = {
     _Name: "Dulce de mocka",
     _Descr: "[Defensa + 5 #2min]",
     _FunctEffect: oPlayer._effLeveltwoDissipationofego,
-    _cantidad: irandom_range(1, 10)
+    _cantidad: 0
 };
 
 inv_candymacchiato = {
     _Name: "Dulce de Macchiato",
     _Descr: "[Velocidad + 5 2min]",
     _FunctEffect: oPlayer._effLeveloneBurned,
-    _cantidad: irandom_range(1, 10)
+    _cantidad: 0
 };
 
 inv_candycoffemilk = {
     _Name: "Dulce de CoffeMilk",
     _Descr: "[Atq Fisic. + 5 2min]",
     _FunctEffect: oPlayer._effUpUpcanLook,
-    _cantidad: irandom_range(1, 10)
+    _cantidad: 0
 };
 
 inv_candycapuccino = {
     _Name: "Dulce de Capuccino",
     _Descr: "[Atq Mag. + 5 2min]",
     _FunctEffect: oPlayer._effLeveltwoPoisoned,
-    _cantidad: irandom_range(1, 10)
+    _cantidad: 0
 };
 
 
@@ -717,12 +753,17 @@ inv_array[6] = inv_candymocka;
 inv_array[7] = inv_candymacchiato;
 inv_array[8] = inv_candycoffemilk;
 inv_array[9] = inv_candycapuccino;
-inv_array[10] = inv_emptyplace;
-inv_array[11] = inv_emptyplace;
-inv_array[12] = inv_emptyplace;
-inv_array[13] = inv_emptyplace;
+inv_array[10] = inv_water;
+inv_array[11] = inv_bandaid;
+inv_array[12] = inv_bandage;
+inv_array[13] = inv_tourniquet;
 inv_array[14] = inv_emptyplace;
 inv_array[15] = inv_emptyplace;
+
+
+
+
+
 
 _invDsList = ds_list_create();
 
@@ -734,6 +775,12 @@ _invDsList = ds_list_create();
 
 #region		INVENTORY_KEYOBJECT
 
+
+
+
+
+
+
 invkey_emptyplace = {
 _Name : "EMPTY EMPTY EMPTY",
 _cantidad : 0,
@@ -742,15 +789,29 @@ _Descr : "EMPTY EMPTY EMPTY",
 
 }
 
+invkey_RETROCEDER = {
+_Name : "RETROCEDER",
+_cantidad : 1,
+_Descr : "RETROCEDER",
 
+
+}
 
 invkey_simplekey = {
 _Name : "Llave simple",
 _cantidad : 0,
 _Descr : "Con un colgante Azul -Uso comun- ",
-
-
 }
+
+
+
+invkey_accescard = {
+_Name : "Tarjeta de acceso",
+_cantidad : 0,
+_Descr : "de color, no posee nombres ni logos",
+}
+
+
 
 
 invkey_serviceskey = {
@@ -759,14 +820,6 @@ _cantidad : 0,
 _Descr : "Con un colgante Verde -Uso servicios- ",
 }
 
-
-
-
-invkey_simplekey = {
-_Name : "Llave de servicios",
-_cantidad : 0,
-_Descr : "Con un colgante Verde -Uso servicios- ",
-}
 
 
 invkey_spaceskey = {
@@ -793,5 +846,71 @@ _Descr : "Pilas AA",
 
 
 
+invk_array[0] = invkey_RETROCEDER;
+invk_array[1] = invkey_simplekey;
+invk_array[2] = invkey_serviceskey;
+invk_array[3] = invkey_accescard;
+invk_array[4] = invkey_map;
+invk_array[5] = invkey_lantern;
+invk_array[6] = invkey_RETROCEDER;
+invk_array[7] = invkey_RETROCEDER;
+invk_array[8] = invkey_RETROCEDER;
+invk_array[9] = invkey_RETROCEDER;
+invk_array[10] = invkey_RETROCEDER;
+invk_array[11] =invkey_RETROCEDER;
+invk_array[12] =invkey_RETROCEDER;
+invk_array[13] = invkey_RETROCEDER;
+invk_array[14] = invkey_RETROCEDER;
+invk_array[15] = invkey_RETROCEDER;
+invk_array[16] =invkey_RETROCEDER;
+invk_array[17] = invkey_RETROCEDER;
+invk_array[18] =invkey_RETROCEDER;
+invk_array[19] =invkey_RETROCEDER;
+
+
+
+_invkDsList = ds_list_create();
+
+
+
+
+
+
+
 #endregion
 
+/*
+_effStopBleedingnvI = {
+    _state: false, 
+    _duration: 1,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 41
+};
+
+
+_effStopBleedingnvII = {
+    _state: false, 
+    _duration: 1,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 41
+};
+
+_effStopBleedingnvIII = {
+    _state: false, 
+    _duration: 1,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 41
+};
+
+
+
+_effHydrated = {
+    _state: false, 
+    _duration: 1,
+    _currentseg: 0,
+    _spr: spr_AlteredEffect,
+    _img: 41
+};
