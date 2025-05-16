@@ -341,12 +341,15 @@ break;
 
 if ds_list_empty(_invDsList) {
 	for (var a_ = 0; a_<(array_length(inv_array)); a_++) {
+		
+		if !(is_undefined(_inv_list_index))
+		
 		if inv_array[a_]._cantidad>0 {
 			ds_list_add(_invDsList,inv_array[a_]);
 		}
 	}
 
-	
+
 } else {
     var _inventoryItemToUse = ds_list_find_value(_invDsList, _mPos);
     if _keyuse {
@@ -357,7 +360,7 @@ if ds_list_empty(_invDsList) {
         } else {
             // Activar la característica _state de la struct dentro de _FunctEffect
             _inventoryItemToUse._FunctEffect._state = true;
-			 _inventoryItemToUse._cantidad-=1;
+			/// _inventoryItemToUse._cantidad-=1;
         }
     }
 

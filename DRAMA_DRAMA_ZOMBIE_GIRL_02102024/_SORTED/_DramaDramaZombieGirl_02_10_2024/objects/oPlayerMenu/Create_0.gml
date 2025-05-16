@@ -605,7 +605,7 @@ inv_chokocookies = {
     _Name: "Chocogalletas",
     _Descr: "[Cura + 2]",
     _FunctEffect: oPlayer._effUpHealt,///_effConfusion
-    _cantidad: irandom_range(1, 10)
+    _cantidad:1
 };
 
 
@@ -639,10 +639,7 @@ inv_water = {
     _cantidad: irandom_range(1, 10)
 };
 
-/*
 
-
-*/
 
 inv_apple = {
     _Name: "Manzana",
@@ -709,45 +706,12 @@ inv_candycapuccino = {
 
 
 
-
-/*
-
-_effArray[0] = _effUpcanLook;
-_effArray[1] = _effUpUpcanLook;
-_effArray[2] = _effUpHealt;
-_effArray[3] = _effUpUpHealt;
-_effArray[4] = _effDowncanLook;
-_effArray[5] = _effDownDowncanLook;
-_effArray[6] = _effDownHealt;
-_effArray[7] = _effUpDownDownHealt;
-_effArray[8] = _EffProhibitedHealt;
-_effArray[9] = _effLeveloneBurned;
-_effArray[10] = _effLeveltwoBurned;
-_effArray[11] = _effLevelthreeBurned;
-_effArray[12] = _effLevelonePoisoned;
-_effArray[13] = _effLeveltwoPoisoned;
-_effArray[14] = _effLevelthreePoisoned;
-_effArray[15] = _effLeveloneDissipationofego;
-_effArray[16] = _effLeveltwoDissipationofego;
-_effArray[17] = _effLevelthreeDissipationofego;
-_effArray[18] = _effLevelfourDissipationofego;
-_effArray[19] = _effLevelfiveDissipationofego;
-_effArray[20] = _effConfusion;
-_effArray[21] = _effFear;
-
-
-*/
-
-//inv_list = ds_list_create();
-//ds_list_add(inv_list,0);
-
-
 //INVENTARY ARRAY  
 inv_array[0] = inv_RETROCEDER;
 inv_array[1] = inv_chokocookies;
 inv_array[2] = inv_apple;
 inv_array[3] = inv_gummyfingers;
-inv_array[4] = inv_doridoripicantes; //
+inv_array[4] = inv_doridoripicantes;
 inv_array[5] = inv_glitter;
 inv_array[6] = inv_candymocka;
 inv_array[7] = inv_candymacchiato;
@@ -870,7 +834,6 @@ invk_array[19] =invkey_RETROCEDER;
 
 
 _invkDsList = ds_list_create();
-
 
 
 

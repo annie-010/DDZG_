@@ -444,24 +444,58 @@ if _itemTouse._equipset!="Noone" {
   case _ingameMenuPage._inventoryConsumiblePage:
 
 
-    var _inventoryConsumiblePageSep = 64;
-	var _invItem = ds_list_find_value(_invDsList,_mPos);
-        
-	
-	if !ds_list_empty(_invDsList){
 
+if !ds_list_empty(_invDsList) {
+
+
+
+show_debug_message("hay " + string(ds_list_size(_invDsList)) + "  objetos en la Ds_list");
+
+var _inventoryConsumiblePageSep = 64;
+var _invItem = ds_list_find_value(_invDsList,_mPos);
 
     draw_sprite_ext(sprcharequip, 0, 64, 358, 1, 1, 0, c_white, 1);
     draw_sprite_ext(sprDesc, 0, 64, 120, 1, 1, 0, c_white, 1);
 	    draw_text(128, 140, "Descripcion");
     draw_text_ext(96, 196, _invItem._Descr, 16, 450);
 
-
-
-
-
+if _mPos<7 && _mPos>-1 {
+for (var _i=0; _i<7; _i++;) {
+	var _inv_list_index = ds_list_find_value(_invDsList,_i);
 	
+	{
+	show_debug_message(string(_inv_list_index._Name))}
+	///draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * _i), string(_inv_list_index._Descr))
+}
+}
+
+}
+
+/*		draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_),string(_inv_i._Name));
+	if _mPos<7 && _mPos>-1 {  
+
+			for (var i_=0; i_<7; i_++) {
+		
+		var _inv_i = ds_list_find_value(_invDsList,i_);
+		draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_),string(_inv_i._Name));
+		if i_!=0 {draw_text(1004,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_)," X " + string(_inv_i._cantidad));}
+
+		}} 
+
+*/
+
+
+
+
+
+
+/*
+    var _inventoryConsumiblePageSep = 64;
+	var _invItem = ds_list_find_value(_invDsList,_mPos);
+        
 	
+	if !ds_list_empty(_invDsList){
+
 	if _mPos<7 && _mPos>-1 {  
 
 			for (var i_=0; i_<7; i_++) {
@@ -484,8 +518,17 @@ if _itemTouse._equipset!="Noone" {
 	
 	}
 	
+
+
+
+
+
+
+	
 	
 
+	
+*/
     break;  
   
   
