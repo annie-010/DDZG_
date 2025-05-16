@@ -5,7 +5,7 @@
 event_inherited();
 
 show_debug_message("_creado dmg");
-_selected=noone;
+_selected = noone;
 _owner=noone;
 
 

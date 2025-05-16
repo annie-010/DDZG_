@@ -59,7 +59,6 @@ case "_commoninventory":
 break
 
 case "_keyinventory":
-ds_list_add(oPlayerMenu._invkDsList,_gift);
 break
 
 

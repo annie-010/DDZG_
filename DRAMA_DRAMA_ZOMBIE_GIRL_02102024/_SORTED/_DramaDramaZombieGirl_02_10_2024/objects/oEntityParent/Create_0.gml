@@ -589,88 +589,9 @@ _effLink = {
 
 
 
-_effStopBleedingnvI = {
-    _state: false, 
-    _duration: 1,
-    _currentseg: 0,
-    _spr: spr_AlteredEffect,
-    _img: 41
-};
-
-
-_effStopBleedingnvII = {
-    _state: false, 
-    _duration: 1,
-    _currentseg: 0,
-    _spr: spr_AlteredEffect,
-    _img: 41
-};
-
-_effStopBleedingnvIII = {
-    _state: false, 
-    _duration: 1,
-    _currentseg: 0,
-    _spr: spr_AlteredEffect,
-    _img: 41
-};
 
 
 
-_effHydrated = {
-    _state: false, 
-    _duration: 1,
-    _currentseg: 0,
-    _spr: spr_AlteredEffect,
-    _img: 41
-};
-
-/*
-
-
-_effStopBleedingnvI
-_effStopBleedingnvII
-_effStopBleedingnvIII
-_effHydrated
-
-*/
-
-
-
-
-/*
-
-
-inv_bandaid = {
-    _Name: "Curitas",
-    _Descr: "Diseños de osito. Detiene sangrado nivel I.",
-    _FunctEffect: oPlayer._effStopBleedLv1,
-    _cantidad: irandom_range(1, 10)
-};
-
-inv_bandage = {
-    _Name: "Bendaje",
-    _Descr: "Aplicar presión. Detiene sangrado hasta nivel II.",
-    _FunctEffect: oPlayer._effStopBleedLv2,
-    _cantidad: irandom_range(1, 10)
-};
-
-inv_tourniquet = {
-    _Name: "Torniquete",
-    _Descr: "Uso extremo. Detiene sangrado hasta nivel III.",
-    _FunctEffect: oPlayer._effStopBleedLv3,
-    _cantidad: irandom_range(1, 10)
-};
-
-inv_water = {
-    _Name: "Agua limpia",
-    _Descr: "Embotellada en plástico. Útil para heridas o consumo.",
-    _FunctEffect: oPlayer._effHydrate,
-    _cantidad: irandom_range(1, 10)
-};
-
-
-
-*/
 
 
 
@@ -794,13 +715,6 @@ _effArray[23] = _effConfusion;
 _effArray[24] = _effFear;
 _effArray[25] = _effInvulnerability;
 _effArray[26] = _effLink;
-_effArray[27] = _effStopBleedingnvI;
-_effArray[28] = _effStopBleedingnvII;
-_effArray[29] = _effStopBleedingnvIII; 
-_effArray[30] = _effHydrated;
-
-
-
 
 
 
@@ -888,65 +802,18 @@ function process_effects() {
 					
 					
                 case _effLeveloneCutted:
-
-					if object_index==oPlayer {
-						_PlayerStatsManager.PlayerStats._hpCurrent-=0.3;
-						_cutted=true;
-						} break;
-						
-				case _effHydrated:
-				if object_index==oPlayer {    effect._state = false; 
-            effect._currentseg = 99; oPlayer._effHydrated._state=false;}
-				break;
-				
-				case _effStopBleedingnvI:
-				if object_index==oPlayer {_effLeveloneCutted._state=false; 
-					_effLeveloneCutted._currentseg=99; 
-					_cutted=false;  effect._state = false;
-            effect._currentseg = 99;
-					 
-					
-					}
-				break;
-				
-				case _effStopBleedingnvII:
-				if object_index==oPlayer {_effLeveloneCutted._currentseg=99; _effLeveltwoCutted._currentseg=99;   _effLeveloneCutted._state=false; _effLeveltwoCutted._state=false; _cutted=false;  effect._state = false;
-            effect._currentseg = 99;
-					 
-					
-					}	
-				
-				
-				break;
-
-				case _effStopBleedingnvIII:
-				if object_index==oPlayer {_effLeveloneCutted._currentseg=99; _effLeveltwoCutted._currentseg=99;   _effLevelthreeCutted._currentseg=99;   _effLevelthreeCutted._state=false;   _effLeveloneCutted._state=false; _effLeveltwoCutted._state=false; _cutted=true;  effect._state = false;
-            effect._currentseg = 99;
-					 
-					
-					}
-				
-				break;
-				
-						
-						/*
-											if object_index==oPlayer {
-						_PlayerStatsManager.PlayerStats._hpCurrent-=0.3;
-						_cutted=true;
-						}
-						*/
-					
-					
-					
-                case _effUpHealt:
                     // Acciones específicas para _effInvulnerability
                     ///show_debug_message("Corte pasa turno.");
 					if object_index==oPlayer {///show_debug_message("Saki afectada.");
-						_PlayerStatsManager.PlayerStats._hpCurrent+=0.3;
-						///_cutted=true;
+						_PlayerStatsManager.PlayerStats._hpCurrent-=0.3;
+						_cutted=true;
 						}
 						
-                    break;						
+                    break;					
+					
+					
+					
+					
 					
 
                 case _effLink:

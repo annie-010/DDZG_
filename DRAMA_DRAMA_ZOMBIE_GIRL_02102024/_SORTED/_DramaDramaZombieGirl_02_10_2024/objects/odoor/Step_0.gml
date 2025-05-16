@@ -113,27 +113,12 @@ if instance_exists(oPlayer) {
 
 	/*
 	
-	"open": "closed": "_forceclosed":
 	
 	
 	
 	
-	case "open":
-	image_blend=c_white;
-	break;	
-	
-	case "closed":
-	image_blend=c_white;
-	break;
 	
 	
-	
-	case "_forceclosed":
-	image_blend=c_white;
-	solid=true;
-	image_index=0;
-	break;	
-		
 	
 	
 	

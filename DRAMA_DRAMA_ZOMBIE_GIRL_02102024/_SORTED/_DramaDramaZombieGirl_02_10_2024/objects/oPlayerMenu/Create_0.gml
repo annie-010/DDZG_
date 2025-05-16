@@ -6,8 +6,8 @@ PlayerStats = {
 
 ///_HP_STATS
 _hpMin : 0, 
-_hpMax : 25,
-_hpCurrent : 25,
+_hpMax : 12,
+_hpCurrent : 12,
 _staminaMin : 0,
 _staminaMax : 12,
 _staminaCurrent : 12,
@@ -520,12 +520,12 @@ _handEquip_beecane = {
 _handEquip_knife = {
 	_equipname : "Cuchillo Afilado",
 	__cantidad : 0,
-	_equipvel : 3,
-	_equipphyssicattack : 4,
-	_equipspecialattack : 2,
+	_equipvel : 2,
+	_equipphyssicattack : 1,
+	_equipspecialattack : 1,
 	_equipdefense: 1,
 	_equipspecialdefense : 0,	
-	_equiplucky : 3,
+	_equiplucky : 4,
 	_equipspritefront : spr_knife,
 	_equipspriteback : spr_knife,
 	_equipdescription : "Por alguna razon te sientes mas Indie",
@@ -604,6 +604,7 @@ inv_RETROCEDER = {
 inv_chokocookies = {
     _Name: "Chocogalletas",
     _Descr: "[Cura + 2]",
+<<<<<<< HEAD
     _FunctEffect: oPlayer._effUpHealt,///_effConfusion
     _cantidad:1
 };
@@ -641,67 +642,73 @@ inv_water = {
 
 
 
+=======
+    _FunctEffect: oPlayer._effConfusion,
+    _cantidad: irandom_range(1, 10)
+};
+
+>>>>>>> parent of a8dfa38 (_)
 inv_apple = {
     _Name: "Manzana",
     _Descr: "[Cura + 2]",
     _FunctEffect: oPlayer._effFear,
-    _cantidad: 0///irandom_range(1, 10)
+    _cantidad: irandom_range(1, 10)
 };
 
 inv_gummyfingers = {
     _Name: "Gomidedos",
     _Descr: "[Cura + 2]",
     _FunctEffect: oPlayer._effLevelthreeBurned,
-    _cantidad: 0///irandom_range(1, 10)
+    _cantidad: irandom_range(1, 10)
 };
 
 inv_doridoripicantes = {
     _Name: "Doridoripicantes",
     _Descr: "[Cura Estado : Veneno]",
     _FunctEffect: oPlayer._effUpcanLook,
-    _cantidad:0
+    _cantidad: irandom_range(1, 10)
 };
 
 inv_glitter = {
     _Name: "Barrita luminosa",
     _Descr: "[Luminoso! #2min]",
     _FunctEffect: oPlayer._effLevelfiveDissipationofego,
-    _cantidad:0
+    _cantidad: irandom_range(1, 10)
 };
 
 inv_badges = {
     _Name: "Chapitas",
     _Descr: "[Intercambiables]",
     _FunctEffect: oPlayer._effDownDowncanLook,
-    _cantidad: 0
+    _cantidad: irandom_range(1, 10)
 };
 
 inv_candymocka = {
     _Name: "Dulce de mocka",
     _Descr: "[Defensa + 5 #2min]",
     _FunctEffect: oPlayer._effLeveltwoDissipationofego,
-    _cantidad: 0
+    _cantidad: irandom_range(1, 10)
 };
 
 inv_candymacchiato = {
     _Name: "Dulce de Macchiato",
     _Descr: "[Velocidad + 5 2min]",
     _FunctEffect: oPlayer._effLeveloneBurned,
-    _cantidad: 0
+    _cantidad: irandom_range(1, 10)
 };
 
 inv_candycoffemilk = {
     _Name: "Dulce de CoffeMilk",
     _Descr: "[Atq Fisic. + 5 2min]",
     _FunctEffect: oPlayer._effUpUpcanLook,
-    _cantidad: 0
+    _cantidad: irandom_range(1, 10)
 };
 
 inv_candycapuccino = {
     _Name: "Dulce de Capuccino",
     _Descr: "[Atq Mag. + 5 2min]",
     _FunctEffect: oPlayer._effLeveltwoPoisoned,
-    _cantidad: 0
+    _cantidad: irandom_range(1, 10)
 };
 
 
@@ -717,17 +724,12 @@ inv_array[6] = inv_candymocka;
 inv_array[7] = inv_candymacchiato;
 inv_array[8] = inv_candycoffemilk;
 inv_array[9] = inv_candycapuccino;
-inv_array[10] = inv_water;
-inv_array[11] = inv_bandaid;
-inv_array[12] = inv_bandage;
-inv_array[13] = inv_tourniquet;
+inv_array[10] = inv_emptyplace;
+inv_array[11] = inv_emptyplace;
+inv_array[12] = inv_emptyplace;
+inv_array[13] = inv_emptyplace;
 inv_array[14] = inv_emptyplace;
 inv_array[15] = inv_emptyplace;
-
-
-
-
-
 
 _invDsList = ds_list_create();
 
@@ -739,12 +741,6 @@ _invDsList = ds_list_create();
 
 #region		INVENTORY_KEYOBJECT
 
-
-
-
-
-
-
 invkey_emptyplace = {
 _Name : "EMPTY EMPTY EMPTY",
 _cantidad : 0,
@@ -753,29 +749,15 @@ _Descr : "EMPTY EMPTY EMPTY",
 
 }
 
-invkey_RETROCEDER = {
-_Name : "RETROCEDER",
-_cantidad : 1,
-_Descr : "RETROCEDER",
 
-
-}
 
 invkey_simplekey = {
 _Name : "Llave simple",
 _cantidad : 0,
 _Descr : "Con un colgante Azul -Uso comun- ",
+
+
 }
-
-
-
-invkey_accescard = {
-_Name : "Tarjeta de acceso",
-_cantidad : 0,
-_Descr : "de color, no posee nombres ni logos",
-}
-
-
 
 
 invkey_serviceskey = {
@@ -784,6 +766,14 @@ _cantidad : 0,
 _Descr : "Con un colgante Verde -Uso servicios- ",
 }
 
+
+
+
+invkey_simplekey = {
+_Name : "Llave de servicios",
+_cantidad : 0,
+_Descr : "Con un colgante Verde -Uso servicios- ",
+}
 
 
 invkey_spaceskey = {
@@ -810,6 +800,7 @@ _Descr : "Pilas AA",
 
 
 
+<<<<<<< HEAD
 invk_array[0] = invkey_RETROCEDER;
 invk_array[1] = invkey_simplekey;
 invk_array[2] = invkey_serviceskey;
@@ -840,40 +831,7 @@ _invkDsList = ds_list_create();
 
 
 
+=======
+>>>>>>> parent of a8dfa38 (_)
 #endregion
 
-/*
-_effStopBleedingnvI = {
-    _state: false, 
-    _duration: 1,
-    _currentseg: 0,
-    _spr: spr_AlteredEffect,
-    _img: 41
-};
-
-
-_effStopBleedingnvII = {
-    _state: false, 
-    _duration: 1,
-    _currentseg: 0,
-    _spr: spr_AlteredEffect,
-    _img: 41
-};
-
-_effStopBleedingnvIII = {
-    _state: false, 
-    _duration: 1,
-    _currentseg: 0,
-    _spr: spr_AlteredEffect,
-    _img: 41
-};
-
-
-
-_effHydrated = {
-    _state: false, 
-    _duration: 1,
-    _currentseg: 0,
-    _spr: spr_AlteredEffect,
-    _img: 41
-};

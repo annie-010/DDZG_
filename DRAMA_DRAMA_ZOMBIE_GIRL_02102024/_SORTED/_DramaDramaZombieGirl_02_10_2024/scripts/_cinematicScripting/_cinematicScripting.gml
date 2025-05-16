@@ -251,9 +251,9 @@ if _acted==true {
 	_useblack=false;
 
 
-instance_create_layer(5142,5640,"_Entities",o_en_basic_test_01_entity);
-instance_create_layer(4127,5920,"_Entities",o_en_basic_test_01_entity);
-instance_create_layer(5342,4260,"_Entities",o_en_basic_test_01_entity);
+instance_create_layer(5142,5640,"_Entities",_en_basic_test_01_entity);
+instance_create_layer(4127,5920,"_Entities",_en_basic_test_01_entity);
+instance_create_layer(5342,4260,"_Entities",_en_basic_test_01_entity);
 
 ////var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
 ///_text._text[0]="saki@@@@@@ Quizas prepararme resulte mas facil con la luz encendida";

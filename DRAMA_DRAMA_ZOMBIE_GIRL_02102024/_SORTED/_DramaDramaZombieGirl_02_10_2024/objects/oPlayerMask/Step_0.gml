@@ -12,7 +12,6 @@ if _owner!=noone {
 		oCameraResolution._earthquake=true;
 		_owner._CurrentPlayerState=_EnumPlayerState._hurt;
 		_coll.used=true;
-		_owner._effLeveloneCutted._state=true;
 	}}
 	
 	}

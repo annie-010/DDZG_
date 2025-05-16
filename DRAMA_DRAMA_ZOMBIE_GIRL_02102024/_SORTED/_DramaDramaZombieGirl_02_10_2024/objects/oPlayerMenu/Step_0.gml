@@ -360,7 +360,10 @@ if ds_list_empty(_invDsList) {
         } else {
             // Activar la característica _state de la struct dentro de _FunctEffect
             _inventoryItemToUse._FunctEffect._state = true;
+<<<<<<< HEAD
 			/// _inventoryItemToUse._cantidad-=1;
+=======
+>>>>>>> parent of a8dfa38 (_)
         }
     }
 

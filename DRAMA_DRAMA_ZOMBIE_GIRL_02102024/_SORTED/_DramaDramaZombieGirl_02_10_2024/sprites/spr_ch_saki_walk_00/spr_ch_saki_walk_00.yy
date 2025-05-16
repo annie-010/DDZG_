@@ -20,7 +20,6 @@
   "height":134,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"f3960377-8129-4c59-be2a-97aabb06510b","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"f3960377-8129-4c59-be2a-97aabb06510b","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"fd1daf30-ea23-43d7-aa6e-06fb0ef09658","blendMode":0,"displayName":"default","isLocked":false,"name":"fd1daf30-ea23-43d7-aa6e-06fb0ef09658","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_ch_saki_walk_00",

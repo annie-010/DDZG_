@@ -100,8 +100,8 @@
   ],
   "name":"r_playable_minus1th_hideway",
   "parent":{
-    "name":"_HIDEWAY",
-    "path":"folders/Salas/_playable/corridos_&_plants/Minus/_HIDEWAY.yy",
+    "name":"Minus",
+    "path":"folders/Salas/_playable/corridos_&_plants/Minus.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

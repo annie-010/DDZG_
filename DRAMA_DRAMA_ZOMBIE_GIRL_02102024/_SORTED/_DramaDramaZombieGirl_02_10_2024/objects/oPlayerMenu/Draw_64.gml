@@ -18,17 +18,14 @@ var _indexlistMargin = 770;
 var _indexlistVerticalMargin = 210;
 var number = 784;
 var arrayfor = pointer_null;
-var _currenthp = floor(PlayerStats._hpCurrent);
-var _currenthptodraw = 0; 
-
-if _currenthp>0 && _currenthp<12 {_currenthptodraw=_currenthp;} else if _currenthp>=12 {_currenthptodraw=12;}
+var _currenthp = floor(PlayerStats._hpCurrent)
 
 
 if oPlayer._CurrentPlayerState==_EnumPlayerState._dialog {} else {
 	
 draw_text(136, 800 , string(PlayerStats._name)); draw_text(136, 840 , string(floor(PlayerStats._hpCurrent))); 
 draw_sprite_ext(PlayerStats._profilePicture, 0, _margin+1, (768), 1, 1, 0, c_white, 1);
-var _lifeBar = draw_line_width_color((128), number, 128 + (16 * _currenthptodraw), number, 34, StatColor, c_green);
+var _lifeBar = draw_line_width_color((128), number, 128 + (16 * _currenthp), number, 34, StatColor, c_green);
 
 } 
 
@@ -533,48 +530,6 @@ for (var _i=0; _i<7; _i++;) {
   
   
   case _ingameMenuPage._inventoryKeysPage:
-
-
-    var _inventoryConsumiblePageSep = 64;
-	var _invkItem = ds_list_find_value(_invkDsList,_mPos);
-        
-	
-	if !ds_list_empty(_invkDsList){
-
-
-    draw_sprite_ext(sprcharequip, 0, 64, 358, 1, 1, 0, c_white, 1);
-    draw_sprite_ext(sprDesc, 0, 64, 120, 1, 1, 0, c_white, 1);
-	    draw_text(128, 140, "Descripcion");
-    draw_text_ext(96, 196, _invkItem._Descr, 16, 450);
-
-
-
-
-
-	
-	
-	if _mPos<7 && _mPos>-1 {  
-
-			for (var i_=0; i_<7; i_++) {
-		
-		var _invk_i = ds_list_find_value(_invkDsList,i_);
-		draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_),string(_invk_i._Name));
-		if i_!=0 {draw_text(1004,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_)," X " + string(_invk_i._cantidad));}
-
-		}} 
-	
-	if _mPos<16 && _mPos>=7 {
-
-			for (var a_=7; a_<(ds_list_size(_invkDsList)); a_++) {
-		
-		var _invk_a = ds_list_find_value(_invkDsList,a_);
-		draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * (a_-7)),string(_invk_a._Name));
-				draw_text(1004,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * (a_-7))," X " + string(_invk_a._cantidad));
-
-}} 
-	
-	}
-	 
   break;
   
   
