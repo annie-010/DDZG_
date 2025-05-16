@@ -12,11 +12,18 @@ x=_owner.x; y=_owner.y;
 */
 
 var playercoll =collision_rectangle(x-16,y-16,x+16,y+16,oPlayer,true,true);
+<<<<<<< HEAD
 if playercoll {
 	///playercoll._PlayerStatsManager.PlayerStats._hpCurrent-=1;
 show_debug_message("dmg golpeo");
 ///playercoll._PlayerStatsManager.PlayerStats._hpCurrent-=1;
 show_debug_message("hp player :" + string(playercoll._PlayerStatsManager.PlayerStats._hpCurrent));
+=======
+
+if playercoll!=noone {
+//////show_debug_message("aca");
+
+>>>>>>> parent of 91a77df (o)
 /// if (_check_z_collision(self, playercoll)) && (_collisioned==false)
 ///_StateAlterer_Effects(oPlayer,"Poison",5,5,false,(oPlayer._effLevelonePoisoned));
 {
