@@ -1,1 +1,0 @@
-_CurrentPlayerState=_EnumPlayerState._stand;
