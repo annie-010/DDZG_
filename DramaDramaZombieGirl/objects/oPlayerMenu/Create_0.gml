@@ -1,5 +1,23 @@
 #macro OWNER  oPlayer
 
+
+function _arraytodslist(_array) {
+
+var _createddslist = ds_list_create();
+
+for (var _k = 0; _k<array_length(_array); _k++) {
+	ds_list_add(_createddslist,_array[_k]);
+	} return _createddslist;
+}
+
+
+
+
+
+
+
+
+
 z=0;
 StatColor = c_green;
 PlayerStats = {
@@ -121,7 +139,7 @@ _headEquip_RETROCEDER = {
 
 _headEquip_sombrespin = {
 	_equipname : "Sombrespin",
-	__cantidad : 0,
+	__cantidad : 1,
 	_equipvel : 2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 0,
@@ -138,7 +156,7 @@ _headEquip_sombrespin = {
 
 _headEquip_beelmet = {
 	_equipname : "Beelmet",
-	__cantidad : 0,
+	__cantidad : 1,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 0,
@@ -160,7 +178,7 @@ _headEquip_beelmet = {
 
 _headEquip_kittyhears = {
 	_equipname : "Kitty Hears",
-	__cantidad : 0,
+	__cantidad : 1,
 	_equipvel : 3,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 1,
@@ -179,7 +197,7 @@ _headEquip_kittyhears = {
 
 _headEquip_sombreroembrujado = {
 	_equipname : "Sombrebrujado",
-	__cantidad : 0,
+	__cantidad : 1,
 	_equipvel : 2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 1,
@@ -196,7 +214,7 @@ _headEquip_sombreroembrujado = {
 
 _headEquip_ornamentorosasviejas = {
 	_equipname : "Ornamento rosas viejas",
-	__cantidad : 0,
+	__cantidad : 1,
 	_equipvel : -2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 0,
@@ -223,7 +241,10 @@ _headEquipArray[6] = _headEquip_beelmet;
 _headEquipArray[7] = _headEquip_EMPTY;
 
 _headEquipDsList = ds_list_create();
-ds_list_add(_headEquipDsList,_headEquipArray[0],_headEquipArray[1]);
+
+for (var i = 0; i < array_length(_headEquipArray); i++) {
+    ds_list_add(_headEquipDsList, _headEquipArray[i]);
+} 
 
 
 #endregion
@@ -289,7 +310,7 @@ _chestEquip_EMPTY = {
 
 _chestEquip_reinadecorazones = {
 	_equipname : "Reina de Corazones",
-	__cantidad : 0,
+	__cantidad : 1,
 	_equipvel : 0,
 	_equipphyssicattack : 3,
 	_equipspecialattack : 0,
@@ -306,7 +327,7 @@ _chestEquip_reinadecorazones = {
 
 _chestEquip_beecap = {
 	_equipname : "BeeCap",
-	__cantidad : 0,
+	__cantidad : 1,
 	_equipvel : 2,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 1,
@@ -324,7 +345,7 @@ _chestEquip_beecap = {
 
 _chestEquip_vestidodebruja = {
 	_equipname : "Vestido de bruja",
-	__cantidad : 0,
+	__cantidad : 1,
 	_equipvel : 2,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 4,
@@ -352,7 +373,10 @@ _chestEquipArray[5] = _chestEquip_EMPTY;
 
 
 _chestEquipDsList = ds_list_create();
-ds_list_add(_chestEquipDsList,_chestEquipArray[0],_chestEquipArray[1]);
+for (var i = 0; i < array_length(_chestEquipArray); i++) {
+    ds_list_add(_chestEquipDsList,_chestEquipArray[i]);
+} 
+
 
 
 #endregion
@@ -506,7 +530,7 @@ _handEquip_beecane = {
 
 _handEquip_knife = {
 	_equipname : "Cuchillo Afilado",
-	__cantidad : 0,
+	__cantidad : 1,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 1,
@@ -536,7 +560,10 @@ _handEquipArray[7] = _handEquip_knife;
 
 _handEquipDsList = ds_list_create();
 
-ds_list_add(_handEquipDsList,_handEquipArray[0],_handEquipArray[1]);
+for (var i = 0; i < array_length(_handEquipArray); i++) {
+    ds_list_add(_handEquipDsList,_handEquipArray[i]);
+} 
+
 
 
 
@@ -551,14 +578,7 @@ ds_list_add(_handEquipDsList,_handEquipArray[0],_handEquipArray[1]);
 
 
 
-function _arraytodslist(_array) {
 
-var _createddslist = ds_list_create();
-
-for (var _k = 0; _k<array_length(_array); _k++) {
-	ds_list_add(_createddslist,_array[_k]);
-	} return _createddslist;
-}
 
 
 

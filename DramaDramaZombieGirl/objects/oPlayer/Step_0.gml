@@ -541,10 +541,7 @@ if PAD_MOVE {if (_keyJ) {_CurrentPlayerState=_EnumPlayerState._run} if (_keyJ==f
  _keyL = false;
  _keyKHold =false;
  _keyMenu = false;
- _keyDown=false;
- _keyUp=false;
- _keyRight=false;
- _keyLeft=false;
+
 	
 	
 move_z = 0;
