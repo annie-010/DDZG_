@@ -242,10 +242,13 @@ _headEquipArray[7] = _headEquip_EMPTY;
 
 _headEquipDsList = ds_list_create();
 
+
+
+/*
 for (var i = 0; i < array_length(_headEquipArray); i++) {
     ds_list_add(_headEquipDsList, _headEquipArray[i]);
 } 
-
+*/
 
 #endregion
 
@@ -368,15 +371,20 @@ _chestEquipArray[2] = _chestEquip_reinadecorazones;
 _chestEquipArray[3] = _chestEquip_vestidodebruja;
 _chestEquipArray[4] = _chestEquip_beecap;
 _chestEquipArray[5] = _chestEquip_EMPTY;
-//_chestEquipArray[1] = chestEquip_sombreroembrujado;
-//_chestEquipArray[2] = chestEquip_ornamentorosasviejas;
+
 
 
 _chestEquipDsList = ds_list_create();
-for (var i = 0; i < array_length(_chestEquipArray); i++) {
-    ds_list_add(_chestEquipDsList,_chestEquipArray[i]);
-} 
 
+//_chestEquipArray[1] = chestEquip_sombreroembrujado;
+//_chestEquipArray[2] = chestEquip_ornamentorosasviejas;
+
+/*
+
+for (var i = 0; i < array_length(_headEquipArray); i++) {
+    ds_list_add(_chestEquipDsList, _headEquipArray[i]);
+} 
+*/
 
 
 #endregion
@@ -515,7 +523,7 @@ _handEquip_bubbleblaster = {
 
 _handEquip_beecane = {
 	_equipname : "Beecane",
-	__cantidad : 0,
+	__cantidad : 1,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 1,
@@ -560,9 +568,6 @@ _handEquipArray[7] = _handEquip_knife;
 
 _handEquipDsList = ds_list_create();
 
-for (var i = 0; i < array_length(_handEquipArray); i++) {
-    ds_list_add(_handEquipDsList,_handEquipArray[i]);
-} 
 
 
 
@@ -735,3 +740,28 @@ _invDsList = ds_list_create();
 #endregion INVENTORY CLASSES
 
 
+
+
+
+
+function _refreshinventory(_arraytoread, _dstoread) {
+    
+    if (ds_list_empty(_dstoread)) {
+        // Llenar la lista con elementos cuya cantidad sea 1
+        for (var a_ = 0; a_ < array_length(_arraytoread); a_++) {
+            if (_arraytoread[a_].__cantidad == 1) {
+                ds_list_add(_dstoread, _arraytoread[a_]);
+            }
+        }
+    } else {
+        // Control de posición de menú
+        var list_size = ds_list_size(_dstoread);
+
+        if (_mPos < 0) {
+            _mPos = list_size - 1;
+        } else if (_mPos >= list_size) {
+            _mPos = 0;
+        }
+    }
+
+}

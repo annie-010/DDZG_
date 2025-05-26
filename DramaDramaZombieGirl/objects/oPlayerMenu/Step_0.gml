@@ -177,42 +177,18 @@ if isMenuOpen == true {
 
   case _ingameMenuPage._equipHeadPage_:
   
-  
-  
-  
-show_debug_message("ds_list_size : " + string(ds_list_size(_handEquipDsList)))
-    ////("mpos " + string(_mPos));
-/*
-    if ds_list_empty(_headEquipDsList) {
-      for (var a_ = 0; a_ < array_length(_headEquipArray); a_++) {
-        if _headEquipArray[a_].__cantidad == 1 {
-          ds_list_add(_headEquipDsList, _headEquipArray[a_]);
-        }
-      }
 
-      ////("ds_list_size : " + string(ds_list_size(_headEquipDsList)));
-    }
-	*/
-	
-	
-	
-	
-	if !ds_list_empty(_headEquipDsList) {
-		      if _mPos < 0 {
-        _mPos = ds_list_size(_headEquipDsList)-1;
-      } else if _mPos>ds_list_size(_headEquipDsList)-1 {
-        _mPos = 0;
-      }
-	}
-	
-	
-	
+
+ _refreshinventory(_headEquipArray,_headEquipDsList); 
+
+  
+
+show_debug_message("ds_list_size : " + string(ds_list_size(_headEquipDsList)))
 	if _keyuse {
 
       if _mPos != 0 && _mPos != 1 {
-        OWNER._currentequipPlayer._Head=ds_list_find_value(_headEquipDsList,_mPos);/// _headEquipArray[_mPos];
-        ////(string(OWNER._currentequipPlayer._Head)); //"OWNER._currentequipPlayer._Head=_headEquipArray[_mPos];")
-        ////("CAMBIO HECHO");
+        OWNER._currentequipPlayer._Head=ds_list_find_value(_headEquipDsList,_mPos);
+
         _mPos = 0;
       } else if _mPos == 0 { ///DESEQUIPAR   pointer_null
 
@@ -233,30 +209,7 @@ show_debug_message("ds_list_size : " + string(ds_list_size(_handEquipDsList)))
     ////("mpos " + string(_mPos));
 show_debug_message("ds_list_size : " + string(ds_list_size(_handEquipDsList)))
 
-/*
-    if ds_list_empty(_chestEquipDsList) {
-      for (var a_ = 0; a_ < array_length(_chestEquipArray); a_++) {
-        if _chestEquipArray[a_].__cantidad == 1 {
-          ds_list_add(_chestEquipDsList, _chestEquipArray[a_]);
-        }
-      }
-
-      ////("ds_list_size : " + string(ds_list_size(_chestEquipDsList)));
-    }
-	*/
-	
-	
-	
-	
-	if !ds_list_empty(_chestEquipDsList) {
-		      if _mPos < 0 {
-        _mPos = ds_list_size(_chestEquipDsList)-1;
-      } else if _mPos>ds_list_size(_chestEquipDsList)-1 {
-        _mPos = 0;
-      }
-	}
-	
-	
+ _refreshinventory(_chestEquipArray,_chestEquipDsList); 
 	
 	if _keyuse {
 
@@ -285,30 +238,7 @@ case _ingameMenuPage._equipHandPage_:
 
 
 
-/*
-show_debug_message("ds_list_size : " + string(ds_list_size(_handEquipDsList)))
-    ////("mpos " + string(_mPos));
-
-    if ds_list_empty(_handEquipDsList) {
-      for (var a_ = 0; a_ < array_length(_handEquipArray); a_++) {
-        if _handEquipArray[a_].__cantidad == 1 {
-          ds_list_add(_handEquipDsList, _handEquipArray[a_]);
-        }
-      }
-
-      ////("ds_list_size : " + string(ds_list_size(_handEquipDsList)));
-    }
-	
-	*/
-	
-	
-	if !ds_list_empty(_handEquipDsList) {
-		      if _mPos < 0 {
-        _mPos = ds_list_size(_handEquipDsList)-1;
-      } else if _mPos>ds_list_size(_handEquipDsList)-1 {
-        _mPos = 0;
-      }
-	}
+ _refreshinventory(_handEquipArray,_handEquipDsList); 
 	
 	
 	
