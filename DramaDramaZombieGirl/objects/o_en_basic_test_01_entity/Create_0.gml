@@ -9,7 +9,8 @@ var _dist=floor( point_distance(x,y,oPlayer.x,oPlayer.y));
 
 }
 
-_hp=20;///choose(20,25,15,30,10);
+_hp=choose(20,25,15,30,10);
+_maxhp=_hp;
 _defphy=0;
 _defesp=0;
 _vel=0;
@@ -50,7 +51,7 @@ _CurrentTangibleState=_PossibleEntityTangibleState._Tangible;
 
 
 
-enum _EnumEnemieState {_inactive,_stand,_walk,_run,_menu,_jump,_backdash,_attack00,_hurt,_counter,_dialog,_retreat}
+
 _CurrentEnemieState = _EnumEnemieState._inactive; 
 _CurrentStatePrint="Noone";
 _attackprint="noone";

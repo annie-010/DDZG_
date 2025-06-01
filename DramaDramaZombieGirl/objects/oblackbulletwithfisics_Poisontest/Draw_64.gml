@@ -1,1 +1,0 @@
-//collisionar con el player.

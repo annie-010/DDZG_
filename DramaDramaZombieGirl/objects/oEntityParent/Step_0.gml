@@ -1,4 +1,9 @@
 
+if !place_meeting(x,y,odarksectionroom) {
+visible=1;
+}
+
+
 	#region
 // Verificar si la lista está vacía
 if ds_list_empty(_effDsList) {

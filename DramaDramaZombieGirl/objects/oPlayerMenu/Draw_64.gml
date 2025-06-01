@@ -486,116 +486,49 @@ var _invItem = ds_list_find_value(_invDsList,_mPos);
 }
 
 
-
-
-
-
- 
-	
-
-
-
-
-
-
-
-
-
-/*		
-	if _mPos<7 && _mPos>-1 {  
-
-			for (var i_=0; i_<7; i_++) {
-		
-		var _inv_i = ds_list_find_value(_invDsList,i_);
-		draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_),string(_inv_i._Name));
-		if i_!=0 {draw_text(1004,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_)," X " + string(_inv_i._cantidad));}
-
-		}} 
-
-*/
-
-
-
-
-
-
-/*
-    var _inventoryConsumiblePageSep = 64;
-	var _invItem = ds_list_find_value(_invDsList,_mPos);
-        
-	
-	if !ds_list_empty(_invDsList){
-
-	if _mPos<7 && _mPos>-1 {  
-
-			for (var i_=0; i_<7; i_++) {
-		
-		var _inv_i = ds_list_find_value(_invDsList,i_);
-		draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_),string(_inv_i._Name));
-		if i_!=0 {draw_text(1004,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_)," X " + string(_inv_i._cantidad));}
-
-		}} 
-	
-
-	}
-	
-
-
-
-
-
-
-	
-	
-
-	
-*/
     break;  
   
   
   case _ingameMenuPage._inventoryKeysPage:
 
 
-    var _inventoryConsumiblePageSep = 64;
-	var _invkItem = ds_list_find_value(_invkDsList,_mPos);
-        
-	
-	if !ds_list_empty(_invkDsList){
 
+if !ds_list_empty(_invkeyDsList) {
+
+
+
+
+
+var _inventoryConsumiblePageSep = 64;
+var _invItem = ds_list_find_value(_invkeyDsList,_mPos);
 
     draw_sprite_ext(sprcharequip, 0, 64, 358, 1, 1, 0, c_white, 1);
     draw_sprite_ext(sprDesc, 0, 64, 120, 1, 1, 0, c_white, 1);
 	    draw_text(128, 140, "Descripcion");
-    draw_text_ext(96, 196, _invkItem._Descr, 16, 450);
+    draw_text_ext(96, 196, _invItem._Descr, 16, 450);
 
-
-
-
-
-	
-	
 	if _mPos<7 && _mPos>-1 {  
 
 			for (var i_=0; i_<7; i_++) {
 		
-		var _invk_i = ds_list_find_value(_invkDsList,i_);
-		draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_),string(_invk_i._Name));
-		if i_!=0 {draw_text(1004,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_)," X " + string(_invk_i._cantidad));}
+		var _inv_i = ds_list_find_value(_invkeyDsList,i_);
+		if _inv_i!=undefined {
+				draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_),string(_inv_i._Name));
+		///if i_!=0 {draw_text(1004,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * i_)," X " + string(_inv_i._cantidad));}
+		} 
+
 
 		}} 
-	
+
 	if _mPos<16 && _mPos>=7 {
 
-			for (var a_=7; a_<(ds_list_size(_invkDsList)); a_++) {
+			for (var a_=7; a_<(ds_list_size(_invkeyDsList)); a_++) {
 		
-		var _invk_a = ds_list_find_value(_invkDsList,a_);
-		draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * (a_-7)),string(_invk_a._Name));
-				draw_text(1004,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * (a_-7))," X " + string(_invk_a._cantidad));
-
-}} 
-	
-	}
-	 
+		var _inv_a = ds_list_find_value(_invkeyDsList,a_);
+		draw_text(_indexlistMargin,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * (a_-7)),string(_inv_a._Name));
+				draw_text(1004,(_indexlistVerticalMargin)+(_inventoryConsumiblePageSep * (a_-7))," X " + string(_inv_a._cantidad));
+}}
+}
   break;
   
   

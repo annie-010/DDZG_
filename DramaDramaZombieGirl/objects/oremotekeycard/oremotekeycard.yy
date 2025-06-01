@@ -1,18 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"o_en_basic_sangwhoo",
-  "eventList":[],
+  "%Name":"oremotekeycard",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"o_en_basic_sangwhoo",
+  "name":"oremotekeycard",
   "overriddenProperties":[],
   "parent":{
-    "name":"_en_sangwhoo",
-    "path":"folders/Objetos/_ENTITIES/_ENEMIES/_en_sangwhoo.yy",
+    "name":"_FUNCTIONALDECORATION",
+    "path":"folders/Objetos/_DECORATION/_FUNCTIONALDECORATION.yy",
   },
-  "parentObjectId":{
-    "name":"o_en_basic_test_01_entity",
-    "path":"objects/o_en_basic_test_01_entity/o_en_basic_test_01_entity.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_sanghwoo_walking",
-    "path":"sprites/spr_sanghwoo_walking/spr_sanghwoo_walking.yy",
+    "name":"spr_cardcolors",
+    "path":"sprites/spr_cardcolors/spr_cardcolors.yy",
   },
   "spriteMaskId":null,
   "visible":true,

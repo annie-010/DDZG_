@@ -1,24 +1,23 @@
 {
   "$GMObject":"",
-  "%Name":"oblackbulletwithfisics_Poisontest",
+  "%Name":"osanghwo_testing_def",
   "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"oblackbulletwithfisics_Poisontest",
+  "name":"osanghwo_testing_def",
   "overriddenProperties":[],
   "parent":{
-    "name":"_MACHINES",
-    "path":"folders/Objetos/_ENTITIES/_MACHINES.yy",
+    "name":"sanghwo_",
+    "path":"folders/Objetos/_ENTITIES/_ENEMIES/sanghwo_.yy",
   },
   "parentObjectId":{
-    "name":"oEnemyDmg",
-    "path":"objects/oEnemyDmg/oEnemyDmg.yy",
+    "name":"oEntityParent",
+    "path":"objects/oEntityParent/oEntityParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -38,9 +37,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_blackbullet",
-    "path":"sprites/spr_blackbullet/spr_blackbullet.yy",
+    "name":"sprblockRed",
+    "path":"sprites/sprblockRed/sprblockRed.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"sprcol32",
+    "path":"sprites/sprcol32/sprcol32.yy",
+  },
   "visible":true,
 }

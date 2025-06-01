@@ -1,38 +1,21 @@
-/// @description Inserte aquí la descripción
-// Puede escribir su código en este editor
-
-/*
-
-
-
-
-if _owner!=noone {
-x=_owner.x; y=_owner.y;
-}
-*/
-
-var playercoll =collision_rectangle(x-16,y-16,x+16,y+16,oPlayer,true,true);
-if playercoll {
-	///playercoll._PlayerStatsManager.PlayerStats._hpCurrent-=1;
-show_debug_message("dmg golpeo");
-///playercoll._PlayerStatsManager.PlayerStats._hpCurrent-=1;
-show_debug_message("hp player :" + string(playercoll._PlayerStatsManager.PlayerStats._hpCurrent));
-/// if (_check_z_collision(self, playercoll)) && (_collisioned==false)
-///_StateAlterer_Effects(oPlayer,"Poison",5,5,false,(oPlayer._effLevelonePoisoned));
-{
-/*
-(_check_z_collision(self, playercoll))
-*/
-if playercoll._effLeveloneCutted._state==false {
-////if _selected==noone {
-show_debug_message("cutted");
-playercoll._effLeveloneCutted._state=true;
-instance_destroy();	
-}
+if _effect!=noone {
+show_debug_message("el ataque continiene un efecto");
+show_debug_message("el efecto : " + string(_effect) );
 }
 
+var playercoll =collision_rectangle(x-16,y-16,x+16,y+16,oPlayerMask,true,true);
+
+if playercoll    {
+	var _afectedentity = (playercoll._owner.id);
+	show_debug_message("afected  :" + string(object_get_name(playercoll._owner.object_index)));	
+//show_debug_message("dmg golpeo");
+//show_debug_message("hp player :" + string(_afectedentity._PlayerStatsManager.PlayerStats._hpCurrent));
+///show_debug_message("looking for * " + string(_afectedentity._effectforAsking) + "inside the player");
+
+//_afectedentity.//
+//show_debug_message("looking for * " + string(_afectedentity._effectforAsking) + "inside the player");
+///show_debug_message("looking for * " + string(_afectedentity._effectforAsking));
+
 }
-
-
 
 

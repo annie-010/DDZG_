@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+	draw_text(x,y+z,"depth : " + string(depth));
 ///draw_line(x, y, x + (_sensorcoll * image_xscale), y);
 
 

@@ -267,6 +267,55 @@ break;
 
 
 
+
+
+	
+		case _ingameMenuPage._inventoryKeysPage:
+		
+		if ds_list_empty(_invkeyDsList) {
+for (var a_ = 0 ; a_<(array_length(invkey_array)); a_++) {
+	if !(is_undefined(a_)) {
+		if invkey_array[a_]._cantidad>0 {
+			ds_list_add(_invkeyDsList,invkey_array[a_]);}}
+} exit;
+} else { 
+	show_debug_message("hay " + string(ds_list_size(_invkeyDsList)) + "  objetos en la Ds_list");
+	show_debug_message("current _mpos = " + string(_mPos));
+	for (var i = 0; i < ds_list_size(_invkeyDsList); i++) {
+    var item = ds_list_find_value(_invkeyDsList, i);
+    show_debug_message("Ítem " + string(i) + ": " + string(item));
+}
+	if _mPos>ds_list_size(_invkeyDsList)-1 {_mPos=0;} else if _mPos<0{_mPos=ds_list_size(_invkeyDsList)-1}
+	
+	var _inventoryItemToUse = ds_list_find_value(_invkeyDsList, _mPos);
+	if _keyuse {
+		_keyuse=false; 
+		if _mPos==0 {_currentingameMenuPage = _ingameMenuPage._indexPage; _mPos = 0;} else 
+		{
+			
+			
+			switch (_inventoryItemToUse) {
+			
+			
+			case invkey_keycard_first:  
+var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
+_text._text[0]="robot@@@@@ *No es el momento*";
+			break;
+			}
+			
+	isMenuOpen=false;
+	_mPos=0;
+	canbeClosed=false;
+	_keyback=false;
+	currentWaittoBlockbutton=0;
+	
+	_currentingameMenuPage = _ingameMenuPage._indexPage; }
+	}
+}
+		
+		
+		break;
+	
   case _ingameMenuPage._inventoryConsumiblePage:
 
 
@@ -398,6 +447,18 @@ if canbeClosed==false {
 	_keyback=false;
 	currentWaittoBlockbutton=0;
 	_currentingameMenuPage = _ingameMenuPage._indexPage;
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 		break;
 
 

@@ -64,7 +64,7 @@ if (sprite_index != noone) {
     x = OWNER.x;
     y = OWNER.y + OWNER.z;
 }
-
+z=_owner.z;
 
 /*
 

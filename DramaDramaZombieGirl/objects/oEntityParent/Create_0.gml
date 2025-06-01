@@ -490,7 +490,7 @@ _effLevelthreeCutted = {
 /// POISONED
 _effLevelonePoisoned = {
     _state: false, 
-    _duration: 20,
+    _duration: 3,
     _currentseg: 0,
     _spr: spr_AlteredEffect,
     _img: 23
@@ -675,98 +675,6 @@ inv_water = {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 _effArray[0] = _effUpcanLook;
 _effArray[1] = _effUpUpcanLook;
 _effArray[2] = _effUpHealt;
@@ -798,15 +706,6 @@ _effArray[27] = _effStopBleedingnvI;
 _effArray[28] = _effStopBleedingnvII;
 _effArray[29] = _effStopBleedingnvIII; 
 _effArray[30] = _effHydrated;
-
-
-
-
-
-
-
-
-
 
 _effDsList = ds_list_create();
 ///ds_list_add(_effDsList,_effArray[0]);
@@ -878,12 +777,16 @@ function process_effects() {
 				
 				if object_index==oEnemyTest_00 {
 					_currentdefphy=9999;
-					_currentdefesp=9999;
-				}
-
+					_currentdefesp=9999;}
+					
                     break;
 					
-					
+                case _effLevelonePoisoned:
+
+					if object_index==oPlayer {
+						_PlayerStatsManager.PlayerStats._hpCurrent-=0.3;
+						///_cutted=true;
+						} break;				
 					
 					
 					
@@ -1027,6 +930,7 @@ function process_effects() {
 
 
 ////enum _EnumEnemieState {_inactive,_stand,_walk,_run,_menu,_jump,_backdash,_attack00,_hurt,_counter,_dialog}
+enum _EnumEnemieState {_inactive,_stand,_walk,_run,_menu,_jump,_backdash,_attack00,_attack01,_attack02,_attack03,_attack04,_attack05,_hurt,_counter,_dialog,_retreat}
 _CurrentEnemieState = _EnumEnemieState._inactive; 
 _CurrentStatePrint="Noone";
 ///alarm_set(0,30);
@@ -1035,5 +939,5 @@ _CurrentStatePrint="Noone";
 
 
 
-
+_effectforAsking=noone;
 

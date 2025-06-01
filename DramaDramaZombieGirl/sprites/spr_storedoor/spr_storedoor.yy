@@ -19,7 +19,7 @@
   "height":288,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"25c7dcb2-9e81-41a7-9b6f-fab953c7a288","blendMode":0,"displayName":"default","isLocked":false,"name":"25c7dcb2-9e81-41a7-9b6f-fab953c7a288","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"25c7dcb2-9e81-41a7-9b6f-fab953c7a288","blendMode":0,"displayName":"default","isLocked":false,"name":"25c7dcb2-9e81-41a7-9b6f-fab953c7a288","opacity":50.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_storedoor",
   "nineSlice":null,

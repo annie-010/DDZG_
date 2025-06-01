@@ -169,29 +169,7 @@ _CurrentEnemieState= _EnumEnemieState._attack00; _attackprint=choose("_frontPunc
 	}
 	
 
-	
-	/*
-	if _dist>0 {
-	///if _dist<=0 {} else 
-	
-	if _dist>_mintoreact {_CurrentEnemieState= _EnumEnemieState._stand;}
-	
-	if _dist<=_mintoreact {}
-	
-	if _dist<=_mintofollow {_CurrentEnemieState= _EnumEnemieState._walk;}
-	
-	if _dist<=_mintofigthfollow {_CurrentEnemieState= _EnumEnemieState._walk;}
-	
-	if _dist<=_mintoattack && _alreadyattack==false {_CurrentEnemieState= _EnumEnemieState._attack00; _attackprint=choose("_frontPunch","_crunchPunch","_crunchThrow"); image_index=0; _alreadyattack=true; }
-	
-	
-	if _dist<_mintoattack or _alreadyattack==true {_CurrentEnemieState= _EnumEnemieState._retreat;}
-	}
-	
-	*/
 
-
-	
 	
 	
 	
@@ -256,26 +234,7 @@ if abs(_dist - _mintoattack) <= 10 && _alreadyattack==false  {
 	
 
 	
-	
-	
-	
-	/*
-		if _dist>0 {
-	///if _dist<=0 {} else 
-	
-	if _dist>_mintoreact { _movetowardsvel=0; _CurrentEnemieState= _EnumEnemieState._stand;}
-	
-	if _dist<=_mintoreact {}
-	
-	if _dist<=_mintofollow {sprite_index=spr_HanamariWalk; _movetowardsvel=2;}
-	
-	if _dist<=_mintofigthfollow && _dist>_mintoattack { _movetowardsvel=.8;}
-	
-	if _dist==_mintoattack &&  {}
-	if _dist<_mintoattack or _alreadyattack==true {_CurrentEnemieState= _EnumEnemieState._retreat;}
-	}
-	
-*/
+
 
 	image_speed=1;
 	break;
@@ -299,6 +258,7 @@ if abs(_dist - _mintoattack) <= 10 && _alreadyattack==false  {
 	case 1: 	if _alreadycreateddmg==false {
 		var _punch = instance_create_layer(x+(64*image_xscale),(y-64),"_Entities",oEnemyTestDmg_00);
 		_punch._dmg=choose(3,2,3,1,8);
+		_punch._effect=oPlayer._effArray[15];
 _punch._owner = id; _alreadycreateddmg=true;
 
 }
@@ -313,7 +273,10 @@ _punch._owner = id; _alreadycreateddmg=true;
 	
 	switch(floor(image_index)) {
 	case 3: 	if _alreadycreateddmg==false {
-		var _punch = instance_create_layer(x+(64*image_xscale),(y-64),"_Entities",oEnemyTestDmg_00); 		_punch._dmg=choose(3,2,3,1,8);
+		var _punch = instance_create_layer(x+(64*image_xscale),(y-64),"_Entities",oEnemyTestDmg_00); 	
+		
+		_punch._dmg=choose(3,2,3,1,8);
+		_punch._effect=oPlayer._effArray[15];
 _punch._owner = id; _alreadycreateddmg=true;}
 	break;
 }
@@ -332,7 +295,9 @@ _punch._owner = id; _alreadycreateddmg=true;}
 	case 3: 
 
 	if _alreadycreateddmg==false {
-		var _punch = instance_create_layer(x+(64*image_xscale),(y-64),"_Entities",oEnemyTestDmg_00);		_punch._dmg=choose(3,2,3,1,8);
+		var _punch = instance_create_layer(x+(64*image_xscale),(y-64),"_Entities",oEnemyTestDmg_00);		
+		_punch._dmg=choose(3,2,3,1,8);
+		_punch._effect=oPlayer._effArray[15];
 _punch._owner = id; _alreadycreateddmg=true;}
 
 }	break;
@@ -426,11 +391,6 @@ if _CurrentEnemieState!=_EnumEnemieState._hurt && _CurrentEnemieState!=_EnumEnem
 _CurrentEnemieState=_EnumEnemieState._hurt;
 move_towards_point(x,y,0);
 }
-
-
-
-///_CurrentTangibleState=_PossibleEntityTangibleState._Intangible; ///_Tangible;
-
 }
 
 /*

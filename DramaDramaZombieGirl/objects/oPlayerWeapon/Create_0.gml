@@ -11,3 +11,4 @@ if !sprite_index==noone {
 _used=false;
 
 show_debug_message("instance_weapon_creada!");
+z=0;

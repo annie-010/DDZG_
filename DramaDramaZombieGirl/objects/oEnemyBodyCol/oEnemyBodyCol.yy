@@ -35,5 +35,5 @@
     "path":"sprites/spr_pl_saki_bodymask/spr_pl_saki_bodymask.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

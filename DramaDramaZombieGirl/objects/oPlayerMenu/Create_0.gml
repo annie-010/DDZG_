@@ -581,13 +581,6 @@ _handEquipDsList = ds_list_create();
 
 #region INVENTORY CLASSES
 
-
-
-
-
-
-
-
 #region CONSUMIBLE INVENTORY
 inv_showed=false;
 
@@ -733,6 +726,51 @@ _invDsList = ds_list_create();
 
 
 #region KEY INVENTORY
+
+
+invkey_emptyplace = {
+    _Name: "EMPTY EMPTY EMPTY",
+    _Descr: "EMPTY EMPTY EMPTY",
+    _Funct: "",
+   /// _FunctEffect: oPlayer._effConfusion,
+    _cantidad: 0
+};
+
+
+invkey_retroceder = {
+    _Name: "RETROCEDER",
+    _Descr: "RETROCEDER",
+    _Funct: "",
+   /// _FunctEffect: oPlayer._effConfusion,
+    _cantidad: 1
+};
+
+
+
+
+
+invkey_keycard_first = {
+    _Name: "Key Card Aqua",
+    _Descr: "Key Card Aqua Sin identificacion, solo un chip. abrira alguna puerta?",
+    _Funct: "",
+   // _FunctEffect: oPlayer._effConfusion,
+    _cantidad: 1
+};
+
+
+
+
+
+
+invkey_array[0] = invkey_retroceder;
+invkey_array[1] = invkey_keycard_first;
+invkey_array[2] = invkey_emptyplace;
+invkey_array[3] = invkey_emptyplace;
+
+_invkeyDsList = ds_list_create();
+
+
+
 #endregion KEY INVENTORY
 
 

@@ -12,13 +12,10 @@
   "name":"oEnemyTestDmg_00",
   "overriddenProperties":[],
   "parent":{
-    "name":"knife_parentTest",
-    "path":"folders/Objetos/_ENTITIES/_ENEMIES/knife_parentTest.yy",
+    "name":"_PARENTS",
+    "path":"folders/Objetos/_ENTITIES/_PARENTS.yy",
   },
-  "parentObjectId":{
-    "name":"oEnemyDmg",
-    "path":"objects/oEnemyDmg/oEnemyDmg.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
