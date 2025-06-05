@@ -32,3 +32,10 @@ draw_line_width_color(bar_x, bar_y, bar_x + life_width, bar_y, bar_height, c_gre
 // Inherit the parent event
 event_inherited();
 
+
+if (path != noone) {
+    draw_set_color(c_blue);
+    draw_path(path, x, y, 1); // El último parámetro es la escala (1 = tamaño normal)
+	draw_set_color(c_white);
+}
+

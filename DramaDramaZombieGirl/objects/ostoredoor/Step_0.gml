@@ -22,6 +22,29 @@ if instance_exists(oPlayer) {
 	var _distance=distance_to_point(oPlayer.x,oPlayer.y);
 	///var _distancetoenemy=distance_to_point()
 	
+	switch(_state) {
+		case "closed" :	
+		if (global._currentgrid!=noone) {
+mp_grid_add_rectangle(global._currentgrid, x-(5*32), y-8, x+(5*32), y+8);
+}
+break;
+		
+		case "_forceclosed":
+		if (global._currentgrid!=noone) {
+mp_grid_add_rectangle(global._currentgrid, x-(5*32), y-8, x+(5*32), y+8);
+}
+		
+		
+		break;
+		
+		
+		case "open":
+		mp_grid_clear_rectangle(global._currentgrid, x-(5*32), y-8, x+(5*32), y+8);
+		break;
+		
+	}
+	
+	
 	
 	if (_coldown or _colup) {
 		
@@ -34,6 +57,9 @@ if instance_exists(oPlayer) {
 	case "closed" :
 	image_blend=c_white;
 	solid=true;
+
+
+
 
 	
 	if _actionbutton  {image_speed=0.3; sprite_index=spr_storedoor_animated;   _actionbutton=false; }
@@ -62,7 +88,7 @@ if instance_exists(oPlayer) {
 }	
 
 		
-		} else if _colcenter {image_index=1;} 
+		} //else if _colcenter {image_index=1;} 
 
 		
 		if _distance>_disttoreact {image_alpha=1;}

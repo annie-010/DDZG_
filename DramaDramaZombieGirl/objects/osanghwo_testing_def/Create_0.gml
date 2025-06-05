@@ -14,6 +14,21 @@ _atkesp=0;
 
 
 
+_alreadyattack=false;
+_mustrecalculatepath=false;
+dx = 0;
+dy = 0;
+dist = 1;
+angle = 0;
+retreat_dist = 32 * 20;
+retreat_x = 0;
+retreat_y = 0;
+retreat_attempt = 0;
+retreat_path = noone;
+found_path = false;
+retreat_pathtaken = false;
+path=noone;
+
 
 
 

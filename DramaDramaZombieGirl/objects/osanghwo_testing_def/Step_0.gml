@@ -73,48 +73,42 @@ break;
 case _EnumEnemieState._retreat:
     _CurrentStatePrint = "Retreat";
     sprite_index = spr_sanghwoo_walking;
+	
 
-if (_alreadyattack) {
-    var dx = x - oPlayer.x;
-    var dy = y - oPlayer.y;
+  path_start(path,1,path_action_stop , false);
+  
+  
+  
+  
+  
+  if (path != noone) {
+    var num_points = path_get_number(path);
+    if (num_points > 0) {
+        var final_x = path_get_point_x(path, num_points - 1);
+        var final_y = path_get_point_y(path, num_points - 1);
 
-    var dist = point_distance(x, y, oPlayer.x, oPlayer.y);
-    if (dist == 0) dist = 1;
-
-    var retreat_dist = 32 * 20;
-    var angle = point_direction(oPlayer.x, oPlayer.y, x, y);
-
-    var found_path = false;
-    var path = path_add();
-
-    for (var i = 0; i < 8; i++) {
-        var offset_angle = angle + i * 45; // probar 0°, 45°, 90°... hasta 315°
-        var retreat_x = x + lengthdir_x(retreat_dist, offset_angle);
-        var retreat_y = y + lengthdir_y(retreat_dist, offset_angle);
-
-        if (mp_grid_path(global._currentgrid, path, x, y, retreat_x, retreat_y, true)) {
-            path_start(path, _walkvel, path_action_stop, false);
-            found_path = true;
-            break;
+        if (abs(x - final_x) < 32 && abs(y - final_y) < 32) {
+           /// path_end();
+           // path_delete(path);
+           // path = noone;
         }
     }
+}
+  
+  
+  
+  
+  
 
-    if (!found_path) {
-        path_delete(path);
-        // Podrías poner una animación de duda o simplemente detener al enemigo aquí
-    }
-} else {
-        _CurrentEnemieState = _EnumEnemieState._stand;
-    }
+break; 
 
 
-break;
 
 case _EnumEnemieState._walk:
+
 _CurrentStatePrint="Walk";
 sprite_index=spr_sanghwoo_walking;
-
-	var path = path_add();
+path = path_add();
     if (mp_grid_path(global._currentgrid, path, x, y, oPlayer.x, oPlayer.y, 1))
     {path_start(path, _walkvel, 3, 0);}	
 
@@ -170,6 +164,36 @@ sprite_index=spr_sanghwoo_attack_00;
 		_createdbullet._effect=oPlayer._effArray[12];
 		
 		_createdbullet=noone ; 
+		
+		
+		
+		
+		
+		
+		
+	
+		#region INCISO
+		
+
+
+		
+		#endregion
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		image_index=4;
     }
 	
