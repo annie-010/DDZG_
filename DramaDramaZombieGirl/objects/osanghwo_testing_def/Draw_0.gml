@@ -1,13 +1,14 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
 draw_set_color(c_black);
-draw_text(x-64,(y+64)+z,"_current state : "+ string (_CurrentStatePrint));
-draw_text(x-64,(y+48)+z,"_current wait : " + string( _currentwait ));
+//draw_text(x-64,(y+64)+z,"_current state : "+ string (_CurrentStatePrint));
+//draw_text(x-64,(y+48)+z,"_current wait : " + string( _currentwait ));
 
 draw_set_color(c_white);
 //draw_text(x-64,(y+64)+z,"_CurrentTangibleState : "+ string ( _CurrentTangibleState ));
 //draw_text(x-64,(y+80)+z,"_CurrentActiveState : "+ string ( _CurrentActiveState ));
-//draw_text(x-64,(y+96)+z,"_CurrentDepth : "+ string ( depth ));
+draw_text(x-64,(y+96)+z,"_current Dist_ : "+ string (_currentdistancetoplayer));
+show_debug_message("current _dist : " + string(floor(_currentdistancetoplayer)));
 
 
 
@@ -31,9 +32,9 @@ draw_line_width_color(bar_x, bar_y, bar_x + life_width, bar_y, bar_height, c_gre
 
 // Inherit the parent event
 event_inherited();
+/*
 
-
-if (path != noone) {
+if (path != -1) &&  (path !=noone) {
     draw_set_color(c_blue);
     draw_path(path, x, y, 1); // El último parámetro es la escala (1 = tamaño normal)
 	draw_set_color(c_white);

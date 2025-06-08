@@ -23,14 +23,16 @@ if x<_target.x {image_xscale=1;} else if  x>_target.x {image_xscale=-1;}
 
 
 if _alreadyattack==true {
-if _currentwait<_waittoattackgain {_currentwait+=1*(_deltatimeSec()) show_debug_message(string(_currentwait))} 
+if _currentwait<_waittoattackgain {_currentwait+=1*(_deltatimeSec()) ////show_debug_message(string(_currentwait))
+	
+	} 
 else if _currentwait>=_waittoattackgain 
 {_alreadyattack=false; _currentwait=0;}
 }
 
 
 
-if _hurtred!=false { show_debug_message("_hurtred activo");
+if _hurtred!=false { ///show_debug_message("_hurtred activo");
 _hurtred=false;
 
 
@@ -72,35 +74,55 @@ break;
 
 case _EnumEnemieState._retreat:
     _CurrentStatePrint = "Retreat";
-    sprite_index = spr_sanghwoo_walking;
 	
+	
+	
+sprite_index=spr_sanghwoo_walking;
 
-  path_start(path,1,path_action_stop , false);
-  
-  
-  
-  
-  
-  if (path != noone) {
-    var num_points = path_get_number(path);
-    if (num_points > 0) {
-        var final_x = path_get_point_x(path, num_points - 1);
-        var final_y = path_get_point_y(path, num_points - 1);
 
-        if (abs(x - final_x) < 32 && abs(y - final_y) < 32) {
-           /// path_end();
-           // path_delete(path);
-           // path = noone;
-        }
-    }
+var _dx, _dy , _dist, _angle, _retreat_x, _retreat_y, _retreat_dist, off, _pathto
+
+
+	_pathto=path_add();
+	_dx = x - oPlayer.x;
+	_dy = y - oPlayer.y;
+	_retreat_dist=32*20;
+	_dist= point_distance(x,y,oPlayer.x,oPlayer.y);
+	if (_dist==0) {_dist=1;}
+	
+	_angle= point_direction(x,y,oPlayer.x,oPlayer.y);
+	
+	
+	if (found_path==false) {
+	
+for (var i = 0; i < 8; i++) {
+	offset_angle = angle + i *45;
+	_retreat_x = x + lengthdir_x(_retreat_dist, offset_angle);
+	_retreat_y = y + lengthdir_y(_retreat_dist, offset_angle);
+	
+	
+	if (mp_grid_path(global._currentgrid, _pathto, x,y, _retreat_x, _retreat_y, false)) {
+		show_debug_message("se ha seleccionado un camino efectivo");
+		found_path=true;  path=_pathto;	retreat_x=_retreat_x; retreat_y=_retreat_y;	
+	}
 }
-  
-  
-  
-  
-  
+}   else if (found_path==true) {
+	            if (mp_grid_path(global._currentgrid, path, x, y, retreat_x, retreat_y, true)) {
+                path_start(path, _retreatvel, path_action_stop, false);		
+        // Revisión de si llegó al final del path
+        if (abs(x - retreat_x) < 32 && abs(y - retreat_y) < 32) {
+            path_end();
+            path_delete(path);
+            path = -1;
+            found_path = false;
+            _CurrentEnemieState = _EnumEnemieState._stand; }
+			
+}
+}
 
-break; 
+	
+	break;
+
 
 
 
@@ -111,13 +133,6 @@ sprite_index=spr_sanghwoo_walking;
 path = path_add();
     if (mp_grid_path(global._currentgrid, path, x, y, oPlayer.x, oPlayer.y, 1))
     {path_start(path, _walkvel, 3, 0);}	
-
-
-
-
-
-
-
 
 if _currentdistancetoplayer<=_distcacattack && _alreadyattack==false {  _CurrentEnemieState=_EnumEnemieState._attack00; image_index=0; }
 if _currentdistancetoplayer>_distsee {_CurrentEnemieState=_EnumEnemieState._stand;}
@@ -159,17 +174,10 @@ sprite_index=spr_sanghwoo_attack_00;
 
         var _createdbullet = instance_create_layer(x, y, "_Entities", _bullet);
         _createdbullet._dirtomove = dir;
-        _createdbullet._dmg = 0;
+        _createdbullet._dmg = 5;
 		_createdbullet.z=-90;
 		_createdbullet._effect=oPlayer._effArray[12];
-		
 		_createdbullet=noone ; 
-		
-		
-		
-		
-		
-		
 		
 	
 		#region INCISO
@@ -180,18 +188,7 @@ sprite_index=spr_sanghwoo_attack_00;
 		#endregion
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		
 		image_index=4;

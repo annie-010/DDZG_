@@ -3,6 +3,8 @@ if _owner!=noone {
 	var _coll = collision_rectangle(_owner.x-16,_owner.y-90+_owner.z,_owner.x+16,_owner.y+_owner.z,oEnemyTestDmg_00,true,true);
 	
 	if _coll!=noone {
+		
+		
 		if _check_z_collision(_owner, _coll) && abs(_owner.depth - _coll.depth) <= 2  {
 		
 	if _owner._CurrentPlayerState!=_EnumPlayerState._hurt {

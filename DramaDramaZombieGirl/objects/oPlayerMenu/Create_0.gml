@@ -156,7 +156,7 @@ _headEquip_sombrespin = {
 
 _headEquip_beelmet = {
 	_equipname : "Beelmet",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 0,
@@ -178,7 +178,7 @@ _headEquip_beelmet = {
 
 _headEquip_kittyhears = {
 	_equipname : "Kitty Hears",
-	__cantidad : 1,
+	__cantidad :0,
 	_equipvel : 3,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 1,
@@ -197,7 +197,7 @@ _headEquip_kittyhears = {
 
 _headEquip_sombreroembrujado = {
 	_equipname : "Sombrebrujado",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 1,
@@ -214,7 +214,7 @@ _headEquip_sombreroembrujado = {
 
 _headEquip_ornamentorosasviejas = {
 	_equipname : "Ornamento rosas viejas",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : -2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 0,
@@ -313,7 +313,7 @@ _chestEquip_EMPTY = {
 
 _chestEquip_reinadecorazones = {
 	_equipname : "Reina de Corazones",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 0,
 	_equipphyssicattack : 3,
 	_equipspecialattack : 0,
@@ -330,7 +330,7 @@ _chestEquip_reinadecorazones = {
 
 _chestEquip_beecap = {
 	_equipname : "BeeCap",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 1,
@@ -467,7 +467,7 @@ _handEquip_umbrella = {
 
 _handEquip_candybat = {
 	_equipname : "Bat de dulce",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 1,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 1,
@@ -485,7 +485,7 @@ _handEquip_candybat = {
 
 _handEquip_martillo = {
 	_equipname : "Martillo",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 3,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 0,
@@ -506,7 +506,7 @@ _handEquip_martillo = {
 
 _handEquip_bubbleblaster = {
 	_equipname : "Bubble Blaster",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 1,
@@ -523,7 +523,7 @@ _handEquip_bubbleblaster = {
 
 _handEquip_beecane = {
 	_equipname : "Beecane",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 1,
@@ -538,7 +538,7 @@ _handEquip_beecane = {
 
 _handEquip_knife = {
 	_equipname : "Cuchillo Afilado",
-	__cantidad : 1,
+	__cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 1,

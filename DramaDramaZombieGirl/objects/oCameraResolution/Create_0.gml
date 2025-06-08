@@ -23,11 +23,19 @@ _adjustvel= 0.01;
 
 
 
+global._AudioLayersVolume = {
 
 
 
-_AudioLayersVolume = {
+_bg0default : 5,
+_bg1default : 5,
+_bg2default : 5,
+_front0default: 5,
+_front1default: 5,
+_front2default:5,
 	
+	
+
 _bg0 : 1,
 _bg1 : 1,
 _bg2 : 1,
@@ -37,6 +45,9 @@ _front1 : 1,
 _front2 : 1
 } 
 	
+
+
+
 	
 
 global._lastroom="noone";

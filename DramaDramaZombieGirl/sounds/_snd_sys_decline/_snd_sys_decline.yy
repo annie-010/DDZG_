@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"_snd_sys_decline",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.846145,
+  "name":"_snd_sys_decline",
+  "parent":{
+    "name":"_sys",
+    "path":"folders/Sonidos/_sys.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"_snd_sys_decline.wav",
+  "type":0,
+  "volume":1.0,
+}

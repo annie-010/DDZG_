@@ -8,6 +8,8 @@ if !instance_exists(oPlayer) {
 	break;
 	
 	case r_playable_5th_neonoffice: global.oplayerinstance = instance_create_layer(5141,5245,"_Entities",oPlayer); 
+	oPlayerMenu._handEquipArray[0].__cantidad=1;
+	oPlayerMenu._handEquipArray[1].__cantidad=1;
 	break;	
 	
 	
@@ -155,7 +157,7 @@ switch(room) {
 
 case r_playable_5th_neonoffice:
 
-///audio_play_sound(_bgm_interlude_00,1,1);
+////audio_play_sound(_bgm_interlude_00,1,1,(global._AudioLayersVolume._bg1));
 
 break;
 
@@ -169,7 +171,7 @@ break;
 
 case r_playable_minus1th_hideway:
 
-audio_play_sound(_bgm_macroblank,1,1);
+
 
 break;
 

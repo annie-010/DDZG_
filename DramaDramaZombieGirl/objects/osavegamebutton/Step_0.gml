@@ -3,5 +3,5 @@ var _keysave = keyboard_check_pressed(ord("I"));
 
 if _iscolling && _keysave {
 oSavegame._savegame();
-show_debug_message("se guardo partida")
+///show_debug_message("se guardo partida")
 }

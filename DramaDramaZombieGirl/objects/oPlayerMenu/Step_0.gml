@@ -368,7 +368,7 @@ for (var a_ = 0 ; a_<(array_length(inv_array)); a_++) {
 if isMenuOpen==true {
 if canbeClosed==false {
 	if currentWaittoBlockbutton<3 {
-		show_debug_message(string(currentWaittoBlockbutton));
+		////show_debug_message(string(currentWaittoBlockbutton));
 		
 	currentWaittoBlockbutton+=_deltatimeSec();
 	} else if currentWaittoBlockbutton>=3 {

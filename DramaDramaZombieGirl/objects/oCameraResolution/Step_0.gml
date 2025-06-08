@@ -6,7 +6,7 @@ if !instance_exists(oSavegame) {
 
 
 if keyboard_check(ord("G")) {
-show_debug_message("Actual Volume Bg1 Gain  [ " + (string(_AudioLayersVolume._bg1)) + " ]");
+///show_debug_message("Actual Volume Bg1 Gain  [ " + (string(_AudioLayersVolume._bg1)) + " ]");
 }
 
 
@@ -106,7 +106,7 @@ if (_earthquake==true) {
 
 
 if keyboard_check_pressed(ord("P")) {
-show_debug_message("ocameraRes_x : "+ string(x) +  "    ocameraRes_y : " + string(y));
+///show_debug_message("ocameraRes_x : "+ string(x) +  "    ocameraRes_y : " + string(y));
 }
 
 
@@ -119,12 +119,12 @@ show_debug_message("ocameraRes_x : "+ string(x) +  "    ocameraRes_y : " + strin
 if keyboard_check_pressed(ord("Q")) {
 if _shaderdraw==true {
 _shaderdraw=false;
-show_debug_message("shader draw false")
+//show_debug_message("shader draw false")
 
 }
 if _shaderdraw==false {
 _shaderdraw=true;
-show_debug_message("shader draw true")
+///show_debug_message("shader draw true")
 
 }
 

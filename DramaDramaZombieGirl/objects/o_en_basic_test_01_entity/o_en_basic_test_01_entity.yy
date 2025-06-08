@@ -13,8 +13,8 @@
   "name":"o_en_basic_test_01_entity",
   "overriddenProperties":[],
   "parent":{
-    "name":"_en_basic_test_01_entity",
-    "path":"folders/Objetos/_ENTITIES/_ENEMIES/_en_basic01/_en_basic_test_01_entity.yy",
+    "name":"_en_basic01",
+    "path":"folders/Objetos/_ENTITIES/_ENEMIES/_en_basic01.yy",
   },
   "parentObjectId":{
     "name":"oEntityParent",

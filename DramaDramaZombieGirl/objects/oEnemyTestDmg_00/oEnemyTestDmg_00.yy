@@ -38,5 +38,5 @@
     "path":"sprites/_spr_en_knife_attackmask_32/_spr_en_knife_attackmask_32.yy",
   },
   "spriteMaskId":null,
-  "visible":false,
+  "visible":true,
 }

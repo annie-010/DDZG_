@@ -44,7 +44,7 @@ _event=1;
 var _wait = 20;
 if _event==1 {
 
-show_debug_message("Evento 1 : ");
+///show_debug_message("Evento 1 : ");
 if dist>=1500  && _waittoevent<_wait {
 _waittoevent+=_deltatimeSec();
 ///show_debug_message("wait to event : " + string(_waittoevent))0;
@@ -59,7 +59,7 @@ _event=2;}
 
 
 if (floor(dist)>=510 && floor(dist)<=530) && _event==2 {
-	show_debug_message("se deberia ejecutar texto eent 2 ");
+	///show_debug_message("se deberia ejecutar texto eent 2 ");
 var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
 _text._text[0]="saki@@@@@@ De todos modos, que estabamos pensando en separarnos, desde un principio es mala idea";
 visible=false;
@@ -71,7 +71,7 @@ var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
 _text._text[0]="saki@@@@@@ Que es esto, que sucede?";
 
 if !instance_exists(ocinematicctrlsystem) {
-	show_debug_message("creada cinematica, para comprobar si se elimino")
+	///show_debug_message("creada cinematica, para comprobar si se elimino")
 var cinematic = instance_create_layer(x,y,"SYSTEM",ocinematicctrlsystem);
 cinematic._currentCinematicState = _CinematicState._active;
 cinematic._movietoplay="PublicCorridor02";

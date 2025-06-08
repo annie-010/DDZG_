@@ -8,7 +8,7 @@ if _switched==false {
 instance_deactivate_all(true);
 instance_activate_object(oCameraResolution);
 
-oCameraResolution._AudioLayersVolume._bg1=0.5;
+global._AudioLayersVolume._bg1=0.5;
 
 _switched=true;
 

@@ -14,7 +14,7 @@ case false:
                 _instEnemyBodyCol._owner._hurtred = true;
 
                 var _ownerHitDmg = _owner._PlayerStatsManager.PlayerStats._statPhisycAttack;
-                show_debug_message("_ownerHitDmg : " + string(_ownerHitDmg));
+                ///show_debug_message("_ownerHitDmg : " + string(_ownerHitDmg));
 
                 var _ownerHitDmgChoose = choose((_ownerHitDmg * 0.5), (_ownerHitDmg * 0.7), (_ownerHitDmg * 1),
                                                (_ownerHitDmg * 0.5), (_ownerHitDmg * 0.7), (_ownerHitDmg * 1),
@@ -33,8 +33,8 @@ case false:
                 _instEnemyBodyCol._owner._hp -= _processedAtkDmg;
                 _instEnemyBodyCol._owner._atkrecieved = _processedAtkDmg;
 
-                show_debug_message("atk pre processed = " + string(_ownerHitDmgChoose));
-                show_debug_message("atk post processed = " + string(_processedAtkDmg));
+                ///show_debug_message("atk pre processed = " + string(_ownerHitDmgChoose));
+                ///show_debug_message("atk post processed = " + string(_processedAtkDmg));
 
                 var _sfxPoints = instance_create_depth(_instEnemyBodyCol.x, _instEnemyBodyCol.y, depth - 90, obouncingobjecttotest_0);
                 _sfxPoints._owner = _instEnemyBodyCol;

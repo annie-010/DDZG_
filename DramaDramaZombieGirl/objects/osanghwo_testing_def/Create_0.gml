@@ -28,6 +28,7 @@ retreat_path = noone;
 found_path = false;
 retreat_pathtaken = false;
 path=noone;
+offset_angle=0;
 
 
 
@@ -68,7 +69,8 @@ _currentwait = 0;
 _distsee = 1500;
 _distreact = 1000; 
 _distcacattack = 500;
-_walkvel = 2;//choose(2,3,2,2,2,3,2,2);
+_walkvel=choose(2,3,2,4,2);
+_retreatvel=_walkvel*(choose(1.3,1.5,1.2,1.3,1.5));
 
 
 

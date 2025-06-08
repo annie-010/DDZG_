@@ -147,7 +147,7 @@ _mintoattack=70;
 		
 		
 		if (_dist>=0 && _dist<_mintoattack) &&_alreadyattack!=true {
-_CurrentEnemieState= _EnumEnemieState._attack00; _attackprint=choose("_frontPunch","_crunchPunch","_crunchThrow"); image_index=-1; _alreadyattack=true;
+_CurrentEnemieState= _EnumEnemieState._attack00; image_index=-1; _attackprint=choose("_frontPunch","_crunchPunch","_crunchThrow"); image_index=-1; _alreadyattack=true;
 
 		//_CurrentEnemieState= _EnumEnemieState._retreat;
 		}
@@ -224,7 +224,7 @@ _CurrentEnemieState= _EnumEnemieState._attack00; _attackprint=choose("_frontPunc
 	
 if abs(_dist - _mintoattack) <= 10 && _alreadyattack==false  {
     ///show_debug_message("depuración");
-	_CurrentEnemieState= _EnumEnemieState._attack00; _attackprint=choose("_frontPunch","_crunchPunch","_crunchThrow"); image_index=-1; _alreadyattack=true;
+	_CurrentEnemieState= _EnumEnemieState._attack00; image_index=-1; _attackprint=choose("_frontPunch","_crunchPunch","_crunchThrow"); image_index=-1; _alreadyattack=true;
 
 
 }

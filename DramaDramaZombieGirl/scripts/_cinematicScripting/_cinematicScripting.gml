@@ -117,7 +117,7 @@ _front2 : 0
 
 
 
-audio_play_sound(_bgm_interlude_00,1,1,oCameraResolution._AudioLayersVolume._bg1);
+audio_play_sound(_bgm_interlude_00,1,1,global._AudioLayersVolume._bg1);
 }_acted=false; _isplaying=true; 
 
 break;
@@ -203,6 +203,15 @@ if _acted==true {
 
 var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
 _text._text[0]="saki@@@@@@ *Alguien ha apagado la luz!*";
+
+
+if audio_is_playing(_bgm_interlude_00){audio_stop_sound(_bgm_interlude_00);
+	
+	audio_play_sound(_bgm_fear,1,1,1);
+	
+	}
+
+
 //_text._text[1]="saki@@@@@@ Senorita?";
 //_text._text[2]="saki@@@@@@ Eh, si!, esta ocupado";
 //_text._text[3]="saki@@@@@@ Me parece que sus companeras estan listas";
@@ -227,6 +236,24 @@ ohistoryevents._hevents_0._firstSwitch=false;
 ohistoryevents._hevents_0._secondSwitch=false;
 ohistoryevents._hevents_0._thirdSwitch=false;
 with(inst_2EDB245F) {_state="closed";}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 with(inst_79F595DF) {instance_destroy();} 
 with(inst_3E17DD10) {instance_destroy();}
 with(inst_116699A) {instance_change(odoor,true); _state="closed"; }
