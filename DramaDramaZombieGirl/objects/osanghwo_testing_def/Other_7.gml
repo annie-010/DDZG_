@@ -1,7 +1,7 @@
 switch(sprite_index) {
 	
     case spr_sanghwoo_attack_00:
-	_CurrentEnemieState= _EnumEnemieState._retreat; 
+	_CurrentEnemieState= _EnumEnemieState._retreat;
 	////path=noone;
 image_index=-1;
     break;
@@ -16,6 +16,9 @@ break;
 	//case :
 	///break;
 	
+	
+   case spr_sanghwoo_attack_01: _CurrentEnemieState= _EnumEnemieState._retreat;
+break;
 	
 	default : //path=noone;
 	break;

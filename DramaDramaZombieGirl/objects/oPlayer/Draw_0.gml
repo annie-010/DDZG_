@@ -11,7 +11,7 @@ event_inherited();
 //_CurrentTangibleState = _PossibleEntityTangibleState._Tangible;
 //_CurrentActiveState=_PossibleEntityActiveState._Active;
 
-///draw_text(x,y+64,"can attack ? " + string(_canAttack) )
+draw_text(x,y+64,"distoenemy " + string(distoenemy) )
 
 
 

@@ -10,6 +10,7 @@ _CurrentLifeState = _PossibleEntityLifeState._Alive;
 _CurrentTangibleState = _PossibleEntityTangibleState._Tangible;
 _CurrentActiveState=_PossibleEntityActiveState._Active;
 
+distoenemy = 0;
 
 
 _debugShowisOn=false;

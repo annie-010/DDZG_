@@ -10,6 +10,12 @@ _vel=0;
 _atkphy=0;
 _atkesp=0;
 
+////Distances///
+_distsee = 1500;
+_distreact = 1000; 
+_distcacattack = 32;
+_distbulletattack=500;
+_choosedifsee=false;
 
 
 
@@ -20,7 +26,7 @@ dx = 0;
 dy = 0;
 dist = 1;
 angle = 0;
-retreat_dist = 32 * 20;
+retreat_dist = 32 *5;
 retreat_x = 0;
 retreat_y = 0;
 retreat_attempt = 0;
@@ -65,12 +71,13 @@ _hurtred=false;
 _alreadyattack=false;
 _waittoattackgain = 5;//*_deltatimeSec();
 _currentwait = 0;
-////Distances///
-_distsee = 1500;
-_distreact = 1000; 
-_distcacattack = 500;
-_walkvel=choose(2,3,2,4,2);
-_retreatvel=_walkvel*(choose(1.3,1.5,1.2,1.3,1.5));
+
+
+
+
+
+_walkvel=2
+_retreatvel=2;
 
 
 

@@ -1,7 +1,7 @@
 /// @description Inserte aquí la descripción
 // Puede escribir su código en este editor
 draw_set_color(c_black);
-//draw_text(x-64,(y+64)+z,"_current state : "+ string (_CurrentStatePrint));
+draw_text(x-64,(y+64)+z,"_current state : "+ string (_CurrentStatePrint));
 //draw_text(x-64,(y+48)+z,"_current wait : " + string( _currentwait ));
 
 draw_set_color(c_white);

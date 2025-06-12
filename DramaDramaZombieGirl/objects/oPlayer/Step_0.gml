@@ -7,6 +7,11 @@ var _acceleration = 0.2;
 var _deceleration = 1; 
 
 
+if instance_exists(osanghwo_testing_def) {
+distoenemy = distance_to_point(osanghwo_testing_def.x,osanghwo_testing_def.y);
+}
+
+
 var _keyK = KEY_K_PRESSED;
 var _keyL = KEY_L_PRESSED;
 var _keyKHold = KEY_K_HOLD;
