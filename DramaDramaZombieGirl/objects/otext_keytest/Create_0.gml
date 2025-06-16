@@ -18,5 +18,39 @@ _uniquetype=noone;
 _gifttype = noone;
 _giftamount = noone;
 _gift = noone;
+_askforobjet=noone;
 
 visible=false;
+
+function has_key_required(_key_name) {
+    if instance_exists(oPlayerMenu) {
+        var menu = instance_find(oPlayerMenu, 0);
+
+        // Rellenar la lista si está vacía
+        if ds_list_empty(menu._invkeyDsList) {
+            for (var i = 0; i < array_length(menu.invkey_array); i++) {
+                var key = menu.invkey_array[i];
+                if !is_undefined(key) && key._cantidad > 0 {
+                    ds_list_add(menu._invkeyDsList, key);
+                }
+            }
+        }
+
+        // Mostrar contenido de la lista
+        show_debug_message("🔍 Contenido de _invkeyDsList:");
+        for (var j = 0; j < ds_list_size(menu._invkeyDsList); j++) {
+            var itm = menu._invkeyDsList[| j];
+            show_debug_message(" - " + string(itm._Name) + " x" + string(itm._cantidad));
+        }
+
+        // Buscar si se encuentra el objeto deseado
+        for (var i = 0; i < ds_list_size(menu._invkeyDsList); i++) {
+            var item = menu._invkeyDsList[| i];
+            if item._Name == _key_name && item._cantidad > 0 {
+                return true;
+            }
+        }
+    }
+
+    return false;
+}

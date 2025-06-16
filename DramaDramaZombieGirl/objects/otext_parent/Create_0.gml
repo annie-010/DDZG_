@@ -76,6 +76,9 @@ function _dialogSystem(_dialogtype, _dialogarray) {
 			case 5: _spkportvoice=snd_ch_mimivoice;
 			break;
 			
+			default: _spkportvoice=snd_ch_robotvoice;
+			break;
+			
 		
 		}
 		
@@ -113,10 +116,9 @@ function _dialogSystem(_dialogtype, _dialogarray) {
 	
 			
 		
-		var _spkportspr,_spkportvoice;
+		var _spkportspr;
 				switch (_chindex) {
     case 0:
-
 _spkportspr = spr_ch_saki_portrait;
 draw_sprite(_spkportspr,0,48,726);
         break;
@@ -157,6 +159,7 @@ draw_sprite(_spkportspr,1,48,726);
     default:
 _spkportspr = spr_chtext_portraitBase_00;
 draw_sprite(_spkportspr,1,48,726);
+
         break;
 }
 		

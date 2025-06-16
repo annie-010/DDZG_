@@ -297,7 +297,11 @@ for (var a_ = 0 ; a_<(array_length(invkey_array)); a_++) {
 			switch (_inventoryItemToUse) {
 			
 			
-			case invkey_keycard_first:  
+			case invkey_keycard_first: 
+
+
+			
+			
 var _text = instance_create_layer(x,y,"SYSTEM",otext_parent);
 _text._text[0]="robot@@@@@ *No es el momento*";
 			break;

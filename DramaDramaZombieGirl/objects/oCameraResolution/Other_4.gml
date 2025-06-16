@@ -8,8 +8,8 @@ if !instance_exists(oPlayer) {
 	break;
 	
 	case r_playable_5th_neonoffice: global.oplayerinstance = instance_create_layer(5141,5245,"_Entities",oPlayer); 
-	oPlayerMenu._handEquipArray[0].__cantidad=1;
-	oPlayerMenu._handEquipArray[1].__cantidad=1;
+	oPlayerMenu._handEquipArray[0]._cantidad=1;
+	oPlayerMenu._handEquipArray[1]._cantidad=1;
 	break;	
 	
 	
@@ -120,6 +120,19 @@ break;
 
 
 case r_playable_minus2th_hideway:
+
+
+
+
+
+
+
+
+
+
+
+
+
 with (oCameraTarget) {
 target=oPlayer;
 }
@@ -128,6 +141,14 @@ if instance_exists(oPlayer) {
 oPlayer.x=3032;
 oPlayer.y=4505;
 }
+
+oCameraTarget.x=oPlayer.x//-(VIEW_WIDTH/2);
+oCameraTarget.y=oPlayer.y///-(VIEW_HEIGHT/2);
+oCameraTarget.target=oPlayer;
+
+
+
+
 break;
 
 }}

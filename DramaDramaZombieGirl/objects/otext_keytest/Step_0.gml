@@ -1,3 +1,13 @@
+if id == inst_63B9DEE2 {
+	if instance_exists(oPlayerMenu) {
+	_type="_askfor";
+_askforobjet=oPlayerMenu.invkey_array[1];
+
+	} 
+	
+	}
+
+
 var _keyi = KEY_I_PRESSED;
 if instance_exists(oPlayer) {
 var _dist = distance_to_point(oPlayer.x,oPlayer.y);
@@ -32,6 +42,40 @@ instance_destroy();
 break;
 
 
+case "_askfor":
+
+
+if has_key_required("Key Card Aqua") {
+    show_debug_message("funcionando, pero aun sin saber como");
+	
+	
+var _texto,_msje_0
+_texto = instance_create_layer(x,y,"SYSTEM",otext_parent);
+_msje_0 ="El sensor de la puerta con un sonido indica que aprueba la tarjeta de acceso, en consecuencia la puerta se abre"
+
+if _msje_0!=noone {_text._text[0]=_msje_0;}
+///text._text[0]=_msg;
+	
+	
+	
+	
+	with(inst_5C1D2DB4){
+	_state="open";
+	}
+	
+} else {   show_debug_message("se supone que no tienes cantidad == 1 de este objeto"); 
+    // denegar acceso
+}
+
+
+break;
+
+
+
+
+
+
+
 case "_gifter":
 
 switch(_gifttype) {
@@ -59,8 +103,9 @@ case "_commoninventory":
 break
 
 case "_keyinventory":
-ds_list_add(oPlayerMenu._invkeyDsList,_gift);
-break
+    _gift._cantidad += 1;
+    ds_list_add(oPlayerMenu._invkeyDsList, _gift);
+break;
 
 
 case "_extrainventory":

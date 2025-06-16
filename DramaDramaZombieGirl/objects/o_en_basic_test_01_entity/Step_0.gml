@@ -193,18 +193,20 @@ _CurrentEnemieState= _EnumEnemieState._attack00; image_index=-1; _attackprint=ch
 	
 	
 	
-	var path = path_add();
-	if _dist>0 {
-	
-    if (mp_grid_path(global._currentgrid, path, x, y, oPlayer.x, oPlayer.y, 1))
-    {path_start(path, _movetowardsvel, 3, 0);}	
-	
-	}
 	
 	
 	
 	
-	if _dist>0 {
+	
+	
+var _possiblewaytoplayer = path_add();
+
+var _targetx=_target.x;
+var _targety=_target.y;
+
+	if (mp_grid_path(global._currentgrid, _possiblewaytoplayer, x,y, _targetx, _targety, false)) {
+	
+		if _dist>0 {
 	
 	if _dist>_mintofigthfollow && _dist<=_mintofollow { 
 		_movetowardsvel=2;
@@ -222,18 +224,59 @@ _CurrentEnemieState= _EnumEnemieState._attack00; image_index=-1; _attackprint=ch
 	///if _dist>=_mintolook {_CurrentEnemieState= _EnumEnemieState._stand; path_end();} 
 	
 	
-if abs(_dist - _mintoattack) <= 10 && _alreadyattack==false  {
+
+	
+	
+	}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	var path = path_add();
+	if _dist>0 {
+	
+    if (mp_grid_path(global._currentgrid, path, x, y, oPlayer.x, oPlayer.y, 1))
+    {path_start(path, _movetowardsvel, 3, 0);}	
+	
+	
+	
+	
+	}
+	
+	
+	
+	
+
+	
+
+	if abs(_dist - _mintoattack) <= 10 && _alreadyattack==false  {
     ///show_debug_message("depuración");
 	_CurrentEnemieState= _EnumEnemieState._attack00; image_index=-1; _attackprint=choose("_frontPunch","_crunchPunch","_crunchThrow"); image_index=-1; _alreadyattack=true;
 
 
 }
-	
-	
-	}
-	
-
-	
 
 
 	image_speed=1;

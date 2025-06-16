@@ -9,6 +9,15 @@
 //
 //
 //
+
+
+var _possiblewaytoplayer, _targetx, _targety, _target;
+_target = oPlayer;
+_targetx=_target.x;
+_targety=_target.y;
+
+
+
 if _hp<=0 {
 	with(_collmask) {instance_destroy();}
 	instance_destroy();}
@@ -24,7 +33,7 @@ if x<_target.x {image_xscale=1;} else if  x>_target.x {image_xscale=-1;}
 
 
 if _alreadyattack==true {
-if _currentwait<_waittoattackgain {_currentwait+=1*(_deltatimeSec()) ////show_debug_message(string(_currentwait))
+if _currentwait<_waittoattackgain {_currentwait+=1*(_deltatimeSec()); ////show_debug_message(string(_currentwait))
 	
 	} 
 else if _currentwait>=_waittoattackgain 
@@ -67,12 +76,25 @@ case _EnumEnemieState._stand:
 _CurrentStatePrint="Stand";
 sprite_index=spr_sanghwoo_stand;
 
+
+
+_possiblewaytoplayer = path_add();
+_target=oPlayer;
+_targetx=_target.x;
+_targety=_target.y;
+
+	if (mp_grid_path(global._currentgrid, _possiblewaytoplayer, x,y, _targetx, _targety, false)) {
+	
+	
+	
+
 if _currentdistancetoplayer>=500 {_CurrentEnemieState=_EnumEnemieState._stand;} //OUT OF CAMERA /
 if (_currentdistancetoplayer<500 && _currentdistancetoplayer>32) && _choosedifsee==false {_CurrentEnemieState=choose(_EnumEnemieState._stand,_EnumEnemieState._walk); _choosedifsee=true; alarm[1]=120 }
 if (_currentdistancetoplayer<32) && _choosedifsee==false {_CurrentEnemieState=choose(_EnumEnemieState._stand,_EnumEnemieState._attack01); _choosedifsee=true; alarm[1]=120} 
 ////if (_currentdistancetoplayer<100) && (_currentdistancetoplayer>=64 ) {_CurrentEnemieState=_EnumEnemieState._walk;}
 
 
+}
 
 
 
@@ -99,7 +121,7 @@ break;
 
 case _EnumEnemieState._retreat:
     _CurrentStatePrint = "Retreat";
-	
+	var _pathto = path_add();
 	if _currentdistancetoplayer<16 && !_alreadyattack {_CurrentEnemieState=_EnumEnemieState._attack01; image_index=0; _alreadyattack=true;}
 	
 	if _currentdistancetoplayer<250 && _choosedifsee==false {_CurrentEnemieState=choose(_EnumEnemieState._attack00,_EnumEnemieState._retreat); image_index=0; _choosedifsee=true; alarm[1]=120;}
@@ -107,6 +129,33 @@ case _EnumEnemieState._retreat:
 	
 sprite_index=spr_sanghwoo_walking;
 
+
+
+
+if (mp_grid_path(global._currentgrid,_pathto, x,y, _initx, _inity, true )) {
+	 path_start(_pathto ,_retreatvel, path_action_stop, false);	
+	 
+	 
+	 
+	         if (abs(x - _initx) < 32 && abs(y - _inity) < 32) {
+            path_end();
+            path_delete(_pathto );
+            _pathto  = -1;
+            found_path = false;
+            _CurrentEnemieState = _EnumEnemieState._stand; 
+			
+			}
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+}
+
+
+/*
 
 var _dx, _dy , _dist, _angle, _retreat_x, _retreat_y, _retreat_dist, off, _pathto
 
@@ -152,7 +201,7 @@ for (var i = 0; i < 8; i++) {
 
 	if _currentdistancetoplayer>=700 {path_end(); _CurrentEnemieState = _EnumEnemieState._stand;}
 	
-	
+	*/
 	break;
 
 

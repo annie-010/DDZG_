@@ -87,7 +87,7 @@ _ingameMenuequipOptions[4] = "Retroceder";
 
 _headEquip_EMPTY = {
 	_equipname : "EMPTY EMPTY EMPTY EMPTY",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 0,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 0,
@@ -103,7 +103,7 @@ _headEquip_EMPTY = {
 
 _headEquip_DESEQUIPAR = {
 	_equipname : "DESEQUIPAR",
-	__cantidad : 1,
+	_cantidad : 1,
 	_equipvel : 0,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 0,
@@ -123,7 +123,7 @@ _headEquip_DESEQUIPAR = {
 
 _headEquip_RETROCEDER = {
 	_equipname : "RETROCEDER",
-	__cantidad : 1,
+	_cantidad : 1,
 	_equipvel : 0,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 0,
@@ -139,7 +139,7 @@ _headEquip_RETROCEDER = {
 
 _headEquip_sombrespin = {
 	_equipname : "Sombrespin",
-	__cantidad : 1,
+	_cantidad : 1,
 	_equipvel : 2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 0,
@@ -156,7 +156,7 @@ _headEquip_sombrespin = {
 
 _headEquip_beelmet = {
 	_equipname : "Beelmet",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 0,
@@ -178,7 +178,7 @@ _headEquip_beelmet = {
 
 _headEquip_kittyhears = {
 	_equipname : "Kitty Hears",
-	__cantidad :0,
+	_cantidad :0,
 	_equipvel : 3,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 1,
@@ -197,7 +197,7 @@ _headEquip_kittyhears = {
 
 _headEquip_sombreroembrujado = {
 	_equipname : "Sombrebrujado",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 1,
@@ -214,7 +214,7 @@ _headEquip_sombreroembrujado = {
 
 _headEquip_ornamentorosasviejas = {
 	_equipname : "Ornamento rosas viejas",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : -2,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 0,
@@ -258,7 +258,7 @@ for (var i = 0; i < array_length(_headEquipArray); i++) {
 
 _chestEquip_DESEQUIPAR = {
 	_equipname : "DESEQUIPAR",
-	__cantidad : 1,
+	_cantidad : 1,
 	_equipvel : 0,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 0,
@@ -278,7 +278,7 @@ _chestEquip_DESEQUIPAR = {
 
 _chestEquip_RETROCEDER = {
 	_equipname : "RETROCEDER",
-	__cantidad : 1,
+	_cantidad : 1,
 	_equipvel : 0,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 0,
@@ -296,7 +296,7 @@ _chestEquip_RETROCEDER = {
 
 _chestEquip_EMPTY = {
 	_equipname : "EMPTY EMPTY EMPTY EMPTY",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 0,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 0,
@@ -313,7 +313,7 @@ _chestEquip_EMPTY = {
 
 _chestEquip_reinadecorazones = {
 	_equipname : "Reina de Corazones",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 0,
 	_equipphyssicattack : 3,
 	_equipspecialattack : 0,
@@ -330,7 +330,7 @@ _chestEquip_reinadecorazones = {
 
 _chestEquip_beecap = {
 	_equipname : "BeeCap",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 1,
@@ -348,7 +348,7 @@ _chestEquip_beecap = {
 
 _chestEquip_vestidodebruja = {
 	_equipname : "Vestido de bruja",
-	__cantidad : 1,
+	_cantidad : 1,
 	_equipvel : 2,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 4,
@@ -395,7 +395,7 @@ for (var i = 0; i < array_length(_headEquipArray); i++) {
 
 _handEquip_DESEQUIPAR = {
 	_equipname : "DESEQUIPAR",
-	__cantidad : 1,
+	_cantidad : 1,
 	_equipvel : 0,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 0,
@@ -414,7 +414,7 @@ _handEquip_DESEQUIPAR = {
 
 _handEquip_RETROCEDER = {
 	_equipname : "RETROCEDER",
-	__cantidad : 1,
+	_cantidad : 1,
 	_equipvel : 0,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 0,
@@ -431,7 +431,7 @@ _handEquip_RETROCEDER = {
 
 _handEquip_EMPTY = {
 	_equipname : "EMPTY EMPTY EMPTY EMPTY",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 0,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 0,
@@ -448,7 +448,7 @@ _handEquip_EMPTY = {
 
 _handEquip_umbrella = {
 	_equipname : "Sombrilla",
-	__cantidad : 1,
+	_cantidad : 1,
 	_equipvel : 0,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 1,
@@ -467,7 +467,7 @@ _handEquip_umbrella = {
 
 _handEquip_candybat = {
 	_equipname : "Bat de dulce",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 1,
 	_equipphyssicattack : 0,
 	_equipspecialattack : 1,
@@ -485,7 +485,7 @@ _handEquip_candybat = {
 
 _handEquip_martillo = {
 	_equipname : "Martillo",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 3,
 	_equipphyssicattack : 2,
 	_equipspecialattack : 0,
@@ -506,7 +506,7 @@ _handEquip_martillo = {
 
 _handEquip_bubbleblaster = {
 	_equipname : "Bubble Blaster",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 1,
@@ -523,7 +523,7 @@ _handEquip_bubbleblaster = {
 
 _handEquip_beecane = {
 	_equipname : "Beecane",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 1,
@@ -538,7 +538,7 @@ _handEquip_beecane = {
 
 _handEquip_knife = {
 	_equipname : "Cuchillo Afilado",
-	__cantidad : 0,
+	_cantidad : 0,
 	_equipvel : 2,
 	_equipphyssicattack : 1,
 	_equipspecialattack : 1,
@@ -754,7 +754,7 @@ invkey_keycard_first = {
     _Descr: "Key Card Aqua Sin identificacion, solo un chip. abrira alguna puerta?",
     _Funct: "",
    // _FunctEffect: oPlayer._effConfusion,
-    _cantidad: 1
+    _cantidad: 0
 };
 
 
@@ -787,7 +787,7 @@ function _refreshinventory(_arraytoread, _dstoread) {
     if (ds_list_empty(_dstoread)) {
         // Llenar la lista con elementos cuya cantidad sea 1
         for (var a_ = 0; a_ < array_length(_arraytoread); a_++) {
-            if (_arraytoread[a_].__cantidad == 1) {
+            if (_arraytoread[a_]._cantidad == 1) {
                 ds_list_add(_dstoread, _arraytoread[a_]);
             }
         }

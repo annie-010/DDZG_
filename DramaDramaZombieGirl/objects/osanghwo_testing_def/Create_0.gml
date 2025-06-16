@@ -35,6 +35,8 @@ found_path = false;
 retreat_pathtaken = false;
 path=noone;
 offset_angle=0;
+_initx=x;
+_inity=y;
 
 
 

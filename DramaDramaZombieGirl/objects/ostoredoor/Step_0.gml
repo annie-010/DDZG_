@@ -26,10 +26,17 @@ if instance_exists(oPlayer) {
 		case "closed" :	
 		if (global._currentgrid!=noone) {
 mp_grid_add_rectangle(global._currentgrid, x-(5*32), y-8, x+(5*32), y+8);
-}
+}if _darktolight!=noone {_darktolight.visible=true;}
+
+
+
+
+
+
 break;
 		
 		case "_forceclosed":
+		if _darktolight!=noone {_darktolight.visible=true;}
 		if (global._currentgrid!=noone) {
 mp_grid_add_rectangle(global._currentgrid, x-(5*32), y-8, x+(5*32), y+8);
 }
@@ -39,6 +46,7 @@ mp_grid_add_rectangle(global._currentgrid, x-(5*32), y-8, x+(5*32), y+8);
 		
 		
 		case "open":
+		if _darktolight!=noone {_darktolight.visible=false;}
 		mp_grid_clear_rectangle(global._currentgrid, x-(5*32), y-8, x+(5*32), y+8);
 		break;
 		

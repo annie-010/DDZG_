@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-var _acceleration = 0.2;  
+var _acceleration = 0.5;  
 var _deceleration = 1; 
 
 
