@@ -1,6 +1,10 @@
 var _target = oPlayer;
 var _dist=floor( point_distance(x,y,_target.x,_target.y));
 
+_possiblewaytoplayer = path_add();
+ _grid = _mpgrid_navigation3d(700,0);
+
+
 
 
 if _alreadyattack==true {
@@ -199,12 +203,13 @@ _CurrentEnemieState= _EnumEnemieState._attack00; image_index=-1; _attackprint=ch
 	
 	
 	
-var _possiblewaytoplayer = path_add();
 
 var _targetx=_target.x;
 var _targety=_target.y;
 
-	if (mp_grid_path(global._currentgrid, _possiblewaytoplayer, x,y, _targetx, _targety, false)) {
+
+
+	if (mp_grid_path(_grid, _possiblewaytoplayer, x,y, _targetx, _targety, false)) {
 	
 		if _dist>0 {
 	
@@ -242,22 +247,13 @@ var _targety=_target.y;
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	
 	
 	var path = path_add();
 	if _dist>0 {
 	
-    if (mp_grid_path(global._currentgrid, path, x, y, oPlayer.x, oPlayer.y, 1))
+    if (mp_grid_path(_grid, _possiblewaytoplayer, x,y, _targetx, _targety, false)) 
     {path_start(path, _movetowardsvel, 3, 0);}	
 	
 	

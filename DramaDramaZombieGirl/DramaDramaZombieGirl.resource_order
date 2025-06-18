@@ -170,6 +170,7 @@
     {"name":"osavelocation","order":1,"path":"objects/osavelocation/osavelocation.yy",},
     {"name":"ostoredoor","order":5,"path":"objects/ostoredoor/ostoredoor.yy",},
     {"name":"otable","order":9,"path":"objects/otable/otable.yy",},
+    {"name":"otesting_PARENTENEMY","order":7,"path":"objects/otesting_PARENTENEMY/otesting_PARENTENEMY.yy",},
     {"name":"oTestingOrb","order":1,"path":"objects/oTestingOrb/oTestingOrb.yy",},
     {"name":"otext_keytest","order":1,"path":"objects/otext_keytest/otext_keytest.yy",},
     {"name":"otextactioner_proximity","order":2,"path":"objects/otextactioner_proximity/otextactioner_proximity.yy",},

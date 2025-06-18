@@ -24,7 +24,12 @@ image_blend=col;///make_colour_hsv(255, 255, random(255));
 
 
 
+if _grid!=noone {
 
+draw_set_alpha(0.3);
+mp_grid_draw(_grid);
+draw_set_alpha(1);
+}
 
 
 

@@ -2,6 +2,10 @@
 // Inherit the parent event
 event_inherited();
 
+
+
+
+
 _hp=20;
 _maxhp=_hp;
 _defphy=0;

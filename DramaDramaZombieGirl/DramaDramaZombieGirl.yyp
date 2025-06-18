@@ -232,6 +232,7 @@
     {"id":{"name":"osavelocation","path":"objects/osavelocation/osavelocation.yy",},},
     {"id":{"name":"ostoredoor","path":"objects/ostoredoor/ostoredoor.yy",},},
     {"id":{"name":"otable","path":"objects/otable/otable.yy",},},
+    {"id":{"name":"otesting_PARENTENEMY","path":"objects/otesting_PARENTENEMY/otesting_PARENTENEMY.yy",},},
     {"id":{"name":"oTestingOrb","path":"objects/oTestingOrb/oTestingOrb.yy",},},
     {"id":{"name":"otext_keytest","path":"objects/otext_keytest/otext_keytest.yy",},},
     {"id":{"name":"otext_parent","path":"objects/otext_parent/otext_parent.yy",},},

@@ -15,10 +15,7 @@
     "name":"knife_parentTest",
     "path":"folders/Objetos/_ENTITIES/_ENEMIES/knife_parentTest.yy",
   },
-  "parentObjectId":{
-    "name":"oEntityParent",
-    "path":"objects/oEntityParent/oEntityParent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

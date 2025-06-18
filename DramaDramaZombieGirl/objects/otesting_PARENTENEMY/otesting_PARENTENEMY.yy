@@ -1,13 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"oEnemyEntityParent",
-  "eventList":[],
+  "%Name":"otesting_PARENTENEMY",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"oEnemyEntityParent",
+  "name":"otesting_PARENTENEMY",
   "overriddenProperties":[],
   "parent":{
-    "name":"_ENEMY_PARENTS",
-    "path":"folders/Objetos/_ENTITIES/_PARENTS/_ENEMY_PARENTS.yy",
+    "name":"_PARENTS",
+    "path":"folders/Objetos/_ENTITIES/_PARENTS.yy",
   },
   "parentObjectId":{
     "name":"oEntityParent",

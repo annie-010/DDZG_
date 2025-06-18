@@ -18,8 +18,8 @@
     "path":"folders/Objetos/_ENTITIES/_ENEMIES/sanghwo_.yy",
   },
   "parentObjectId":{
-    "name":"oEntityParent",
-    "path":"objects/oEntityParent/oEntityParent.yy",
+    "name":"otesting_PARENTENEMY",
+    "path":"objects/otesting_PARENTENEMY/otesting_PARENTENEMY.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

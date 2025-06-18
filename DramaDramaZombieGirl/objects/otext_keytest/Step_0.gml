@@ -63,7 +63,7 @@ if _msje_0!=noone {_text._text[0]=_msje_0;}
 	_state="open";
 	}
 	
-} else {   show_debug_message("se supone que no tienes cantidad == 1 de este objeto"); 
+} else {  /// show_debug_message("se supone que no tienes cantidad == 1 de este objeto"); 
     // denegar acceso
 }
 

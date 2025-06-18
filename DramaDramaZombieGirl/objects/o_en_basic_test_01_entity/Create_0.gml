@@ -69,8 +69,8 @@ _hurtred=false;
 
 
 
-
-
+_possiblewaytoplayer = path_add();
+_grid=noone;
 
 
 

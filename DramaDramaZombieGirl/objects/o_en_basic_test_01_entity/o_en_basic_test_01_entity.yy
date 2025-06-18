@@ -17,8 +17,8 @@
     "path":"folders/Objetos/_ENTITIES/_ENEMIES/_en_basic01.yy",
   },
   "parentObjectId":{
-    "name":"oEntityParent",
-    "path":"objects/oEntityParent/oEntityParent.yy",
+    "name":"otesting_PARENTENEMY",
+    "path":"objects/otesting_PARENTENEMY/otesting_PARENTENEMY.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
