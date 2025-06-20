@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"_scr_tileset_to_mpgridredcells",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"_scr_tileset_to_mpgridredcells",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -20,6 +20,11 @@ if !instance_exists(oPlayer) {
 	case r_playable_minus2th_hideway : global.oplayerinstance = instance_create_layer(340,4481,"_Entities",oPlayer);  
 	break;
 	
+	
+	case r_playable_testingmpgrid: global.oplayerinstance = instance_create_layer(340,800,"_Entities",oPlayer);  
+	break;
+	
+	
 	}
 	}
 	

@@ -1,8 +1,62 @@
+var _target,_target_x,_target_y,_dist;
+
+_target=oPlayer;
+_target_x=oPlayer.x;
+_target_y=oPlayer.y;
+_dist=floor( point_distance(x,y,_target.x,_target.y));
+
+if _alreadyattack==true {
+_currentwaitnumber+=_deltatimeSec();
+///show_debug_message("wait : " + string(_currentwaitnumber));
+if _currentwaitnumber>=5 {
+///show_debug_message("enemy attack avaliable");
+ _alreadyattack=false;
+_alreadycreateddmg=false;
+ _currentwaitnumber=0;
+ 
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
 var _target = oPlayer;
 var _dist=floor( point_distance(x,y,_target.x,_target.y));
+var _targetx=_target.x;
+var _targety=_target.y;
+
 
 _possiblewaytoplayer = path_add();
- _grid = _mpgrid_navigation3d(700,0);
+/// _grid=_mpgrid_navigation3d(700,0);
+///add_tiles_to_mpgrid(0, 0, room_width, room_height,64);
+///_mpgrid_block_tiles_by_layer(_grid,"Tiles_00_coll");
 
 
 
@@ -73,8 +127,6 @@ _valuetoreact=15;
 
 
 
-*/
-
 }
 
 
@@ -132,7 +184,7 @@ _mintoattack=70;
 	*/
 
 
-		
+		/*
 		
 		if _dist>_mintolook {_islookingtoplayer=false;
 			_currentreactvalue=0;
@@ -204,9 +256,8 @@ _CurrentEnemieState= _EnumEnemieState._attack00; image_index=-1; _attackprint=ch
 	
 	
 
-var _targetx=_target.x;
-var _targety=_target.y;
 
+/*
 
 
 	if (mp_grid_path(_grid, _possiblewaytoplayer, x,y, _targetx, _targety, false)) {
@@ -236,36 +287,12 @@ var _targety=_target.y;
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
-	
-	
 	var path = path_add();
 	if _dist>0 {
-	
     if (mp_grid_path(_grid, _possiblewaytoplayer, x,y, _targetx, _targety, false)) 
-    {path_start(path, _movetowardsvel, 3, 0);}	
-	
-	
-	
-	
-	}
-	
-	
-	
-	
+    {path_start(_possiblewaytoplayer, _movetowardsvel, 3, 0);}}
 
-	
 
 	if abs(_dist - _mintoattack) <= 10 && _alreadyattack==false  {
     ///show_debug_message("depuración");
