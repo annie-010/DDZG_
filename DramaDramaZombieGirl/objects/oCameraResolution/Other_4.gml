@@ -22,6 +22,9 @@ if !instance_exists(oPlayer) {
 	
 	
 	case r_playable_testingmpgrid: global.oplayerinstance = instance_create_layer(340,800,"_Entities",oPlayer);  
+	if !instance_exists(oCameraTarget) {instance_create_layer(340,800,"SYSTEM",oCameraTarget);} else if instance_exists(oCameraTarget) {with(oCameraTarget) {
+	x = oPlayer.x; y=oPlayer.y; target=oPlayer;
+	}} 
 	break;
 	
 	
@@ -121,6 +124,31 @@ with (oCameraTarget) {
 target=oPlayer;
 }
 break;
+
+
+
+
+
+
+case r_playable_testingmpgrid:
+with (oCameraTarget) {
+target=oPlayer;
+}
+break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

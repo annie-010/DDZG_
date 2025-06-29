@@ -19,11 +19,11 @@
   "height":64,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"efeab0a9-3133-4d9b-8113-30f8e5d74280","blendMode":0,"displayName":"default","isLocked":false,"name":"efeab0a9-3133-4d9b-8113-30f8e5d74280","opacity":25.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"efeab0a9-3133-4d9b-8113-30f8e5d74280","blendMode":0,"displayName":"default","isLocked":false,"name":"efeab0a9-3133-4d9b-8113-30f8e5d74280","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_square64shadow",
   "nineSlice":null,
-  "origin":1,
+  "origin":0,
   "parent":{
     "name":"_platform",
     "path":"folders/Sprites/_platform.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":32,
+    "xorigin":0,
     "yorigin":0,
   },
   "swatchColours":null,

@@ -8,3 +8,6 @@ _inuse=false;
 alarm_set(0,1);
 // En el evento Create de la plataforma
 custom_id = string(id);
+tileset_zid=false;
+
+

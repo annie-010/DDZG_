@@ -8,8 +8,8 @@
   "name":"oplatform64",
   "overriddenProperties":[],
   "parent":{
-    "name":"_STATIC",
-    "path":"folders/Objetos/_PLATFORMBOXES/_STATIC.yy",
+    "name":"BASE",
+    "path":"folders/Objetos/_PLATFORMBOXES/_STATIC/BASE.yy",
   },
   "parentObjectId":{
     "name":"oplatformparent",

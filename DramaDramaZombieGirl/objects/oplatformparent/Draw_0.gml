@@ -2,7 +2,7 @@
 
 
 
-draw_sprite_ext(sprite_index,image_index,x,(y+z),image_xscale,image_yscale,0,c_white,1);
+draw_sprite_ext(sprite_index,image_index,x,(y+z),image_xscale,image_yscale,0,c_white,0.2);
 //draw_set_font(fnt_default_08);
 
 
@@ -47,7 +47,7 @@ if !instance_place(x,y,oPlayer) {
 
 */
 
-
+/*
 if _surface != noone {
     // Ajuste del alpha de la sombra en función del valor total de _surface
     var max_surface = -448;  // Altura máxima de _surface
@@ -61,7 +61,7 @@ if _surface != noone {
 
 
 
-
+/*
 
 
 

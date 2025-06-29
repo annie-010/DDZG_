@@ -9,6 +9,9 @@ var _dist=floor( point_distance(x,y,oPlayer.x,oPlayer.y));
 
 }
 
+
+_zfloorreaded=false;
+
 _hp=choose(20,25,15,30,10);
 _maxhp=_hp;
 _defphy=0;
