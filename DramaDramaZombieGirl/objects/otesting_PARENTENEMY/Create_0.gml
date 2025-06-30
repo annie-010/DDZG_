@@ -78,38 +78,37 @@ global.zfloor_grid = zfloor_grid_create(64);
 
 
 
+function separate_from_wall_enemiez() {
+
+// Derecha
+var inst = instance_place(x + 64, y, oplatformparent);
+if (inst != noone && abs(inst._height) > _currentclimbcapacity) {
+    x -= 16; // Empujar hacia la izquierda
+    show_debug_message("Fue empujado hacia la izquierda por altura " + string(inst._height));
+}
+
+// Abajo
+inst = instance_place(x, y + 64, oplatformparent);
+if (inst != noone && abs(inst._height) > _currentclimbcapacity) {
+    y -= 16; // Empujar hacia arriba
+    show_debug_message("Fue empujado hacia arriba por altura " + string(inst._height));
+}
+
+// Izquierda
+inst = instance_place(x - 64, y, oplatformparent);
+if (inst != noone && abs(inst._height) > _currentclimbcapacity) {
+    x += 16; // Empujar hacia la derecha
+    show_debug_message("Fue empujado hacia la derecha por altura " + string(inst._height));
+}
+
+// Arriba
+inst = instance_place(x, y - 64, oplatformparent);
+if (inst != noone && abs(inst._height) > _currentclimbcapacity) {
+    y += 16; // Empujar hacia abajo
+    show_debug_message("Fue empujado hacia abajo por altura " + string(inst._height));
+}
 
 
-
-
-
-
-/// @function _mpgrid_block_tiles_by_layer(_grid, _layer_name)
-/// @description Bloquea celdas del grid si hay un tile en la capa especificada.
-/*
-function _mpgrid_block_tiles_by_layer(_gridtoread, _layer_name) {
-	var _tilemap = layer_tilemap_get_id(layer_get_id(_layer_name));
-
-	var _cellw = mp_grid_get_cell_width(_gridtoread);
-	var _cellh = mp_grid_get_cell_height(_gridtoread);
-
-	var _grid_x = mp_grid_get_x(_gridtoread);
-	var _grid_y = mp_grid_get_y(_gridtoread);
-
-	var _cols = mp_grid_get_columns(_gridtoread);
-	var _rows = mp_grid_get_rows(_gridtoread);
-
-	for (var i = 0; i < _cols; i++) {
-		for (var j = 0; j < _rows; j++) {
-			var cell_x = _grid_x + i * _cellw;
-			var cell_y = _grid_y + j * _cellh;
-
-			var tiledata = tilemap_get_at_pixel(_tilemap, cell_x, cell_y);
-			if (tiledata != 0) {
-				mp_grid_add_cell(_gridtoread, i, j); // celda bloqueada
-			}
-		}
-	}
 }
 
 
@@ -118,15 +117,61 @@ function _mpgrid_block_tiles_by_layer(_gridtoread, _layer_name) {
 
 
 
+/// update_enemy_pathfinding(_range, _currentclimbcapacity, _pathvel, ref mp_navigation, ref path_navigation)
+/// _range: rango para crear mp_navigation
+/// _currentclimbcapacity: altura máxima que puede subir el enemigo
+/// _pathvel: velocidad del path
+/// mp_navigation: variable que guarda el mp_grid struct (pasada por referencia)
+/// path_navigation: id del path (pasada por referencia)
 
-*/
+function update_enemy_pathfinding(_range, _currentclimbcapacity, _pathvel, mp_navigation, path_navigation) {
+    if (!instance_exists(oPlayer)) return;
 
+    var target = oPlayer;
+    var target_x = target.x;
+    var target_y = target.y;
 
+    if (!variable_global_exists("zfloor_grid")) {
+        global.zfloor_grid = zfloor_grid_from_tilemap("Tiles_00_altura", z + 64);
+    }
 
+    if (mp_navigation == noone) {
+        mp_navigation = _mpgrid_navigation3d(_range, 0);
+        
+        add_tiles_to_addheight_to_mpgrid(
+            mp_navigation.grid,
+            _currentclimbcapacity,
+            mp_navigation.pos_x,
+            mp_navigation.pos_y,
+            mp_navigation.pos_x + mp_navigation.cols * mp_navigation.cellsize,
+            mp_navigation.pos_y + mp_navigation.rows * mp_navigation.cellsize,
+            mp_navigation.cellsize
+        );
 
+        alarm[1] = 20;
 
+        if (path_navigation != -1) {
+            path_delete(path_navigation);
+            path_navigation = -1;
+        }
+    } else {
+        if (path_navigation != -1) {
+            path_delete(path_navigation);
+            path_navigation = -1;
+        }
 
+        path_navigation = path_add();
 
+        var path_found = mp_grid_path(mp_navigation.grid, path_navigation, x, y, target_x, target_y, false);
+
+        if (path_found) {
+            path_start(path_navigation, _pathvel, path_action_stop, false);
+        } else {
+            path_delete(path_navigation);
+            path_navigation = -1;
+        }
+    }
+}
 
 
 

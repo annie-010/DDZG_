@@ -1,5 +1,7 @@
 // ===============================================
 // Enemigo: Pathfinding con alturas (Begin Step)
+
+
 if (instance_exists(oPlayer)) {
     target = oPlayer;
     var target_x = target.x;
